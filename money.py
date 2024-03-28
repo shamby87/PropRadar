@@ -1,4 +1,5 @@
 import math
+import os
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -13,6 +14,10 @@ from datetime import date, timedelta, datetime, timezone
 import statistics as stats
 import requests
 import sys
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.environ.get('API_KEY')
 
 THRESHOLD = 0.65 # ignore plays that are lower than this
 
@@ -50,6 +55,11 @@ match s:
         api_stats = ['player_shots_on_goal', 'player_points', 'player_total_saves'] #The-odds-api
         pp_stats = ['Shots on Goal', 'Points', 'Goalie Saves'] # Prizepicks
         league = "NHL"
+    case "MLB":
+        SPORT = 'baseball_mlb' # use the sport_key from the /sports endpoint 
+        api_stats = ['pitcher_strikeouts', 'pitcher_outs'] #The-odds-api
+        pp_stats = ['Pitcher Strikeouts', 'Pitching Outs'] # Prizepicks
+        league = "MLB"
     case "pass yards":
         SPORT = 'americanfootball_nfl' # use the sport_key from the /sports endpoint 
         api_stats = ['player_pass_yds'] #The-odds-api
@@ -341,10 +351,7 @@ result = dict(sorted(top_plays.items(), key=lambda item: abs(item[1]['avgDif']),
 num = min(6, len(result)) # Only print top 6 plays max
 print("\nFull best play:")
 for r in result.items():
-    if abs(r[1]['avgDif']) < THRESHOLD: # Still want to show the first play no matter what, but once we hit shitty plays we should stop
-        if num < min(6, len(result)) - 1: # Want at least 2
-            break
     if num > 0:
-        print(f"\t{r[0]} - PPLine: {'Over' if r[1]['avgDif'] < 0 else 'Under'} {r[1]['PPLine']} {r[1]['PPStat']}, Avg Diff: {round(r[1]['avgDif'], 4)}, len: {len(r[1]['otherBooks'])}")
+        print(f"\t{r[0]} - PPLine: {'Over' if r[1]['avgDif'] < 0 else 'Under'} {r[1]['PPLine']} {r[1]['PPStat']}, Avg Diff: {round(r[1]['avgDif'], 4)}, len: {r[1]['len']}")
 
     num -= 1
