@@ -1,3 +1,7 @@
 .env
 geckodriver*
-__pycache__/*
+*chromedriver*
+*/__pycache__/*
+data.txt
+googlesheets-credentials.json
+*.log
