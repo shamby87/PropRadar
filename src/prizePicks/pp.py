@@ -8,11 +8,47 @@ from datetime import date, timedelta, datetime, timezone
 import statistics as stats
 import requests
 import sys
-import utils
+from .. import utils
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 THRESHOLD = 0.6
 
+
+def prizepicks_cookie():
+    cookie = os.environ.get('PRIZEPICKS_COOKIE')
+    if not cookie:
+        raise SystemExit(
+            'PRIZEPICKS_COOKIE is not set. Copy the Cookie header from a logged-in '
+            'request to api.prizepicks.com in DevTools and add it to .env'
+        )
+    return cookie
+
+
+def prizepicks_headers():
+    """Headers for projections fetch (document-style request)."""
+    return {
+        "accept": 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        "accept-language": 'en-US,en;q=0.6',
+        "cache-control": 'max-age=0',
+        "cookie": prizepicks_cookie(),
+        "priority": 'u=0, i',
+        "sec-ch-ua": '"Chromium";v="140", "Not=A?Brand";v="24", "Brave";v="140"',
+        "sec-ch-ua-mobile": '?0',
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": 'document',
+        "sec-fetch-mode": 'navigate',
+        "sec-fetch-site": 'none',
+        "sec-fetch-user": '?1',
+        "sec-gpc": '1',
+        "upgrade-insecure-requests": '1',
+        "user-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    }
+
 def main():
+    global THRESHOLD
     utils.getArgs()
 
     # Get variables from utils
@@ -24,52 +60,61 @@ def main():
     start_day = utils.start_day
     end_day = utils.end_day
 
-    graphical = True
+    if league == "MLB":
+        THRESHOLD = 0
+        
+    # url = f'https://api.dailyfantasyapi.io/v1/lines/upcoming?sportsbook=PrizePicks&league={league}'
+    # req = requests.get(url, headers= {
+    #     'accept': 'application/json',
+    #     'x-api-key': os.environ.get('DF_API_KEY')
+    # })
+
+    # data = req.content
+
+    auto = True
     if len(sys.argv) >= 5:
-        graphical = False
+        auto = False
 
     url = "https://api.prizepicks.com/projections"
 
     data = None
-    if graphical:
-        driver = webdriver.Firefox()
-        ############## PRIZEPICKS ################################################
+    # if graphical:
+    #     options = webdriver.FirefoxOptions()
+    #     options.add_argument('-headless')
 
-        driver.get(url)
+    #     driver = webdriver.Firefox(options=options)
+    #     ############## PRIZEPICKS ################################################
 
-        time.sleep(2)
+    #     driver.get(url)
 
-        driver.find_element(By.ID, "rawdata-tab").click()
+    #     time.sleep(2)
 
-        time.sleep(2)
+    #     driver.find_element(By.ID, "rawdata-tab").click()
 
-        data = driver.find_element(By.CLASS_NAME, "data").text
+    #     time.sleep(2)
+
+    #     data = driver.find_element(By.CLASS_NAME, "data").text
         
-        driver.quit()
-    else:
-        header = {
-            "Host": "api.prizepicks.com",
-            "User-Agent": "Mozilla/5.0 (X11; Linux aarch64; rv:102.0) Gecko/20100101 Firefox/102.0",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.5",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Alt-Used": "api.prizepicks.com",
-            "Cookie": "_ga_7D11YVFKG7=GS1.1.1703792369.1.1.1703792388.0.0.0; _ga=GA1.1.1935787825.1703792370; _gcl_au=1.1.1966627405.1703792370; __podscribe_prizepicks_referrer=_; __podscribe_prizepicks_landing_url=https://www.prizepicks.com/api/projections; __podscribe_did=d1b96d42-483b-4a2e-d463-2aae0d6c0115; _sp_id.9177=b6c5e7a4-94b3-4e5c-9e83-645101a06ce1.1703792371.1.1703792371.1703792371.f933723f-5680-43fc-9ba0-f96350e87379; _rdt_uuid=1703792370847.9dfda275-fafd-4aa5-aa6d-c581eb28517b; _scid=09a375bd-622e-4ddc-a8a4-0fd936ba93d5; _scid_r=09a375bd-622e-4ddc-a8a4-0fd936ba93d5; ajs_anonymous_id=b7795cc5-3bde-412b-86f0-169f7eab0843; _lab=3377700667481019; _sctr=1%7C1703721600000; _fbp=fb.1.1703792373009.143617702; intercom-id-qmdeaj0t=5b644d51-da13-406b-835c-cac2d17dcc56; intercom-session-qmdeaj0t=; intercom-device-id-qmdeaj0t=0311a048-ce76-4331-908e-46f6abda9bd3; _cfuvid=bcUGXuqkvyuaoB81pj1WaP9QUpusXBQapEDmm2SdipA-1703792401148-0-604800000",
-            "Upgrade-Insecure-Requests": "1",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "cross-site",
-            "TE": "trailers",
-        }
-
-        req = requests.get(url, headers=header)
+    #     driver.quit()
+    if auto:
+        req = requests.get(url, headers=prizepicks_headers())
         data = req.content
+        print(req.status_code)
         if req.status_code != 200:
             print(f'Request failed w status {req.status_code}: {req.reason}')
             print(data)
             exit()
+    else:
+    # data = None
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        with open(f'{current_directory}/data.txt', 'r') as file:
+            data = file.read()
 
-    # print(data)
+    # Remove N/A stats
+    filtered_pp_stats = [pp for pp in pp_stats if pp != "N/A"]
+    api_stats = [api for pp, api in zip(pp_stats, api_stats) if pp != "N/A"]
+    pp_stats = filtered_pp_stats
+
     df = json.loads(data)
     data = pd.json_normalize(df['data'], max_level=3)
     included = pd.json_normalize(df['included'], max_level=3)
@@ -168,7 +213,7 @@ def main():
 
         # After we get all the values from the books, find the avg and compare to the PPLine
         for player in players[pp_stat]:
-            if len(players[pp_stat][player]['otherBooks']) > 3:
+            if len(players[pp_stat][player]['otherBooks']) >= 3:
                 players[pp_stat][player]['avgDif'] = players[pp_stat][player]['PPLine'] - stats.fmean(players[pp_stat][player]['otherBooks'])
 
     top_plays = {}
