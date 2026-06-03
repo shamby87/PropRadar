@@ -19,6 +19,7 @@ def placePlays():
     
     remainingPromos = len(promos)
     i = 0
+    tried_swap = False
     while i < len(promos):
         if balance <= 0:
             utils.logMsg('Ran out of funds', debug=True)
@@ -66,13 +67,14 @@ def placePlays():
             bestPlays.pop(index)
 
         if len(lineIds) == 1:
-            #TODO: This can cause a infinte loop if there are 2 consecutive promos with the same team and the only available play(s) are from that same team
-            if i < len(promos) - 1 and len(bestPlays) > 0: 
-                # Try next promo
-                promos[i], promos[i+1] = promos[i+1], promos[i]
+            if not tried_swap and i < len(promos) - 1 and len(bestPlays) > 0:
+                promos[i], promos[i + 1] = promos[i + 1], promos[i]
+                tried_swap = True
                 continue
-            else:
-                break
+            utils.logMsg(f'Skipping promo (no filler leg): {parlay[0]["player"]} {parlay[0]["stat"]}', debug=True, notify=False)
+            i += 1
+            tried_swap = False
+            continue
 
         multiplier = math.trunc(multiplier*100)/100
         res = sleepUtils.createParlay(lineIds, multiplier, wager)
@@ -94,6 +96,7 @@ def placePlays():
 
             # Successful parlay creation, move on to next promo
             i += 1
+            tried_swap = False
             balance -= wager
             remainingPromos -= 1
         sleep(10) # Sleep to prevent createParlay from failing for going too fast
