@@ -132,7 +132,7 @@ def getPlayerPromos():
     session = requests.Session()
     resp = session.post(URL, headers=header, json=body)
     if resp.status_code != 200:
-        utils.logMsg(f'Failed to get promos {resp.status_code}: {resp.reason}', admin=True)
+        utils.logMsg(f'Failed to get promos {resp.status_code}: {resp.reason}', debug=True)
         return res
     linePromos = json.loads(resp.content)['data']['available_line_promotions']
 
@@ -187,7 +187,7 @@ def hasActiveLines(sport):
     req = requests.get(url)
     data = req.content
     if req.status_code != 200:
-        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', admin=True)
+        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', debug=True)
         utils.logMsg(data)
         exit()
         
@@ -231,7 +231,7 @@ def createParlay(lineIds, payoutMultiplier, amount=10, share=True):
     session = requests.Session()
     resp = session.post(URL, headers=header, json=body)
     if resp.status_code != 200:
-        utils.logMsg(f'Failed to create parlay {resp.status_code}: {resp.reason}', admin=True)
+        utils.logMsg(f'Failed to create parlay {resp.status_code}: {resp.reason}', debug=True)
         return resp
     
     return resp

@@ -12,7 +12,7 @@ def placePlays():
     promos = [promo for promo in sleepUtils.getPlayerPromos() if (promo['increase'] >= PROMO_THRESHOLD and (promo['type'] == 'line_discount' or promo['ogPayout'] <= MAX_PAYOUT))]
     if len(promos) == 0:
         return
-    utils.logMsg(promos, admin=False)
+    utils.logMsg(promos, debug=True, notify=False)
     
     bestPlays = getBestAvailablePlays()
     balance = sleepUtils.getBalance()
@@ -21,7 +21,7 @@ def placePlays():
     i = 0
     while i < len(promos):
         if balance <= 0:
-            utils.logMsg('Ran out of funds', admin=True)
+            utils.logMsg('Ran out of funds', debug=True)
             return
         
         promo = promos[i]
@@ -77,11 +77,11 @@ def placePlays():
         multiplier = math.trunc(multiplier*100)/100
         res = sleepUtils.createParlay(lineIds, multiplier, wager)
         if res.status_code != 200:
-            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', admin=True)
+            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
             exit()
         content = json.loads(res.content)['data']
         if content['create_parlay'] == None:
-            utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', admin=True)
+            utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
         else:
             parlayMsg = '\n- *PROMO* '
             for idx, player in enumerate(parlay):
@@ -146,7 +146,7 @@ def nonPromoPlays(bestPlays=None):
     while len(bestPlays) >= 2:
         i = 0
         if balance <= 0:
-            utils.logMsg('Ran out of funds', admin=True)
+            utils.logMsg('Ran out of funds', debug=True)
             return
         
         play = bestPlays[i]
@@ -194,11 +194,11 @@ def nonPromoPlays(bestPlays=None):
         multiplier = math.trunc(multiplier*100)/100
         res = sleepUtils.createParlay(lineIds, multiplier, wager)
         if res.status_code != 200:
-            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', admin=True)
+            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
             exit()
         content = json.loads(res.content)['data']
         if content['create_parlay'] == None:
-            utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', admin=True)
+            utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
         else:
             for player in parlay:
                 parlayMsg += f"- **{player['player']}** *{player['ou']}* {player['line']} {player['stat']} @ {player['payout']}x payout\n"
@@ -217,9 +217,9 @@ if __name__ == '__main__':
 
         if sleepUtils.hasActiveLines(utils.league):
             placePlays()
-            utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', admin=False)
+            utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', debug=True, notify=False)
         else:
-            utils.logMsg(f'No active games for {utils.league}', admin=True)
+            utils.logMsg(f'No active games for {utils.league}', debug=True)
     except Exception as e:
-        utils.logMsg(f'Failed to run autoSleeper: {traceback.format_exc()}', admin=True)
+        utils.logMsg(f'Failed to run autoSleeper: {traceback.format_exc()}', debug=True)
     

@@ -44,8 +44,8 @@ def getBestPlays():
     req = requests.get(lines_url)
     data = req.content
     if req.status_code != 200:
-        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', admin=True)
-        utils.logMsg(data, admin=True)
+        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', debug=True)
+        utils.logMsg(data, debug=True)
         exit()
         
     df = json.loads(data)
@@ -54,8 +54,8 @@ def getBestPlays():
     req = requests.get(playerIDs_url)
     data = req.content
     if req.status_code != 200:
-        utils.logMsg(f'Player IDs request failed w status {req.status_code}: {req.reason}', admin=True)
-        utils.logMsg(data, admin=True)
+        utils.logMsg(f'Player IDs request failed w status {req.status_code}: {req.reason}', debug=True)
+        utils.logMsg(data, debug=True)
         exit()
         
     playerIDs = json.loads(data) # Dict where index is the player ID

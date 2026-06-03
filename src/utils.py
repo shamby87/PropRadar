@@ -121,7 +121,7 @@ def getArgs():
             pp_stats = ['Shots On Goal'] # Prizepicks
             league = "NHL"
         case _:
-            logMsg(f'Unknown stat: {s}', admin=True)
+            logMsg(f'Unknown stat: {s}', debug=True)
             exit()
 
     start_d = 0
@@ -168,10 +168,10 @@ def getEvents():
             if API_KEY_INDEX < len(API_KEYS):
                 return getEvents()
             else:
-                logMsg('Out of API keys, exiting...', admin=True)
+                logMsg('Out of API keys, exiting...', debug=True)
                 exit()
         else:
-            logMsg(f'Failed to get odds: status_code {odds_response.status_code}, response body {odds_response.json()}', admin=True)
+            logMsg(f'Failed to get odds: status_code {odds_response.status_code}, response body {odds_response.json()}', debug=True)
             exit()
     else:
         odds_json = odds_response.json()
@@ -217,14 +217,14 @@ def getEvent(eventID, market):
             if API_KEY_INDEX < len(API_KEYS):
                 return getEvent(eventID, market)
             else:
-                logMsg('Out of API keys, exiting...', admin=True)
+                logMsg('Out of API keys, exiting...', debug=True)
                 exit()
         elif response.status_code == 429:
             logMsg(f'Rate limited. Waiting {RATE_LIMIT_SLEEP} seconds before retrying...')
             sleep(RATE_LIMIT_SLEEP)
             return getEvent(eventID, market)
         else:
-            logMsg(f'Failed to get odds: status_code {response.status_code}, response body {response.json()}', admin=True)
+            logMsg(f'Failed to get odds: status_code {response.status_code}, response body {response.json()}', debug=True)
             return None
     else:
         remainingRequests = int(response.headers['x-requests-remaining'])
@@ -240,7 +240,7 @@ SLEEPER_PLAYS_CHANNEL = Discord(url=os.environ.get('SLEEPER_PLAYS_WEBHOOK'))
 ADMIN = os.environ.get('ADMIN_ID')
 SLEEPER = os.environ.get('SLEEPER_ROLE_ID')
 
-def logMsg(text, sleeper=False, admin=False, sleepPlays=False):
+def logMsg(text, sleeper=False, debug=False, notify=True, sleepPlays=False):
     now = datetime.now()
     dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
 
@@ -249,8 +249,8 @@ def logMsg(text, sleeper=False, admin=False, sleepPlays=False):
     print(msg)
     if sleeper:
         PARLAY_CHANNEL.post(content=f'<@&{SLEEPER}> {text}')
-    if admin:
-        ADMIN_CHANNEL.post(content=f"<@{ADMIN}> {msg}")
+    if debug:
+        ADMIN_CHANNEL.post(content=f"{f'<@{ADMIN}> ' if notify else ''}{msg}")
     if sleepPlays:
         SLEEPER_PLAYS_CHANNEL.post(content=msg)
 
