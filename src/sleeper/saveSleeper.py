@@ -70,7 +70,11 @@ def main():
     }
     '''
 
-    data = sleepUtils.getParlays(pending=False)
+    try:
+        data = sleepUtils.getParlays(pending=False)
+    except sleepUtils.SleeperApiError as e:
+        utils.logMsg(f'saveSleeper: failed to fetch parlays ({e})')
+        return
     data = sorted(data, key=lambda x: x['created'])
 
     for entry in data:

@@ -7,6 +7,44 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
+class SleeperApiError(Exception):
+    """Sleeper HTTP/JSON/GraphQL response could not be parsed or was invalid."""
+    pass
+
+def response_snippet(content, limit=200):
+    if not content:
+        return '<empty>'
+    text = content.decode('utf-8', errors='replace') if isinstance(content, bytes) else str(content)
+    return text if len(text) <= limit else text[:limit] + '...'
+
+
+def parse_json_body(content, context):
+    if content is None or (isinstance(content, (bytes, str)) and len(content) == 0):
+        raise SleeperApiError(f'{context}: empty response')
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError as e:
+        raise SleeperApiError(
+            f'{context}: invalid JSON ({e}); body: {response_snippet(content)}'
+        ) from e
+
+
+def parse_graphql_data(resp, context, *, require_status_200=True):
+    if require_status_200 and resp.status_code != 200:
+        raise SleeperApiError(
+            f'{context}: HTTP {resp.status_code} {resp.reason}; body: {response_snippet(resp.content)}'
+        )
+    payload = parse_json_body(resp.content, context)
+    errors = payload.get('errors')
+    if errors:
+        raise SleeperApiError(f'{context}: GraphQL errors {errors}')
+    data = payload.get('data')
+    if data is None:
+        raise SleeperApiError(f'{context}: missing data field; body: {response_snippet(resp.content)}')
+    return data
+
+
 # Auth not really working, just copy cookie from real requests each time we need to use this
 AUTH = os.environ.get('SLEEPER_AUTH')
 URL = 'https://api.sleeper.app/graphql'
@@ -71,6 +109,8 @@ def getPlayerPromos():
     - ogLine (float)
     - ogPayout (float)
     - increase (float) % improvement over original value
+
+    :returns: list of promo dicts on success, or None if promo data could not be loaded.
     '''
     # https://api.sleeper.app/lines/promos
     # Has promos that don't actually exist??
@@ -131,15 +171,28 @@ def getPlayerPromos():
 
     session = requests.Session()
     resp = session.post(URL, headers=header, json=body)
-    if resp.status_code != 200:
-        utils.logMsg(f'Failed to get promos {resp.status_code}: {resp.reason}', debug=True)
-        return res
-    linePromos = json.loads(resp.content)['data']['available_line_promotions']
+    try:
+        data = parse_graphql_data(resp, 'available_line_promotions')
+        linePromos = data['available_line_promotions']
+    except SleeperApiError as e:
+        utils.logMsg(str(e), debug=True)
+        return None
 
     # Get all promos
     promoUrl = 'https://api.sleeper.app/lines/promos'
     resp = session.get(promoUrl)
-    allPromos = json.loads(resp.content)
+    if resp.status_code != 200:
+        utils.logMsg(
+            f'lines/promos failed: HTTP {resp.status_code} {resp.reason}',
+            debug=True,
+        )
+        return None
+    try:
+        allPromos = parse_json_body(resp.content, 'lines/promos')
+    except SleeperApiError as e:
+        utils.logMsg(str(e), debug=True)
+        return None
+
     ogLines = {item['subject_id']: item for item in allPromos if item['line_type'] == 'normal'}
     allPromos = {item['subject_id']: item for item in allPromos if item['line_type'] != 'normal'}
 
@@ -184,16 +237,24 @@ def getPlayerPromos():
 
 def hasActiveLines(sport):
     url = 'https://api.sleeper.app/lines/picks_sport_info?eg=22.control'
-    req = requests.get(url)
-    data = req.content
+    req = requests.get(url, timeout=30)
     if req.status_code != 200:
-        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', debug=True)
-        utils.logMsg(data)
-        exit()
-        
-    data = json.loads(data)
-    res = next((item for item in data if item['sport'] == sport.lower()), None)
-    return res['has_lines']
+        utils.logMsg(
+            f'hasActiveLines: HTTP {req.status_code} {req.reason}; body: {response_snippet(req.content)}',
+            debug=True,
+        )
+        return False
+    try:
+        data = parse_json_body(req.content, 'picks_sport_info')
+    except SleeperApiError as e:
+        utils.logMsg(str(e), debug=True)
+        return False
+
+    entry = next((item for item in data if item.get('sport') == sport.lower()), None)
+    if entry is None:
+        utils.logMsg(f'hasActiveLines: no entry for sport {sport!r}', debug=True)
+        return False
+    return bool(entry.get('has_lines'))
 
 
 def createParlay(lineIds, payoutMultiplier, amount=10, share=True):
@@ -260,10 +321,11 @@ def getParlays(pending=False):
     session = requests.Session()
     resp = session.post(URL, headers=header, json=body)
 
-    if resp.status_code != 200:
-        raise Exception("Failed to get parlays")
-    
-    return json.loads(resp.content)['data']['my_parlays']
+    data = parse_graphql_data(resp, 'my_parlays')
+    parlays = data.get('my_parlays')
+    if parlays is None:
+        raise SleeperApiError('my_parlays: field missing from response')
+    return parlays
 
 def postPlaysToDiscord(plays):
     if len(plays) == 0:
@@ -364,6 +426,9 @@ need to fix location (set to 3516 19th ave):
 '''
 
 def getBalance():
+    '''
+    :returns: USD balance as float, or None if the request or response could not be used.
+    '''
     graphql_op = 'my_currencies'
     query = '#graphql\n        query my_currencies($withdrawableOnly: Boolean) {\n          my_currencies(withdrawable_only: $withdrawableOnly)\n        }'
     body = {
@@ -379,9 +444,27 @@ def getBalance():
     header['x-sleeper-graphql-op'] = graphql_op
 
     session = requests.Session()
-    resp = session.post(URL, headers=header, json=body)
+    try:
+        resp = session.post(URL, headers=header, json=body, timeout=30)
+    except requests.RequestException as e:
+        utils.logMsg(f'getBalance: request failed ({e})', debug=True)
+        return None
 
-    return json.loads(resp.content)['data']['my_currencies']['USD']
+    try:
+        data = parse_graphql_data(resp, 'my_currencies')
+        currencies = data['my_currencies']
+    except (SleeperApiError, KeyError, TypeError) as e:
+        utils.logMsg(f'getBalance: {e}', debug=True)
+        return None
+
+    if 'USD' not in currencies:
+        utils.logMsg(f'getBalance: USD missing (keys: {list(currencies.keys())})', debug=True)
+        return None
+    try:
+        return float(currencies['USD'])
+    except (TypeError, ValueError) as e:
+        utils.logMsg(f'getBalance: invalid USD value ({e})', debug=True)
+        return None
 
 def getPlayerName(id, league):
     url = f'https://api.sleeper.app/players/{league}?exclude_injury=false'
@@ -390,9 +473,16 @@ def getPlayerName(id, league):
         utils.logMsg(f'Failed to get player id {id} for {league}. {resp.status_code}: {resp.reason}')
         return ''
 
-    data = json.loads(resp.content)[id]
-    name = f"{data['first_name']} {data['last_name']}"
-    return name
+    try:
+        players = parse_json_body(resp.content, f'players/{league}')
+        player = players[id]
+    except SleeperApiError as e:
+        utils.logMsg(str(e), debug=True)
+        return ''
+    except KeyError:
+        utils.logMsg(f'getPlayerName: player {id} not in {league}', debug=True)
+        return ''
+    return f"{player['first_name']} {player['last_name']}"
 
 if __name__ == '__main__':
     # getPlayerPromos()

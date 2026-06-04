@@ -1,8 +1,8 @@
 import requests
 import pandas as pd
-import json
 import statistics as stats
 from .. import utils
+from .sleepUtils import SleeperApiError, parse_json_body, response_snippet
 import math
 
 def getBestPlays():
@@ -41,24 +41,30 @@ def getBestPlays():
     lines_url = f"https://api.sleeper.app/lines/available?sports[]={league}&date_from={start_day.isoformat()}&date_to={end_day.isoformat()}&dynamic=true&eg=5.control"
     playerIDs_url = f"https://api.sleeper.app/v1/players/{league}"
 
-    req = requests.get(lines_url)
-    data = req.content
+    try:
+        req = requests.get(lines_url, timeout=30)
+    except requests.RequestException as e:
+        raise SleeperApiError(f'lines/available: request failed ({e})') from e
     if req.status_code != 200:
-        utils.logMsg(f'Lines request failed w status {req.status_code}: {req.reason}', debug=True)
-        utils.logMsg(data, debug=True)
-        exit()
-        
-    df = json.loads(data)
-    lines_data = pd.json_normalize(df, max_level=3)
+        raise SleeperApiError(
+            f'lines/available: HTTP {req.status_code} {req.reason}; '
+            f'body: {response_snippet(req.content)}'
+        )
 
-    req = requests.get(playerIDs_url)
-    data = req.content
+    lines = parse_json_body(req.content, 'lines/available')
+    lines_data = pd.json_normalize(lines, max_level=3)
+
+    try:
+        req = requests.get(playerIDs_url, timeout=30)
+    except requests.RequestException as e:
+        raise SleeperApiError(f'{playerIDs_url}: request failed ({e})') from e
     if req.status_code != 200:
-        utils.logMsg(f'Player IDs request failed w status {req.status_code}: {req.reason}', debug=True)
-        utils.logMsg(data, debug=True)
-        exit()
-        
-    playerIDs = json.loads(data) # Dict where index is the player ID
+        raise SleeperApiError(
+            f'v1/players/{league}: HTTP {req.status_code} {req.reason}; '
+            f'body: {response_snippet(req.content)}'
+        )
+
+    playerIDs = parse_json_body(req.content, f'v1/players/{league}')
 
     filtered2 = lines_data.where((lines_data['game_status']=="pre_game") & (lines_data['line_type']!="normal"))
     filtered2 = filtered2[~filtered2['subject_id'].isna()]

@@ -1,4 +1,3 @@
-import json
 import math
 from time import sleep
 from . import sleeper, sleepUtils
@@ -9,14 +8,25 @@ PROMO_THRESHOLD = 0.06 # Minimum increase to use player promo
 PLAY_THRESHOLD = 1.02 # Minimum avgAdvantage to use play
 MAX_PAYOUT = 2.15 # Don't want to use picks that are too unlikely to win
 def placePlays():
-    promos = [promo for promo in sleepUtils.getPlayerPromos() if (promo['increase'] >= PROMO_THRESHOLD and (promo['type'] == 'line_discount' or promo['ogPayout'] <= MAX_PAYOUT))]
+    promos_raw = sleepUtils.getPlayerPromos()
+    if promos_raw is None:
+        utils.logMsg('placePlays: failed to fetch promos; aborting', debug=True)
+        return
+    promos = [promo for promo in promos_raw if (promo['increase'] >= PROMO_THRESHOLD and (promo['type'] == 'line_discount' or promo['ogPayout'] <= MAX_PAYOUT))]
     if len(promos) == 0:
         return
     utils.logMsg(promos, debug=True, notify=False)
-    
-    bestPlays = getBestAvailablePlays()
+
+    try:
+        bestPlays = getBestAvailablePlays()
+    except sleepUtils.SleeperApiError as e:
+        utils.logMsg(f'placePlays: {e}; aborting', debug=True)
+        return
     balance = sleepUtils.getBalance()
-    
+    if balance is None:
+        utils.logMsg('placePlays: could not fetch balance; aborting', debug=True)
+        return
+
     remainingPromos = len(promos)
     i = 0
     tried_swap = False
@@ -79,9 +89,20 @@ def placePlays():
         multiplier = math.trunc(multiplier*100)/100
         res = sleepUtils.createParlay(lineIds, multiplier, wager)
         if res.status_code != 200:
-            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
-            exit()
-        content = json.loads(res.content)['data']
+            utils.logMsg(
+                f'Create parlay HTTP {res.status_code}: {parlay}, reason: {res.reason}, '
+                f'body: {sleepUtils.response_snippet(res.content)}',
+                debug=True,
+            )
+            sleep(10)
+            continue
+        
+        try:
+            content = sleepUtils.parse_graphql_data(res, 'create_parlay', require_status_200=False)
+        except sleepUtils.SleeperApiError as e:
+            utils.logMsg(f'Create parlay response error: {e}; attempted: {parlay}', debug=True)
+            sleep(10)
+            continue
         if content['create_parlay'] == None:
             utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
         else:
@@ -140,8 +161,15 @@ def getBestAvailablePlays():
 #TODO: Refactor this and placePlays() that use a ton of shared code
 def nonPromoPlays(bestPlays=None):
     if bestPlays == None:
-        bestPlays = getBestAvailablePlays()
+        try:
+            bestPlays = getBestAvailablePlays()
+        except sleepUtils.SleeperApiError as e:
+            utils.logMsg(f'nonPromoPlays: {e}; aborting', debug=True)
+            return
     balance = sleepUtils.getBalance()
+    if balance is None:
+        utils.logMsg('nonPromoPlays: could not fetch balance; aborting', debug=True)
+        return
     #TODO: Use payout boost promos if available
     #TODO: Make more than just 2 leg parlays maybe
 
@@ -197,12 +225,23 @@ def nonPromoPlays(bestPlays=None):
         multiplier = math.trunc(multiplier*100)/100
         res = sleepUtils.createParlay(lineIds, multiplier, wager)
         if res.status_code != 200:
-            utils.logMsg(f'Create parlay status code {res.status_code}: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
-            exit()
-        content = json.loads(res.content)['data']
+            utils.logMsg(
+                f'Create parlay HTTP {res.status_code}: {parlay}, reason: {res.reason}, '
+                f'body: {sleepUtils.response_snippet(res.content)}',
+                debug=True,
+            )
+            sleep(10)
+            continue
+        try:
+            content = sleepUtils.parse_graphql_data(res, 'create_parlay', require_status_200=False)
+        except sleepUtils.SleeperApiError as e:
+            utils.logMsg(f'Create parlay response error: {e}; attempted: {parlay}', debug=True)
+            sleep(10)
+            continue
         if content['create_parlay'] == None:
             utils.logMsg(f'Failed to create parlay: {parlay}, content: {res.content}, reason: {res.reason}', debug=True)
         else:
+            parlayMsg = ''
             for player in parlay:
                 parlayMsg += f"- **{player['player']}** *{player['ou']}* {player['line']} {player['stat']} @ {player['payout']}x payout\n"
             parlayMsg += f'Overall Payout: **{multiplier}x**\n'
@@ -223,6 +262,8 @@ if __name__ == '__main__':
             utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', debug=True, notify=False)
         else:
             utils.logMsg(f'No active games for {utils.league}', debug=True)
-    except Exception as e:
+    except sleepUtils.SleeperApiError as e:
+        utils.logMsg(f'Failed to run autoSleeper (Sleeper API): {e}', debug=True)
+    except Exception:
         utils.logMsg(f'Failed to run autoSleeper: {traceback.format_exc()}', debug=True)
     
