@@ -22,6 +22,9 @@ def placePlays():
     except sleepUtils.SleeperApiError as e:
         utils.logMsg(f'placePlays: {e}; aborting', debug=True)
         return
+    if len(bestPlays) == 0:
+        utils.logMsg('placePlays: no filler plays available; aborting', debug=True, notify=False)
+        return
     balance = sleepUtils.getBalance()
     if balance is None:
         utils.logMsg('placePlays: could not fetch balance; aborting', debug=True)
@@ -131,18 +134,18 @@ def getBestAvailablePlays():
     Calls :func:`sleeper.getBestPlays()` to get best lines, removing any that are already in active parlays
 
     :returns: A list of dictionaries with the following keys:
-    - name (str)
-    - ou (str) Over/Under
-    - line (float) The point value of the picked stat
-    - lineId (str) The line ID to place parlay
-    - playerId (str)
-    - team (str)
-    - SleeperStat (str) The stat to bet
-    - payout (float)
-    - avgAdvantage (float) How much better this payout is than the other books
-    - len (int) How many books were considered
-    - popularity (str) How many people made this pick (of the form "x/y = z%")
-    - fitness (float)
+        - name (str)
+        - ou (str) Over/Under
+        - line (float) The point value of the picked stat
+        - lineId (str) The line ID to place parlay
+        - playerId (str)
+        - team (str)
+        - SleeperStat (str) The stat to bet
+        - payout (float)
+        - avgAdvantage (float) How much better this payout is than the other books
+        - len (int) How many books were considered
+        - popularity (str) How many people made this pick (of the form "x/y = z%")
+        - fitness (float)
     '''
 
     existingParlays = sleepUtils.getParlays(pending=True)
@@ -152,8 +155,12 @@ def getBestAvailablePlays():
             if leg['line']['metadata'].get('promotion', '') != 'true':
                 existingPlayers.append(leg['line']['subject_id'])
 
-    bestPlays = sleeper.getBestPlays()
-    bestPlays = [{'name': key, **value} for key, value in bestPlays.items() if (value['avgAdvantage'] >= PLAY_THRESHOLD and value['payout'] <= MAX_PAYOUT and value['playerId'] not in existingPlayers)]
+    rawPlays = sleeper.getBestPlays()
+    if rawPlays is None:
+        utils.logMsg(f'getBestAvailablePlays: no lines for {utils.league} in date range', debug=True, notify=False)
+        return []
+
+    bestPlays = [{'name': key, **value} for key, value in rawPlays.items() if (value['avgAdvantage'] >= PLAY_THRESHOLD and value['payout'] <= MAX_PAYOUT and value['playerId'] not in existingPlayers)]
     sleepUtils.postPlaysToDiscord(bestPlays)
     
     return bestPlays
@@ -257,11 +264,8 @@ if __name__ == '__main__':
     try:
         utils.getArgs()
 
-        if sleepUtils.hasActiveLines(utils.league):
-            placePlays()
-            utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', debug=True, notify=False)
-        else:
-            utils.logMsg(f'No active games for {utils.league}', debug=True)
+        placePlays()
+        utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', debug=True, notify=False)
     except sleepUtils.SleeperApiError as e:
         utils.logMsg(f'Failed to run autoSleeper (Sleeper API): {e}', debug=True)
     except Exception:

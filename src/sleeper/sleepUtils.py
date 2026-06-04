@@ -233,30 +233,6 @@ def getPlayerPromos():
     res.sort(key=lambda x: x['increase'], reverse=True)
     return res
 
-# Which sports have active lines: https://api.sleeper.app/lines/picks_sport_info?eg=22.control
-
-def hasActiveLines(sport):
-    url = 'https://api.sleeper.app/lines/picks_sport_info?eg=22.control'
-    req = requests.get(url, timeout=30)
-    if req.status_code != 200:
-        utils.logMsg(
-            f'hasActiveLines: HTTP {req.status_code} {req.reason}; body: {response_snippet(req.content)}',
-            debug=True,
-        )
-        return False
-    try:
-        data = parse_json_body(req.content, 'picks_sport_info')
-    except SleeperApiError as e:
-        utils.logMsg(str(e), debug=True)
-        return False
-
-    entry = next((item for item in data if item.get('sport') == sport.lower()), None)
-    if entry is None:
-        utils.logMsg(f'hasActiveLines: no entry for sport {sport!r}', debug=True)
-        return False
-    return bool(entry.get('has_lines'))
-
-
 def createParlay(lineIds, payoutMultiplier, amount=10, share=True):
     query = '#graphql\n            mutation create_parlay($type: String!, $currency_amount: Float!, $currency_type: String!, $league_id: String, $line_ids: [String]!, $league_public: Boolean!, $location: Location!, $promo_id: String, $prototype_parlay_id: String, $payout_version: String!, $client_max_payout: String, $entry_name: String, $vs_group: String, $client_possible_multipliers: Map, $boost_adjustment_version: String) {\n              create_parlay(type: $type, currency_amount: $currency_amount, currency_type: $currency_type, league_id: $league_id, line_ids: $line_ids, league_public: $league_public, location: $location, promo_id: $promo_id, prototype_parlay_id: $prototype_parlay_id, payout_version: $payout_version, client_max_payout: $client_max_payout, entry_name: $entry_name, vs_group: $vs_group, client_possible_multipliers: $client_possible_multipliers, boost_adjustment_version: $boost_adjustment_version) {\n                created\n                currency_amount\n                currency_type\n                league_id\n                legs {\n                  line {\n                    closed\n                    created\n                    game_id\n                    line_id\n                    outcome\n                    outcome_type\n                    outcome_value\n                    payout_multiplier\n                    season\n                    season_type\n                    score {\n                      date\n                      game_id\n                      metadata\n                      season\n                      season_type\n                      sport\n                      start_time\n                      status\n                      week\n                    }\n                    sport\n                    status\n                    subject\n                    subject_id\n                    subject_type\n                    valid_close_duration_seconds\n                    wager_type\n                    line_type\n                    metadata\n                  }\n                  line_id\n                  parlay_leg_id\n                  status\n                }\n                multiplier\n                parlay_id\n                status\n                user_id\n                display_data\n                graded_payout\n                graded_multiplier\n                graded_payout_boost\n                max_payout\n                max_multiplier\n                max_payout_boost\n                possible_multipliers {\n                  lost0\n                  lost1\n                  lost2\n                }\n              }\n            }'
     graphql_op = 'create_parlay'

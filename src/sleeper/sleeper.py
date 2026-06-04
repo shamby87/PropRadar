@@ -10,18 +10,18 @@ def getBestPlays():
     Finds (and utils.logMsgs to stdout) the top 6 plays for the given sport
     
     :returns: A dictionary with the player names as keys and the following values:
-    - ou (str) Over/Under
-    - line (float) The point value of the picked stat
-    - lineId (str) The line ID to place parlay
-    - playerId (str)
-    - team (str)
-    - sport (str)
-    - SleeperStat (str) The stat to bet
-    - payout (float)
-    - avgAdvantage (float) How much better this payout is than the other books
-    - len (int) How many books were considered
-    - popularity (str) How many people made this pick (of the form "x/y = z%")
-    - fitness (float)
+        - ou (str) Over/Under
+        - line (float) The point value of the picked stat
+        - lineId (str) The line ID to place parlay
+        - playerId (str)
+        - team (str)
+        - sport (str)
+        - SleeperStat (str) The stat to bet
+        - payout (float)
+        - avgAdvantage (float) How much better this payout is than the other books
+        - len (int) How many books were considered
+        - popularity (str) How many people made this pick (of the form "x/y = z%")
+        - fitness (float)
     '''
     utils.getArgs()
 
@@ -52,6 +52,8 @@ def getBestPlays():
         )
 
     lines = parse_json_body(req.content, 'lines/available')
+    if len(lines) == 0:
+        return None
     lines_data = pd.json_normalize(lines, max_level=3)
 
     try:
