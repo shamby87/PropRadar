@@ -34,11 +34,11 @@ def main():
     miscCol = 0
     miscRow = 0
     try:
-        miscCol = worksheet.find('Random Shit').col
+        miscCol = worksheet.find('Random').col
         miscRow = len(worksheet.col_values(miscCol)) + 1
     except Exception:
-        utils.logMsg('failed to find random shit')
-        exit()
+        utils.logMsg('saveSleeper: could not find Random column; aborting', debug=True)
+        return
 
     '''
     List available promos (POST)
@@ -119,8 +119,6 @@ def main():
             worksheet.update_cell(miscRow, miscCol, date)
             worksheet.update_cell(miscRow, miscCol+1, profit)
             miscRow += 1
-
-    exit()
 
 def getStatName(name):
     match name:

@@ -19,7 +19,7 @@ def placePlays():
 
     try:
         bestPlays = getBestAvailablePlays()
-    except sleepUtils.SleeperApiError as e:
+    except Exception as e:
         utils.logMsg(f'placePlays: {e}; aborting', debug=True)
         return
     if len(bestPlays) == 0:
@@ -170,7 +170,7 @@ def nonPromoPlays(bestPlays=None):
     if bestPlays == None:
         try:
             bestPlays = getBestAvailablePlays()
-        except sleepUtils.SleeperApiError as e:
+        except Exception as e:
             utils.logMsg(f'nonPromoPlays: {e}; aborting', debug=True)
             return
     balance = sleepUtils.getBalance()
@@ -263,11 +263,12 @@ def nonPromoPlays(bestPlays=None):
 if __name__ == '__main__':
     try:
         utils.getArgs()
-
         placePlays()
-        utils.logMsg(f'Done, remaining API requests: {utils.getRemainingRequests()}', debug=True, notify=False)
-    except sleepUtils.SleeperApiError as e:
-        utils.logMsg(f'Failed to run autoSleeper (Sleeper API): {e}', debug=True)
+        utils.logMsg(
+            f'Done, remaining API requests: {utils.getRemainingRequests()}',
+            debug=True,
+            notify=False,
+        )
     except Exception:
-        utils.logMsg(f'Failed to run autoSleeper: {traceback.format_exc()}', debug=True)
+        utils.logMsg(f'autoSleeper failed: {traceback.format_exc()}', debug=True)
     

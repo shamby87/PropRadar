@@ -20,6 +20,15 @@ ODDS_FORMAT = 'decimal' # decimal | american
 DATE_FORMAT = 'iso' # iso | unix
 RATE_LIMIT_SLEEP = 0.2 # seconds to wait after hitting rate limit
 
+
+class ConfigError(Exception):
+    """Invalid CLI arguments or configuration."""
+
+
+class OddsApiError(Exception):
+    """The-odds-api request failed and cannot be recovered."""
+
+
 def getArgs():
     global SPORT, api_stats, sleeper_stats, pp_stats, league, offset, start_day, end_day
     if 'SPORT' in globals(): # only run once
@@ -121,8 +130,7 @@ def getArgs():
             pp_stats = ['Shots On Goal'] # Prizepicks
             league = "NHL"
         case _:
-            logMsg(f'Unknown stat: {s}', debug=True)
-            exit()
+            raise ConfigError(f'Unknown league/stat: {s!r}')
 
     start_d = 0
     if len(sys.argv) >= 3:
@@ -162,17 +170,21 @@ def getEvents():
     events = []
 
     if odds_response.status_code != 200:
-        if odds_response.json()["error_code"] == 'OUT_OF_USAGE_CREDITS':
-            # Try to use the next API key and rerun
+        try:
+            error_code = odds_response.json().get('error_code')
+        except ValueError:
+            error_code = None
+        if error_code == 'OUT_OF_USAGE_CREDITS':
             API_KEY_INDEX += 1
             if API_KEY_INDEX < len(API_KEYS):
                 return getEvents()
-            else:
-                logMsg('Out of API keys, exiting...', debug=True)
-                exit()
-        else:
-            logMsg(f'Failed to get odds: status_code {odds_response.status_code}, response body {odds_response.json()}', debug=True)
-            exit()
+            logMsg('Out of API keys', debug=True)
+            raise OddsApiError('Out of API keys while fetching events')
+        logMsg(
+            f'Failed to get events: HTTP {odds_response.status_code}, body {odds_response.text}',
+            debug=True,
+        )
+        raise OddsApiError(f'Failed to get events: HTTP {odds_response.status_code}')
     else:
         odds_json = odds_response.json()
         # logMsg('Number of events:', len(odds_json))
@@ -211,14 +223,16 @@ def getEvent(eventID, market):
     )
     
     if response.status_code != 200:
-        if response.json()["error_code"] == 'OUT_OF_USAGE_CREDITS':
-            # Try to use the next API key and rerun
+        try:
+            error_code = response.json().get('error_code')
+        except ValueError:
+            error_code = None
+        if error_code == 'OUT_OF_USAGE_CREDITS':
             API_KEY_INDEX += 1
             if API_KEY_INDEX < len(API_KEYS):
                 return getEvent(eventID, market)
-            else:
-                logMsg('Out of API keys, exiting...', debug=True)
-                exit()
+            logMsg('Out of API keys', debug=True)
+            raise OddsApiError(f'Out of API keys while fetching event {eventID}')
         elif response.status_code == 429:
             logMsg(f'Rate limited. Waiting {RATE_LIMIT_SLEEP} seconds before retrying...')
             sleep(RATE_LIMIT_SLEEP)
