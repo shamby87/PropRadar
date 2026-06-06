@@ -1,4 +1,6 @@
 import math
+import os
+import sys
 from time import sleep
 from . import sleeper, sleepUtils
 from .. import utils
@@ -9,6 +11,13 @@ PLAY_THRESHOLD = 1.02  # Minimum avgAdvantage to use play
 MAX_PAYOUT = 2.15  # Don't want to use picks that are too unlikely to win
 WAGER_CAP = 10
 PARLAY_SUBMIT_SLEEP = 10
+
+
+def is_dry_run():
+    if '--dry-run' in sys.argv:
+        return True
+    val = os.environ.get('SLEEPER_DRY_RUN', '').strip().lower()
+    return val in ('1', 'true', 'yes', 'on')
 
 
 def getBestAvailablePlays():
@@ -132,11 +141,15 @@ def format_parlay_message(parlay, multiplier, parlay_id, *, promo=False):
     return msg
 
 
-def try_create_parlay(lineIds, multiplier, wager, parlay, *, promo=False):
+def try_create_parlay(lineIds, multiplier, wager, parlay, *, promo=False, dry_run=False):
     '''
     Submit a parlay to Sleeper. Returns True on success.
     '''
     multiplier = math.trunc(multiplier * 100) / 100
+    if dry_run:
+        utils.logMsg(format_parlay_message(parlay, multiplier, "dry_run", promo=promo))
+        return True
+
     res = sleepUtils.createParlay(lineIds, multiplier, wager)
     if res.status_code != 200:
         utils.logMsg(
@@ -164,7 +177,7 @@ def try_create_parlay(lineIds, multiplier, wager, parlay, *, promo=False):
     return True
 
 
-def placePlays():
+def placePlays(*, dry_run=False):
     promos_raw = sleepUtils.getPlayerPromos()
     if promos_raw is None:
         utils.logMsg('placePlays: failed to fetch promos; aborting', debug=True)
@@ -187,8 +200,8 @@ def placePlays():
         utils.logMsg('placePlays: no best plays available; aborting', debug=True, notify=False)
         return
     balance = sleepUtils.getBalance()
-    if balance is None:
-        utils.logMsg('placePlays: could not fetch balance; aborting', debug=True)
+    if balance is None or balance <= 0:
+        utils.logMsg('placePlays: no funds available; aborting', debug=True)
         return
 
     remainingPromos = len(promos)
@@ -228,18 +241,19 @@ def placePlays():
             tried_swap = False
             continue
 
-        if try_create_parlay(lineIds, multiplier, wager, parlay, promo=True):
+        if try_create_parlay(lineIds, multiplier, wager, parlay, promo=True, dry_run=dry_run):
             i += 1
             tried_swap = False
             balance -= wager
             remainingPromos -= 1
-        sleep(PARLAY_SUBMIT_SLEEP) # Sleep to prevent createParlay from failing for going too fast
+        if not dry_run:
+            sleep(PARLAY_SUBMIT_SLEEP)  # Sleep to prevent createParlay from failing for going too fast
 
     # if len(bestPlays) >= 2:
     #     nonPromoPlays(bestPlays)
 
 
-def nonPromoPlays(bestPlays=None):
+def nonPromoPlays(bestPlays=None, *, dry_run=False):
     if bestPlays is None:
         try:
             bestPlays = getBestAvailablePlays()
@@ -247,8 +261,8 @@ def nonPromoPlays(bestPlays=None):
             utils.logMsg(f'nonPromoPlays: {e}; aborting', debug=True)
             return
     balance = sleepUtils.getBalance()
-    if balance is None:
-        utils.logMsg('nonPromoPlays: could not fetch balance; aborting', debug=True)
+    if balance is None or balance <= 0:
+        utils.logMsg('nonPromoPlays: no funds available; aborting', debug=True)
         return
 
     # TODO: Use payout boost promos if available
@@ -274,15 +288,19 @@ def nonPromoPlays(bestPlays=None):
         if len(lineIds) == 1:
             break
 
-        if try_create_parlay(lineIds, multiplier, wager, parlay, promo=False):
+        if try_create_parlay(lineIds, multiplier, wager, parlay, promo=False, dry_run=dry_run):
             balance -= wager
-        sleep(PARLAY_SUBMIT_SLEEP) # Sleep to prevent createParlay from failing for going too fast
+        if not dry_run:
+            sleep(PARLAY_SUBMIT_SLEEP)  # Sleep to prevent createParlay from failing for going too fast
 
 
 if __name__ == '__main__':
     try:
         utils.getArgs()
-        placePlays()
+        dry_run = is_dry_run()
+        if dry_run:
+            utils.logMsg('DRY RUN enabled — parlays will be logged but not submitted')
+        placePlays(dry_run=dry_run)
         utils.logMsg(
             f'Done, remaining API requests: {utils.getRemainingRequests()}',
             debug=True,

@@ -32,12 +32,13 @@ class OddsApiError(Exception):
 def getArgs():
     global SPORT, api_stats, sleeper_stats, pp_stats, league, offset, start_day, end_day
     if 'SPORT' in globals(): # only run once
-        return    
-    
+        return
+
+    args = [a for a in sys.argv[1:] if a != '--dry-run']
     s = ""
 
-    if len(sys.argv) >= 2:
-        s = sys.argv[1]
+    if len(args) >= 1:
+        s = args[0]
     else:
         s = str(input("Which league? NFL, NBA, CBB, NHL, MLB: "))
 
@@ -133,14 +134,14 @@ def getArgs():
             raise ConfigError(f'Unknown league/stat: {s!r}')
 
     start_d = 0
-    if len(sys.argv) >= 3:
-        start_d = int(sys.argv[2])
+    if len(args) >= 2:
+        start_d = int(args[1])
     else:
         start_d = int(input("Start day: Today + (days): "))
 
     end_d = 0
-    if len(sys.argv) >= 4:
-        end_d = int(sys.argv[3])
+    if len(args) >= 3:
+        end_d = int(args[2])
     else:
         end_d = int(input("End day: Today + (days): "))
 
