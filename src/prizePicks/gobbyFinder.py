@@ -4,7 +4,6 @@ import json
 from datetime import date
 import statistics as stats
 import requests
-import sys
 from .. import utils
 import os
 
@@ -36,11 +35,10 @@ def main():
 
     # data = req.content
 
-    # Default: read pasted JSON from data.txt; with full CLI args, fetch live from API
-    graphical = len(sys.argv) < 5
+    # Default: read pasted JSON from data.txt; pass --live to fetch from API
     url = "https://api.prizepicks.com/projections"
 
-    if graphical:
+    if not utils.parse_args().live:
         current_directory = os.path.dirname(os.path.abspath(__file__))
         with open(f'{current_directory}/data.txt', 'r') as file:
             data = file.read()

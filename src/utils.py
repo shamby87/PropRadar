@@ -1,7 +1,7 @@
 from time import sleep
+import argparse
 import pandas as pd
 import numpy as np
-import sys
 import os
 import requests
 from discordwebhook import Discord  
@@ -29,16 +29,70 @@ class OddsApiError(Exception):
     """The-odds-api request failed and cannot be recovered."""
 
 
+_parsed_args = None
+
+
+def _build_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'league',
+        nargs='?',
+        help='League or stat (NFL, NBA, CBB, NHL, MLB, or legacy stat names)',
+    )
+    parser.add_argument(
+        'start_day',
+        nargs='?',
+        type=int,
+        help='Start day: today + N days',
+    )
+    parser.add_argument(
+        'end_day',
+        nargs='?',
+        type=int,
+        help='End day: today + N days',
+    )
+    parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Log parlays without submitting (also SLEEPER_DRY_RUN env var)',
+    )
+    parser.add_argument(
+        '--from-file',
+        action='store_true',
+        help='Read PrizePicks projections from data.txt instead of the API',
+    )
+    parser.add_argument(
+        '--live',
+        action='store_true',
+        help='Fetch PrizePicks projections from the API',
+    )
+    return parser
+
+
+def parse_args(argv=None):
+    '''Parse CLI args once; pass argv in tests to avoid mutating global state.'''
+    global _parsed_args
+    if _parsed_args is not None and argv is None:
+        return _parsed_args
+
+    args = _build_parser().parse_args(argv)
+    if not args.dry_run:
+        val = os.environ.get('SLEEPER_DRY_RUN', '').strip().lower()
+        args.dry_run = val in ('1', 'true', 'yes', 'on')
+
+    if argv is None:
+        _parsed_args = args
+    return args
+
+
 def getArgs():
     global SPORT, api_stats, sleeper_stats, pp_stats, league, offset, start_day, end_day
     if 'SPORT' in globals(): # only run once
         return
 
-    args = [a for a in sys.argv[1:] if a != '--dry-run']
-    s = ""
-
-    if len(args) >= 1:
-        s = args[0]
+    args = parse_args()
+    if args.league is not None:
+        s = args.league
     else:
         s = str(input("Which league? NFL, NBA, CBB, NHL, MLB: "))
 
@@ -133,15 +187,13 @@ def getArgs():
         case _:
             raise ConfigError(f'Unknown league/stat: {s!r}')
 
-    start_d = 0
-    if len(args) >= 2:
-        start_d = int(args[1])
+    if args.start_day is not None:
+        start_d = args.start_day
     else:
         start_d = int(input("Start day: Today + (days): "))
 
-    end_d = 0
-    if len(args) >= 3:
-        end_d = int(args[2])
+    if args.end_day is not None:
+        end_d = args.end_day
     else:
         end_d = int(input("End day: Today + (days): "))
 
@@ -262,6 +314,9 @@ def logMsg(text, sleeper=False, debug=False, notify=True, sleepPlays=False):
     msg = f"{dt_string} - {text}"
 
     print(msg)
+    if parse_args().dry_run:
+        return
+
     if sleeper:
         PARLAY_CHANNEL.post(content=f'<@&{SLEEPER}> {text}')
     if debug:

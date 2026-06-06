@@ -7,7 +7,6 @@ import json
 from datetime import date, timedelta, datetime, timezone
 import statistics as stats
 import requests
-import sys
 from .. import utils
 import os
 from dotenv import load_dotenv
@@ -71,10 +70,6 @@ def main():
 
     # data = req.content
 
-    auto = True
-    if len(sys.argv) >= 5:
-        auto = False
-
     url = "https://api.prizepicks.com/projections"
 
     data = None
@@ -96,7 +91,11 @@ def main():
     #     data = driver.find_element(By.CLASS_NAME, "data").text
         
     #     driver.quit()
-    if auto:
+    if utils.parse_args().from_file:
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        with open(f'{current_directory}/data.txt', 'r') as file:
+            data = file.read()
+    else:
         req = requests.get(url, headers=prizepicks_headers())
         data = req.content
         print(req.status_code)
@@ -104,11 +103,6 @@ def main():
             print(f'Request failed w status {req.status_code}: {req.reason}')
             print(data)
             exit()
-    else:
-    # data = None
-        current_directory = os.path.dirname(os.path.abspath(__file__))
-        with open(f'{current_directory}/data.txt', 'r') as file:
-            data = file.read()
 
     # Remove N/A stats
     filtered_pp_stats = [pp for pp in pp_stats if pp != "N/A"]

@@ -1,6 +1,4 @@
 import math
-import os
-import sys
 from time import sleep
 from . import sleeper, sleepUtils
 from .. import utils
@@ -11,13 +9,6 @@ PLAY_THRESHOLD = 1.02  # Minimum avgAdvantage to use play
 MAX_PAYOUT = 2.15  # Don't want to use picks that are too unlikely to win
 WAGER_CAP = 10
 PARLAY_SUBMIT_SLEEP = 10
-
-
-def is_dry_run():
-    if '--dry-run' in sys.argv:
-        return True
-    val = os.environ.get('SLEEPER_DRY_RUN', '').strip().lower()
-    return val in ('1', 'true', 'yes', 'on')
 
 
 def getBestAvailablePlays():
@@ -297,7 +288,7 @@ def nonPromoPlays(bestPlays=None, *, dry_run=False):
 if __name__ == '__main__':
     try:
         utils.getArgs()
-        dry_run = is_dry_run()
+        dry_run = utils.parse_args().dry_run
         if dry_run:
             utils.logMsg('DRY RUN enabled — parlays will be logged but not submitted')
         placePlays(dry_run=dry_run)
