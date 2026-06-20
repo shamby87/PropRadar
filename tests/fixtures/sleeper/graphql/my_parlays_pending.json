@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "source": "sleeper graphql",
+    "operation": "my_parlays"
+  },
+  "data": {
+    "my_parlays": [
+      {
+        "parlay_id": "1371565065907470336",
+        "status": "pending",
+        "multiplier": 2.16,
+        "legs": [
+          {
+            "line_id": "1371561907927916552",
+            "status": "pending",
+            "line": {
+              "line_id": "1371561907927916552",
+              "subject_id": "1887",
+              "wager_type": "points",
+              "outcome_value": 3.5,
+              "payout_multiplier": "1.78",
+              "metadata": {},
+              "score": {
+                "date": "2026-06-13",
+                "game_id": "1366650381416812544",
+                "sport": "nba",
+                "start_time": 1781397000000,
+                "status": "pre_game"
+              }
+            }
+          },
+          {
+            "line_id": "1371563548743839744",
+            "status": "pending",
+            "line": {
+              "line_id": "1371563548743839744",
+              "subject_id": "1006",
+              "wager_type": "significant_strikes",
+              "outcome_value": 39.5,
+              "payout_multiplier": "1.78",
+              "metadata": {
+                "display_as_free_pick": "false",
+                "promotion": "true",
+                "promotion_type": "line_discount"
+              },
+              "score": {
+                "date": "2026-06-14",
+                "game_id": "1336699326063214592",
+                "sport": "mma",
+                "start_time": 1781487600000,
+                "status": "pre_game"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

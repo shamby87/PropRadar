@@ -11,6 +11,58 @@ from .pp import prizepicks_headers
 
 THRESHOLD = 0.6
 
+
+def parse_goblin_players(raw, pp_stats, league, start_day, end_day):
+    '''Parse PrizePicks projections JSON into goblin lines keyed by stat then player name.'''
+    df = json.loads(raw) if isinstance(raw, str) else raw
+    projections = pd.json_normalize(df['data'], max_level=3)
+    included = pd.json_normalize(df['included'], max_level=3)
+    inc_cop = included[included['type'] == 'new_player'].copy().dropna(axis=1)
+    projections = pd.merge(
+        projections,
+        inc_cop,
+        how='left',
+        left_on=['relationships.new_player.data.id', 'relationships.new_player.data.type'],
+        right_on=['id', 'type'],
+        suffixes=('', '_new_player'),
+    )
+    filtered = projections.where(
+        (projections['attributes.stat_type'].isin(pp_stats))
+        & (projections['attributes.status'] == 'pre_game')
+        & (projections['attributes.odds_type'] == 'goblin')
+    )
+    filtered = filtered[~filtered['attributes.stat_type'].isna()]
+
+    players = {stat: {} for stat in pp_stats}
+    for i in range(len(filtered)):
+        player = filtered.iloc[i]
+        desc = player['attributes.description']
+        l = player['attributes.league']
+        t = date.fromisoformat(player['attributes.start_time'].split('T')[0])
+        if t < start_day or t > end_day:
+            continue
+        if (
+            l == league
+            and 'inning' not in desc.lower()
+            and 'SZN' not in l
+            and '1H' not in l
+            and 'half' not in desc.lower()
+            and 'combo' not in desc.lower()
+            and 'first' not in desc.lower()
+            and '1Q' not in desc
+            and '4Q' not in desc
+            and '4Q' not in l
+        ):
+            name = player['attributes.name'].lower()
+            stat = player['attributes.stat_type']
+            players[stat][name] = {
+                'PPLine': player['attributes.line_score'],
+                'otherBooks': [],
+                'avgOdds': 0,
+            }
+    return players
+
+
 def main():
     global THRESHOLD
     utils.getArgs()
@@ -56,46 +108,7 @@ def main():
     api_stats = [f'{api}_alternate' for pp, api in zip(pp_stats, api_stats) if pp != "N/A"]
     pp_stats = filtered_pp_stats
 
-    # print(data)
-    df = json.loads(data)
-    data = pd.json_normalize(df['data'], max_level=3)
-    included = pd.json_normalize(df['included'], max_level=3)
-    inc_cop = included[included['type'] == 'new_player'].copy().dropna(axis=1)
-    data = pd.merge(data
-                    , inc_cop
-                    , how='left'
-                    , left_on=['relationships.new_player.data.id'
-                                ,'relationships.new_player.data.type']
-                    , right_on=['id', 'type']
-                    , suffixes=('', '_new_player'))
-    print(data.head(3))
-    # exit()
-    filtered = data.where((data['attributes.stat_type'].isin(pp_stats)) & (data['attributes.status']=="pre_game") & (data['attributes.odds_type']=="goblin"))
-    filtered = filtered[~filtered['attributes.stat_type'].isna()]
-
-    players = {stat: {} for stat in pp_stats} # Organize the players by stats, then by name
-    for i in range(0, len(filtered)):
-        player = filtered.iloc[i]
-        desc = player['attributes.description']
-        l = player['attributes.league']
-        stat_type = player['attributes.odds_type']
-        t = date.fromisoformat(player['attributes.start_time'].split("T")[0])
-        if t < start_day or t > end_day:
-            continue
-        if l == league and "inning" not in desc.lower() and "SZN" not in l and "1H" not in l and "half" not in desc.lower() and "combo" not in desc.lower() and "first" not in desc.lower() and "1Q" not in desc and "4Q" not in desc and "4Q" not in l:
-            name = player['attributes.name'].lower()
-            stat = player['attributes.stat_type']
-            line = player['attributes.line_score']
-            # print(f"{name}, {stat}, {line}, {t}")
-
-            players[stat][name] = {
-                'PPLine': line,
-                'otherBooks': [],
-                'avgOdds': 0
-            }
-
-    # print(players)
-    # quit()
+    players = parse_goblin_players(data, pp_stats, league, start_day, end_day)
 
     events = utils.getEvents()
 

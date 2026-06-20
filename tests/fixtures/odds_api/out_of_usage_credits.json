@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "source": "the-odds-api.com",
+    "note": "Static error shape for tests; not fetched live"
+  },
+  "error_code": "OUT_OF_USAGE_CREDITS",
+  "message": "Usage quota has been reached"
+}

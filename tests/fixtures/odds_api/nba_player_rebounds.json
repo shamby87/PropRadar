@@ -1,0 +1,606 @@
+{
+  "meta": {
+    "source": "the-odds-api.com",
+    "sport_key": "basketball_nba",
+    "event_id": "6cc5c3b9cfcb1d94bed9f3ca972b3114",
+    "market": "player_rebounds",
+    "alternate": false
+  },
+  "event": {
+    "id": "6cc5c3b9cfcb1d94bed9f3ca972b3114",
+    "sport_key": "basketball_nba",
+    "commence_time": "2026-06-14T00:40:00Z",
+    "home_team": "San Antonio Spurs",
+    "away_team": "New York Knicks",
+    "bookmakers": [
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "markets": [
+          {
+            "key": "player_rebounds",
+            "last_update": "2026-06-13T23:39:23Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "description": "Dylan Harper",
+                "price": 1.87,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "Dylan Harper",
+                "price": 1.9,
+                "point": 5.5
+              },
+              {
+                "name": "Over",
+                "description": "Josh Hart",
+                "price": 2.02,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "description": "Josh Hart",
+                "price": 1.77,
+                "point": 8.5
+              },
+              {
+                "name": "Over",
+                "description": "Luke Kornet",
+                "price": 1.76,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Luke Kornet",
+                "price": 2.04,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Devin Vassell",
+                "price": 1.77,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Devin Vassell",
+                "price": 2.02,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Mikal Bridges",
+                "price": 2.24,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Mikal Bridges",
+                "price": 1.62,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Stephon Castle",
+                "price": 1.82,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Stephon Castle",
+                "price": 1.96,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Julian Champagnie",
+                "price": 1.88,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Julian Champagnie",
+                "price": 1.88,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Jalen Brunson",
+                "price": 2.3,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Jalen Brunson",
+                "price": 1.6,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Landry Shamet",
+                "price": 2.4,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Landry Shamet",
+                "price": 1.56,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "De'Aaron Fox",
+                "price": 2.18,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "De'Aaron Fox",
+                "price": 1.67,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Jose Alvarado",
+                "price": 2.2,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Jose Alvarado",
+                "price": 1.65,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Victor Wembanyama",
+                "price": 1.94,
+                "point": 11.5
+              },
+              {
+                "name": "Under",
+                "description": "Victor Wembanyama",
+                "price": 1.83,
+                "point": 11.5
+              },
+              {
+                "name": "Over",
+                "description": "Karl-Anthony Towns",
+                "price": 1.76,
+                "point": 10.5
+              },
+              {
+                "name": "Under",
+                "description": "Karl-Anthony Towns",
+                "price": 2.04,
+                "point": 10.5
+              },
+              {
+                "name": "Over",
+                "description": "OG Anunoby",
+                "price": 2.16,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "OG Anunoby",
+                "price": 1.68,
+                "point": 5.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "markets": [
+          {
+            "key": "player_rebounds",
+            "last_update": "2026-06-13T23:39:50Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "description": "Victor Wembanyama",
+                "price": 1.88,
+                "point": 11.5
+              },
+              {
+                "name": "Under",
+                "description": "Victor Wembanyama",
+                "price": 1.86,
+                "point": 11.5
+              },
+              {
+                "name": "Over",
+                "description": "Karl-Anthony Towns",
+                "price": 1.71,
+                "point": 10.5
+              },
+              {
+                "name": "Under",
+                "description": "Karl-Anthony Towns",
+                "price": 2.07,
+                "point": 10.5
+              },
+              {
+                "name": "Over",
+                "description": "Josh Hart",
+                "price": 1.88,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "description": "Josh Hart",
+                "price": 1.85,
+                "point": 8.5
+              },
+              {
+                "name": "Over",
+                "description": "Dylan Harper",
+                "price": 1.74,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "Dylan Harper",
+                "price": 2.03,
+                "point": 5.5
+              },
+              {
+                "name": "Over",
+                "description": "OG Anunoby",
+                "price": 2.11,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "OG Anunoby",
+                "price": 1.68,
+                "point": 5.5
+              },
+              {
+                "name": "Over",
+                "description": "Devin Vassell",
+                "price": 1.63,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Devin Vassell",
+                "price": 2.21,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Stephon Castle",
+                "price": 1.74,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Stephon Castle",
+                "price": 2.04,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Julian Champagnie",
+                "price": 1.77,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Julian Champagnie",
+                "price": 1.99,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Mitchell Robinson",
+                "price": 1.85,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Mitchell Robinson",
+                "price": 1.88,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "De'Aaron Fox",
+                "price": 2.11,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "De'Aaron Fox",
+                "price": 1.68,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Mikal Bridges",
+                "price": 2.13,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Mikal Bridges",
+                "price": 1.68,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Jalen Brunson",
+                "price": 2.25,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Jalen Brunson",
+                "price": 1.61,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Keldon Johnson",
+                "price": 1.68,
+                "point": 2.5
+              },
+              {
+                "name": "Under",
+                "description": "Keldon Johnson",
+                "price": 2.11,
+                "point": 2.5
+              },
+              {
+                "name": "Over",
+                "description": "Luke Kornet",
+                "price": 1.61,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Luke Kornet",
+                "price": 2.24,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Jose Alvarado",
+                "price": 2.03,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Jose Alvarado",
+                "price": 1.74,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Landry Shamet",
+                "price": 2.24,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Landry Shamet",
+                "price": 1.61,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Miles McBride",
+                "price": 1.78,
+                "point": 0.5
+              },
+              {
+                "name": "Under",
+                "description": "Miles McBride",
+                "price": 1.98,
+                "point": 0.5
+              },
+              {
+                "name": "Over",
+                "description": "Jordan Clarkson",
+                "price": 1.96,
+                "point": 0.5
+              },
+              {
+                "name": "Under",
+                "description": "Jordan Clarkson",
+                "price": 1.79,
+                "point": 0.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "markets": [
+          {
+            "key": "player_rebounds",
+            "last_update": "2026-06-13T23:39:51Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "description": "De'Aaron Fox",
+                "price": 2.04,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "De'Aaron Fox",
+                "price": 1.71,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "Devin Vassell",
+                "price": 1.66,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Devin Vassell",
+                "price": 2.12,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Keldon Johnson",
+                "price": 1.65,
+                "point": 2.5
+              },
+              {
+                "name": "Under",
+                "description": "Keldon Johnson",
+                "price": 2.14,
+                "point": 2.5
+              },
+              {
+                "name": "Over",
+                "description": "Dylan Harper",
+                "price": 1.7,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "Dylan Harper",
+                "price": 2.07,
+                "point": 5.5
+              },
+              {
+                "name": "Over",
+                "description": "Victor Wembanyama",
+                "price": 1.85,
+                "point": 11.5
+              },
+              {
+                "name": "Under",
+                "description": "Victor Wembanyama",
+                "price": 1.85,
+                "point": 11.5
+              },
+              {
+                "name": "Over",
+                "description": "Karl-Anthony Towns",
+                "price": 2.05,
+                "point": 11.5
+              },
+              {
+                "name": "Under",
+                "description": "Karl-Anthony Towns",
+                "price": 1.7,
+                "point": 11.5
+              },
+              {
+                "name": "Over",
+                "description": "Landry Shamet",
+                "price": 2.23,
+                "point": 1.5
+              },
+              {
+                "name": "Under",
+                "description": "Landry Shamet",
+                "price": 1.6,
+                "point": 1.5
+              },
+              {
+                "name": "Over",
+                "description": "Stephon Castle",
+                "price": 1.73,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Stephon Castle",
+                "price": 2.0,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Julian Champagnie",
+                "price": 1.85,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Julian Champagnie",
+                "price": 1.87,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Mitchell Robinson",
+                "price": 1.83,
+                "point": 4.5
+              },
+              {
+                "name": "Under",
+                "description": "Mitchell Robinson",
+                "price": 1.88,
+                "point": 4.5
+              },
+              {
+                "name": "Over",
+                "description": "Mikal Bridges",
+                "price": 2.14,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Mikal Bridges",
+                "price": 1.64,
+                "point": 3.5
+              },
+              {
+                "name": "Over",
+                "description": "OG Anunoby",
+                "price": 2.05,
+                "point": 5.5
+              },
+              {
+                "name": "Under",
+                "description": "OG Anunoby",
+                "price": 1.7,
+                "point": 5.5
+              },
+              {
+                "name": "Over",
+                "description": "Josh Hart",
+                "price": 1.89,
+                "point": 8.5
+              },
+              {
+                "name": "Under",
+                "description": "Josh Hart",
+                "price": 1.83,
+                "point": 8.5
+              },
+              {
+                "name": "Over",
+                "description": "Jalen Brunson",
+                "price": 2.23,
+                "point": 3.5
+              },
+              {
+                "name": "Under",
+                "description": "Jalen Brunson",
+                "price": 1.6,
+                "point": 3.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "source": "sleeper.app/v1/players/nba",
+    "league": "NBA",
+    "count": 5
+  },
+  "players": {
+    "2146": {
+      "full_name": "Devin Vassell",
+      "team": "SAS",
+      "position": "SF"
+    },
+    "1534": {
+      "full_name": "Jordan Clarkson",
+      "team": "NYK",
+      "position": "SG"
+    },
+    "1759": {
+      "full_name": "Luke Kornet",
+      "team": "SAS",
+      "position": "C"
+    },
+    "1831": {
+      "full_name": "OG Anunoby",
+      "team": "NYK",
+      "position": "PF"
+    },
+    "1613": {
+      "full_name": "Karl-Anthony Towns",
+      "team": "NYK",
+      "position": "C"
+    }
+  }
+}

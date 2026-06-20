@@ -1,0 +1,1212 @@
+{
+  "data": [
+    {
+      "type": "projection",
+      "id": "12582741",
+      "attributes": {
+        "adjusted_odds": false,
+        "board_time": "2026-06-01T20:41:00.000-04:00",
+        "custom_image": null,
+        "description": "NYK/SAS",
+        "end_time": null,
+        "event_type": "combo",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "320746-425-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 57.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1030,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Points",
+        "stat_type": "Points (Combo)",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 809,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T16:58:12.752-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "320746"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "425"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580453",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:37:18.373-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-106-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 54.5,
+        "odds_type": "demon",
+        "projection_type": "Single Stat",
+        "rank": 1031,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "PRA",
+        "stat_type": "Pts+Rebs+Asts",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 347,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:35:18.665-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "106"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12581114",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:48:35.025-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-106-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 43.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1042,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "PRA",
+        "stat_type": "Pts+Rebs+Asts",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 21892,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T09:54:00.504-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "106"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580449",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:37:17.820-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-243-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 40.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1044,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Pts+Rebs",
+        "stat_type": "Pts+Rebs",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 2514,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T16:39:26.710-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "243"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12581115",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:48:35.027-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-106-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 40.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1045,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "PRA",
+        "stat_type": "Pts+Rebs+Asts",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 1567,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:46:35.170-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "106"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580211",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:36:44.809-04:00",
+        "custom_image": null,
+        "description": "SAS",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "188004-244-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 34.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1065,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Pts+Asts",
+        "stat_type": "Pts+Asts",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 1247,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T17:37:44.435-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "188004"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "244"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580450",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:37:17.821-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-243-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 34.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1070,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Pts+Rebs",
+        "stat_type": "Pts+Rebs",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 2047,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:35:18.204-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "243"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580553",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:42:24.507-04:00",
+        "custom_image": null,
+        "description": "SAS",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "188004-244-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 29.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1117,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Pts+Asts",
+        "stat_type": "Pts+Asts",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 318,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:40:24.551-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "188004"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "244"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580442",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:37:16.846-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-19-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 28.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1124,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Points",
+        "stat_type": "Points",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 36708,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T11:22:20.288-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "19"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12581291",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:52:56.682-04:00",
+        "custom_image": null,
+        "description": "SAS",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "188004-19-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 26.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1138,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Points",
+        "stat_type": "Points",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 1976,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:50:56.726-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "188004"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "19"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580457",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:37:18.920-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-22-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 11.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1432,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Rebounds",
+        "stat_type": "Rebounds",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 16204,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:43:05.346-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "22"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12581119",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:48:35.638-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "173819-22-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 10.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1478,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Rebounds",
+        "stat_type": "Rebounds",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 822,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:46:35.687-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "173819"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "22"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580402",
+      "attributes": {
+        "adjusted_odds": null,
+        "board_time": "2026-06-10T23:37:11.357-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "217804-20-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 6.5,
+        "odds_type": "standard",
+        "projection_type": "Single Stat",
+        "rank": 1652,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Assists",
+        "stat_type": "Assists",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 41213,
+        "tv_channel": null,
+        "updated_at": "2026-06-13T14:33:26.902-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "217804"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "20"
+          }
+        }
+      }
+    },
+    {
+      "type": "projection",
+      "id": "12580115",
+      "attributes": {
+        "adjusted_odds": true,
+        "board_time": "2026-06-10T23:36:31.687-04:00",
+        "custom_image": null,
+        "description": "NYK",
+        "end_time": null,
+        "event_type": "team",
+        "flash_sale_line_score": null,
+        "game_id": "NBA_game_sCEDyYZ1qZ8SctoWnkRspff",
+        "group_key": "226913-20-NBA_game_sCEDyYZ1qZ8SctoWnkRspff-11-false",
+        "hr_20": true,
+        "in_game": false,
+        "is_live": false,
+        "is_live_scored": true,
+        "is_promo": false,
+        "line_score": 5.5,
+        "odds_type": "goblin",
+        "projection_type": "Single Stat",
+        "rank": 1717,
+        "refundable": true,
+        "start_time": "2026-06-13T20:40:00.000-04:00",
+        "stat_display_name": "Assists",
+        "stat_type": "Assists",
+        "status": "pre_game",
+        "today": true,
+        "trending_count": 526,
+        "tv_channel": null,
+        "updated_at": "2026-06-10T23:34:32.060-04:00"
+      },
+      "relationships": {
+        "duration": {
+          "data": {
+            "type": "duration",
+            "id": "11"
+          }
+        },
+        "game": {
+          "data": {
+            "type": "game",
+            "id": "165607"
+          }
+        },
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "new_player": {
+          "data": {
+            "type": "new_player",
+            "id": "226913"
+          }
+        },
+        "projection_type": {
+          "data": {
+            "type": "projection_type",
+            "id": "2"
+          }
+        },
+        "score": {
+          "data": null
+        },
+        "stat_type": {
+          "data": {
+            "type": "stat_type",
+            "id": "20"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "new_player",
+      "id": "217804",
+      "attributes": {
+        "combo": false,
+        "display_name": "Stephon Castle",
+        "image_url": "https://static.prizepicks.com/images/players/NBA/Stephon_Castle_NBA_player_3nImU3v39rqjCKdKG1wdfekq.webp",
+        "jersey_number": "5",
+        "league": "NBA",
+        "league_id": 7,
+        "market": "San Antonio",
+        "name": "Stephon Castle",
+        "position": "G",
+        "ppid": "NBA_player_3nImU3v39rqjCKdKG1wdfekq",
+        "team": "SAS",
+        "team_name": "Spurs"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "team_data": {
+          "data": {
+            "type": "team",
+            "id": "870"
+          }
+        }
+      }
+    },
+    {
+      "type": "new_player",
+      "id": "226913",
+      "attributes": {
+        "combo": false,
+        "display_name": "De'Aaron Fox",
+        "image_url": "https://static.prizepicks.com/images/players/NBA/De'Aaron_Fox_NBA_player_ey65igBBNutBRz0ibXh85IuZ.webp",
+        "jersey_number": "4",
+        "league": "NBA",
+        "league_id": 7,
+        "market": "San Antonio",
+        "name": "De'Aaron Fox",
+        "position": "G",
+        "ppid": "NBA_player_ey65igBBNutBRz0ibXh85IuZ",
+        "team": "SAS",
+        "team_name": "Spurs"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "team_data": {
+          "data": {
+            "type": "team",
+            "id": "870"
+          }
+        }
+      }
+    },
+    {
+      "type": "new_player",
+      "id": "173819",
+      "attributes": {
+        "combo": false,
+        "display_name": "Victor Wembanyama",
+        "image_url": "https://static.prizepicks.com/images/players/NBA/Victor_Wembanyama_NBA_player_2EsUEdOt5xmywxPr6qxPdHNs.webp",
+        "jersey_number": "1",
+        "league": "NBA",
+        "league_id": 7,
+        "market": "San Antonio",
+        "name": "Victor Wembanyama",
+        "position": "F-C",
+        "ppid": "NBA_player_2EsUEdOt5xmywxPr6qxPdHNs",
+        "team": "SAS",
+        "team_name": "Spurs"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "team_data": {
+          "data": {
+            "type": "team",
+            "id": "870"
+          }
+        }
+      }
+    },
+    {
+      "type": "new_player",
+      "id": "320746",
+      "attributes": {
+        "combo": true,
+        "display_name": "Victor Wembanyama + Jalen Brunson",
+        "image_url": "https://static.prizepicks.com/images/players/CMBO_group_wmzPQjjnqB97cgUBKPqpcPFY.webp",
+        "jersey_number": "1 + 11",
+        "league": "NBA",
+        "league_id": 7,
+        "market": null,
+        "name": "Victor Wembanyama + Jalen Brunson",
+        "position": "F-C",
+        "ppid": "CMBO_group_wmzPQjjnqB97cgUBKPqpcPFY",
+        "team": "SAS/NYK",
+        "team_name": "Spurs/Knicks"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "team_data": {
+          "data": {
+            "type": "team",
+            "id": "25726"
+          }
+        }
+      }
+    },
+    {
+      "type": "new_player",
+      "id": "188004",
+      "attributes": {
+        "combo": false,
+        "display_name": "Jalen Brunson",
+        "image_url": "https://static.prizepicks.com/images/players/NBA/Jalen_Brunson_NBA_player_yiwlT8GHgktYu1WBoRvjpRr8.webp",
+        "jersey_number": "11",
+        "league": "NBA",
+        "league_id": 7,
+        "market": "New York",
+        "name": "Jalen Brunson",
+        "position": "G",
+        "ppid": "NBA_player_yiwlT8GHgktYu1WBoRvjpRr8",
+        "team": "NYK",
+        "team_name": "Knicks"
+      },
+      "relationships": {
+        "league": {
+          "data": {
+            "type": "league",
+            "id": "7"
+          }
+        },
+        "team_data": {
+          "data": {
+            "type": "team",
+            "id": "1367"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "source": "data.txt",
+    "league": "NBA",
+    "odds_types": {
+      "standard": 7,
+      "goblin": 6,
+      "demon": 1
+    },
+    "note": "Trimmed snapshot for pp.py (standard) and gobbyFinder.py (goblin) tests"
+  }
+}

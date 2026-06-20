@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "source": "the-odds-api.com",
+    "sport_key": "basketball_nba",
+    "start_day": "2026-06-13",
+    "end_day": "2026-06-16",
+    "count": 1
+  },
+  "events": [
+    {
+      "id": "6cc5c3b9cfcb1d94bed9f3ca972b3114",
+      "sport_key": "basketball_nba",
+      "commence_time": "2026-06-14T00:40:00Z",
+      "home_team": "San Antonio Spurs",
+      "away_team": "New York Knicks"
+    }
+  ]
+}

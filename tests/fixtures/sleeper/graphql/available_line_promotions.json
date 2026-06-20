@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "source": "sleeper graphql",
+    "operation": "available_line_promotions",
+    "sleeper_league": "nba",
+    "count": 2
+  },
+  "data": {
+    "available_line_promotions": [
+      {
+        "game_id": "1366650381416812544",
+        "sport": "nba",
+        "subject_id": "1831",
+        "type": "over_boost",
+        "wager_type": "points"
+      },
+      {
+        "game_id": "1366650381416812544",
+        "sport": "nba",
+        "subject_id": "2146",
+        "type": "line_discount",
+        "wager_type": "points"
+      }
+    ]
+  }
+}

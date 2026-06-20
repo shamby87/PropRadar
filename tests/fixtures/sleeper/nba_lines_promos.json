@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "source": "sleeper.app/lines/promos",
+    "league": "NBA",
+    "count": 4,
+    "subject_ids": [
+      "1831",
+      "2146"
+    ]
+  },
+  "promos": [
+    {
+      "status": "active",
+      "options": [
+        {
+          "status": "active",
+          "metadata": {
+            "display_as_free_pick": "false",
+            "promotion": "true",
+            "promotion_type": "over_boost"
+          },
+          "subject_id": "1831",
+          "outcome": "over",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_1831",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "line_promotion",
+          "game_status": "pre_game",
+          "line_id": "1371546706029600768",
+          "outcome_value": 18.5,
+          "payout_multiplier": "1.95",
+          "subject_pos_rank": null,
+          "subject_position": "PF",
+          "subject_team": "NYK"
+        },
+        {
+          "status": "active",
+          "metadata": {
+            "display_as_free_pick": "false",
+            "promotion": "true",
+            "promotion_type": "over_boost"
+          },
+          "subject_id": "1831",
+          "outcome": "under",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_1831",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "line_promotion",
+          "game_status": "pre_game",
+          "line_id": "1371546706063142912",
+          "outcome_value": 18.5,
+          "payout_multiplier": "1.84",
+          "subject_pos_rank": null,
+          "subject_position": "PF",
+          "subject_team": "NYK"
+        }
+      ],
+      "subject_id": "1831",
+      "season": "2025",
+      "season_type": "post",
+      "sport": "nba",
+      "game_id": "1366650381416812544",
+      "market_type": "points_over_under_player_1831",
+      "updated_at": 1781364726137,
+      "subject_type": "player",
+      "wager_type": "points",
+      "outcome_type": "over_under",
+      "line_type": "line_promotion",
+      "game_status": "pre_game",
+      "recent_performance": {
+        "values": [
+          {
+            "date": "2026-05-04",
+            "opponent": "PHI",
+            "value": 18.0
+          },
+          {
+            "date": "2026-05-06",
+            "opponent": "PHI",
+            "value": 24.0
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "CLE",
+            "value": 13.0
+          },
+          {
+            "date": "2026-05-21",
+            "opponent": "CLE",
+            "value": 14.0
+          },
+          {
+            "date": "2026-05-23",
+            "opponent": "CLE",
+            "value": 21.0
+          },
+          {
+            "date": "2026-05-25",
+            "opponent": "CLE",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-03",
+            "opponent": "SAS",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-05",
+            "opponent": "SAS",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-08",
+            "opponent": "SAS",
+            "value": 28.0
+          },
+          {
+            "date": "2026-06-10",
+            "opponent": "SAS",
+            "value": 33.0
+          }
+        ]
+      },
+      "pick_stats": {
+        "counts": {
+          "over": 2368,
+          "total": 2648,
+          "under": 280
+        },
+        "popularity": 0.8313253012048193,
+        "subject_id": "1831",
+        "subject_type": "player"
+      }
+    },
+    {
+      "status": "active",
+      "options": [
+        {
+          "status": "active",
+          "metadata": {},
+          "subject_id": "1831",
+          "outcome": "over",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_1831",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "normal",
+          "game_status": "pre_game",
+          "line_id": "1371678300342079509",
+          "outcome_value": 18.5,
+          "payout_multiplier": "1.86",
+          "subject_pos_rank": null,
+          "subject_position": "PF",
+          "subject_team": "NYK"
+        },
+        {
+          "status": "active",
+          "metadata": {},
+          "subject_id": "1831",
+          "outcome": "under",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_1831",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "normal",
+          "game_status": "pre_game",
+          "line_id": "1371678300342079510",
+          "outcome_value": 18.5,
+          "payout_multiplier": "1.71",
+          "subject_pos_rank": null,
+          "subject_position": "PF",
+          "subject_team": "NYK"
+        }
+      ],
+      "subject_id": "1831",
+      "season": "2025",
+      "season_type": "post",
+      "sport": "nba",
+      "game_id": "1366650381416812544",
+      "market_type": "points_over_under_player_1831",
+      "updated_at": 1781396102190,
+      "subject_type": "player",
+      "wager_type": "points",
+      "outcome_type": "over_under",
+      "line_type": "normal",
+      "game_status": "pre_game",
+      "recent_performance": {
+        "values": [
+          {
+            "date": "2026-05-04",
+            "opponent": "PHI",
+            "value": 18.0
+          },
+          {
+            "date": "2026-05-06",
+            "opponent": "PHI",
+            "value": 24.0
+          },
+          {
+            "date": "2026-05-19",
+            "opponent": "CLE",
+            "value": 13.0
+          },
+          {
+            "date": "2026-05-21",
+            "opponent": "CLE",
+            "value": 14.0
+          },
+          {
+            "date": "2026-05-23",
+            "opponent": "CLE",
+            "value": 21.0
+          },
+          {
+            "date": "2026-05-25",
+            "opponent": "CLE",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-03",
+            "opponent": "SAS",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-05",
+            "opponent": "SAS",
+            "value": 17.0
+          },
+          {
+            "date": "2026-06-08",
+            "opponent": "SAS",
+            "value": 28.0
+          },
+          {
+            "date": "2026-06-10",
+            "opponent": "SAS",
+            "value": 33.0
+          }
+        ]
+      },
+      "pick_stats": {
+        "counts": {
+          "over": 1448,
+          "total": 1781,
+          "under": 333
+        },
+        "popularity": 0.7951807228915663,
+        "subject_id": "1831",
+        "subject_type": "player"
+      }
+    },
+    {
+      "status": "active",
+      "options": [
+        {
+          "status": "active",
+          "metadata": {
+            "display_as_free_pick": "false",
+            "promotion": "true",
+            "promotion_type": "line_discount"
+          },
+          "subject_id": "2146",
+          "outcome": "over",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_2146",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "line_promotion",
+          "game_status": "pre_game",
+          "line_id": "1371542856090521600",
+          "outcome_value": 10.5,
+          "payout_multiplier": "1.78",
+          "subject_pos_rank": null,
+          "subject_position": "SF",
+          "subject_team": "SAS"
+        },
+        {
+          "status": "active",
+          "metadata": {
+            "display_as_free_pick": "false",
+            "promotion": "true",
+            "promotion_type": "line_discount"
+          },
+          "subject_id": "2146",
+          "outcome": "under",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_2146",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "line_promotion",
+          "game_status": "pre_game",
+          "line_id": "1371542856128303104",
+          "outcome_value": 10.5,
+          "payout_multiplier": "1.78",
+          "subject_pos_rank": null,
+          "subject_position": "SF",
+          "subject_team": "SAS"
+        }
+      ],
+      "subject_id": "2146",
+      "season": "2025",
+      "season_type": "post",
+      "sport": "nba",
+      "game_id": "1366650381416812544",
+      "market_type": "points_over_under_player_2146",
+      "updated_at": 1781363808239,
+      "subject_type": "player",
+      "wager_type": "points",
+      "outcome_type": "over_under",
+      "line_type": "line_promotion",
+      "game_status": "pre_game",
+      "recent_performance": {
+        "values": [
+          {
+            "date": "2026-05-20",
+            "opponent": "OKC",
+            "value": 22.0
+          },
+          {
+            "date": "2026-05-22",
+            "opponent": "OKC",
+            "value": 20.0
+          },
+          {
+            "date": "2026-05-24",
+            "opponent": "OKC",
+            "value": 13.0
+          },
+          {
+            "date": "2026-05-26",
+            "opponent": "OKC",
+            "value": 6.0
+          },
+          {
+            "date": "2026-05-28",
+            "opponent": "OKC",
+            "value": 12.0
+          },
+          {
+            "date": "2026-05-30",
+            "opponent": "OKC",
+            "value": 11.0
+          },
+          {
+            "date": "2026-06-03",
+            "opponent": "NYK",
+            "value": 9.0
+          },
+          {
+            "date": "2026-06-05",
+            "opponent": "NYK",
+            "value": 14.0
+          },
+          {
+            "date": "2026-06-08",
+            "opponent": "NYK",
+            "value": 11.0
+          },
+          {
+            "date": "2026-06-10",
+            "opponent": "NYK",
+            "value": 18.0
+          }
+        ]
+      },
+      "pick_stats": {
+        "counts": {
+          "over": 9471,
+          "total": 9494,
+          "under": 23
+        },
+        "popularity": 0.9855421686746988,
+        "subject_id": "2146",
+        "subject_type": "player"
+      }
+    },
+    {
+      "status": "active",
+      "options": [
+        {
+          "status": "active",
+          "metadata": {},
+          "subject_id": "2146",
+          "outcome": "over",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_2146",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "normal",
+          "game_status": "pre_game",
+          "line_id": "1371676791801913350",
+          "outcome_value": 13.5,
+          "payout_multiplier": "1.70",
+          "subject_pos_rank": null,
+          "subject_position": "SF",
+          "subject_team": "SAS"
+        },
+        {
+          "status": "active",
+          "metadata": {},
+          "subject_id": "2146",
+          "outcome": "under",
+          "season": "2025",
+          "season_type": "post",
+          "sport": "nba",
+          "game_id": "1366650381416812544",
+          "market_type": "points_over_under_player_2146",
+          "subject_type": "player",
+          "wager_type": "points",
+          "outcome_type": "over_under",
+          "line_type": "normal",
+          "game_status": "pre_game",
+          "line_id": "1371676791801913351",
+          "outcome_value": 13.5,
+          "payout_multiplier": "1.87",
+          "subject_pos_rank": null,
+          "subject_position": "SF",
+          "subject_team": "SAS"
+        }
+      ],
+      "subject_id": "2146",
+      "season": "2025",
+      "season_type": "post",
+      "sport": "nba",
+      "game_id": "1366650381416812544",
+      "market_type": "points_over_under_player_2146",
+      "updated_at": 1781395743052,
+      "subject_type": "player",
+      "wager_type": "points",
+      "outcome_type": "over_under",
+      "line_type": "normal",
+      "game_status": "pre_game",
+      "recent_performance": {
+        "values": [
+          {
+            "date": "2026-05-20",
+            "opponent": "OKC",
+            "value": 22.0
+          },
+          {
+            "date": "2026-05-22",
+            "opponent": "OKC",
+            "value": 20.0
+          },
+          {
+            "date": "2026-05-24",
+            "opponent": "OKC",
+            "value": 13.0
+          },
+          {
+            "date": "2026-05-26",
+            "opponent": "OKC",
+            "value": 6.0
+          },
+          {
+            "date": "2026-05-28",
+            "opponent": "OKC",
+            "value": 12.0
+          },
+          {
+            "date": "2026-05-30",
+            "opponent": "OKC",
+            "value": 11.0
+          },
+          {
+            "date": "2026-06-03",
+            "opponent": "NYK",
+            "value": 9.0
+          },
+          {
+            "date": "2026-06-05",
+            "opponent": "NYK",
+            "value": 14.0
+          },
+          {
+            "date": "2026-06-08",
+            "opponent": "NYK",
+            "value": 11.0
+          },
+          {
+            "date": "2026-06-10",
+            "opponent": "NYK",
+            "value": 18.0
+          }
+        ]
+      },
+      "pick_stats": {
+        "counts": {
+          "over": 270,
+          "total": 336,
+          "under": 66
+        },
+        "popularity": 0.4578313253012048,
+        "subject_id": "2146",
+        "subject_type": "player"
+      }
+    }
+  ]
+}

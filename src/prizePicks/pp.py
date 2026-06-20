@@ -16,6 +16,58 @@ load_dotenv()
 THRESHOLD = 0.6
 
 
+def parse_standard_players(raw, pp_stats, league, start_day, end_day):
+    '''Parse PrizePicks projections JSON into standard lines keyed by stat then player name.'''
+    df = json.loads(raw) if isinstance(raw, str) else raw
+    projections = pd.json_normalize(df['data'], max_level=3)
+    included = pd.json_normalize(df['included'], max_level=3)
+    inc_cop = included[included['type'] == 'new_player'].copy().dropna(axis=1)
+    projections = pd.merge(
+        projections,
+        inc_cop,
+        how='left',
+        left_on=['relationships.new_player.data.id', 'relationships.new_player.data.type'],
+        right_on=['id', 'type'],
+        suffixes=('', '_new_player'),
+    )
+    filtered = projections.where(
+        (projections['attributes.stat_type'].isin(pp_stats))
+        & (projections['attributes.status'] == 'pre_game')
+    )
+    filtered = filtered[~filtered['attributes.stat_type'].isna()]
+
+    players = {stat: {} for stat in pp_stats}
+    for i in range(len(filtered)):
+        player = filtered.iloc[i]
+        desc = player['attributes.description']
+        l = player['attributes.league']
+        stat_type = player['attributes.odds_type']
+        t = date.fromisoformat(player['attributes.start_time'].split('T')[0])
+        if t < start_day or t > end_day:
+            continue
+        if (
+            l == league
+            and 'inning' not in desc.lower()
+            and 'SZN' not in l
+            and '1H' not in l
+            and 'half' not in desc.lower()
+            and 'combo' not in desc.lower()
+            and 'first' not in desc.lower()
+            and stat_type == 'standard'
+            and '1Q' not in desc
+            and '4Q' not in desc
+            and '4Q' not in l
+        ):
+            name = player['attributes.name'].lower()
+            stat = player['attributes.stat_type']
+            players[stat][name] = {
+                'PPLine': player['attributes.line_score'],
+                'otherBooks': [],
+                'avgDif': 0,
+            }
+    return players
+
+
 def prizepicks_cookie():
     cookie = os.environ.get('PRIZEPICKS_COOKIE')
     if not cookie:
@@ -109,46 +161,7 @@ def main():
     api_stats = [api for pp, api in zip(pp_stats, api_stats) if pp != "N/A"]
     pp_stats = filtered_pp_stats
 
-    df = json.loads(data)
-    data = pd.json_normalize(df['data'], max_level=3)
-    included = pd.json_normalize(df['included'], max_level=3)
-    inc_cop = included[included['type'] == 'new_player'].copy().dropna(axis=1)
-    data = pd.merge(data
-                    , inc_cop
-                    , how='left'
-                    , left_on=['relationships.new_player.data.id'
-                                ,'relationships.new_player.data.type']
-                    , right_on=['id', 'type']
-                    , suffixes=('', '_new_player'))
-    print(data.head(3))
-    # exit()
-    filtered = data.where((data['attributes.stat_type'].isin(pp_stats)) & (data['attributes.status']=="pre_game"))
-    filtered = filtered[~filtered['attributes.stat_type'].isna()]
-
-    players = {stat: {} for stat in pp_stats} # Organize the players by stats, then by name
-    for i in range(0, len(filtered)):
-        player = filtered.iloc[i]
-        desc = player['attributes.description']
-        l = player['attributes.league']
-        stat_type = player['attributes.odds_type']
-        t = date.fromisoformat(player['attributes.start_time'].split("T")[0])
-        if t < start_day or t > end_day:
-            continue
-        if l == league and "inning" not in desc.lower() and "SZN" not in l and "1H" not in l and "half" not in desc.lower() and "combo" not in desc.lower() and "first" not in desc.lower() and stat_type == "standard" and "1Q" not in desc and "4Q" not in desc and "4Q" not in l:
-            name = player['attributes.name'].lower()
-            stat = player['attributes.stat_type']
-            line = player['attributes.line_score']
-            # print(f"{name}, {stat}, {line}, {t}")
-
-            players[stat][name] = {
-                'PPLine': line,
-                'otherBooks': [],
-                'avgDif': 0
-            }
-
-    # print(players)
-    # quit()
-    # players = {'Points': {'caleb love': {'PPLine': 21.5, 'otherBooks': [], 'avgDif': 0}, 'keshad johnson': {'PPLine': 12.5, 'otherBooks': [], 'avgDif': 0}, 'kylan boswell': {'PPLine': 9.0, 'otherBooks': [], 'avgDif': 0}, 'oumar ballo': {'PPLine': 13.5, 'otherBooks': [], 'avgDif': 0}, 'pelle larsson': {'PPLine': 12.5, 'otherBooks': [], 'avgDif': 0}, 'kawhi leonard': {'PPLine': 5.5, 'otherBooks': [], 'avgDif': 0}, 'jimmy butler': {'PPLine': 5.5, 'otherBooks': [], 'avgDif': 0}, 'paul george': {'PPLine': 5.0, 'otherBooks': [], 'avgDif': 0}, 'bam adebayo': {'PPLine': 5.0, 'otherBooks': [], 'avgDif': 0}, 'james harden': {'PPLine': 3.5, 'otherBooks': [], 'avgDif': 0}, 'terry rozier': {'PPLine': 3.5, 'otherBooks': [], 'avgDif': 0}, 'norman powell': {'PPLine': 3.5, 'otherBooks': [], 'avgDif': 0}, 'russell westbrook': {'PPLine': 2.5, 'otherBooks': [], 'avgDif': 0}, 'damian lillard': {'PPLine': 27.5, 'otherBooks': [], 'avgDif': 0}, 'lauri markkanen': {'PPLine': 23.5, 'otherBooks': [], 'avgDif': 0}, 'collin sexton': {'PPLine': 21.0, 'otherBooks': [], 'avgDif': 0}, 'malik beasley': {'PPLine': 13.5, 'otherBooks': [], 'avgDif': 0}, 'john collins': {'PPLine': 13.5, 'otherBooks': [], 'avgDif': 0}, 'simone fontecchio': {'PPLine': 8.5, 'otherBooks': [], 'avgDif': 0}, 'giannis antetokounmpo': {'PPLine': 35.5, 'otherBooks': [], 'avgDif': 0}, 'jordan clarkson': {'PPLine': 19.5, 'otherBooks': [], 'avgDif': 0}, 'kelly olynyk': {'PPLine': 6.5, 'otherBooks': [], 'avgDif': 0}, 'keyonte george': {'PPLine': 10.5, 'otherBooks': [], 'avgDif': 0}, 'walker kessler': {'PPLine': 6.5, 'otherBooks': [], 'avgDif': 0}, 'aaron gordon': {'PPLine': 14.0, 'otherBooks': [], 'avgDif': 0}, 'anfernee simons': {'PPLine': 26.5, 'otherBooks': [], 'avgDif': 0}, 'jamal murray': {'PPLine': 22.5, 'otherBooks': [], 'avgDif': 0}, 'kentavious caldwell-pope': {'PPLine': 10.5, 'otherBooks': [], 'avgDif': 0}, 'michael porter jr.': {'PPLine': 14.5, 'otherBooks': [], 'avgDif': 0}, 'nikola jokic': {'PPLine': 26.0, 'otherBooks': [], 'avgDif': 0}, 'reggie jackson': {'PPLine': 9.5, 'otherBooks': [], 'avgDif': 0}, 'matisse thybulle': {'PPLine': 6.5, 'otherBooks': [], 'avgDif': 0}, 'peyton watson': {'PPLine': 7.5, 'otherBooks': [], 'avgDif': 0}, 'kris murray': {'PPLine': 7.5, 'otherBooks': [], 'avgDif': 0}}}
+    players = parse_standard_players(data, pp_stats, league, start_day, end_day)
 
     events = utils.getEvents()
 
