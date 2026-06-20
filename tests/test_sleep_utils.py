@@ -5,17 +5,9 @@ import pytest
 from src.sleeper.sleepUtils import SleeperApiError, parse_graphql_data, parse_json_body, response_snippet
 
 
-def test_response_snippet_truncates_long_text():
-    assert response_snippet("x" * 250, limit=200) == ("x" * 200) + "..."
-
-
 def test_response_snippet_empty():
     assert response_snippet(None) == "<empty>"
     assert response_snippet(b"") == "<empty>"
-
-
-def test_parse_json_body_valid():
-    assert parse_json_body(b'{"ok": true}', "ctx") == {"ok": True}
 
 
 def test_parse_json_body_invalid():

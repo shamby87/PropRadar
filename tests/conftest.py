@@ -42,6 +42,9 @@ def reset_utils_state():
         live = False
 
     utils._parsed_args = FakeArgs()
+    utils.API_KEY_INDEX = 0
+    utils.API_KEYS = os.environ.get("API_KEYS", "test-key").split(",")
+    utils.remainingRequests = 0
     yield
     utils._parsed_args = None
 
@@ -77,4 +80,61 @@ def nba_odds_events_fixture(fixture_json):
 @pytest.fixture
 def nba_odds_player_points_fixture(fixture_json):
     return fixture_json("odds_api/nba_player_points.json")
+
+
+@pytest.fixture
+def nba_odds_player_points_alternate_fixture(fixture_json):
+    return fixture_json("odds_api/nba_player_points_alternate.json")
+
+
+@pytest.fixture
+def fake_nba_args():
+    """CLI args that configure utils for NBA without interactive input."""
+
+    class FakeArgs:
+        league = "NBA"
+        start_day = 0
+        end_day = 3
+        dry_run = True
+        from_file = False
+        live = False
+
+    return FakeArgs()
+
+
+@pytest.fixture
+def configure_utils(monkeypatch, fake_nba_args):
+    """Reset and call getArgs() with fake NBA CLI args."""
+    import src.utils as utils
+
+    def _configure(league=None, start_day=None, end_day=None, **kwargs):
+        for key in (
+            "SPORT",
+            "api_stats",
+            "sleeper_stats",
+            "pp_stats",
+            "league",
+            "offset",
+            "start_day",
+            "end_day",
+        ):
+            utils.__dict__.pop(key, None)
+
+        args = type(
+            "FakeArgs",
+            (),
+            {
+                "league": league if league is not None else fake_nba_args.league,
+                "start_day": start_day if start_day is not None else fake_nba_args.start_day,
+                "end_day": end_day if end_day is not None else fake_nba_args.end_day,
+                "dry_run": kwargs.get("dry_run", fake_nba_args.dry_run),
+                "from_file": kwargs.get("from_file", fake_nba_args.from_file),
+                "live": kwargs.get("live", fake_nba_args.live),
+            },
+        )()
+        monkeypatch.setattr(utils, "parse_args", lambda argv=None: args)
+        utils.getArgs()
+        return utils
+
+    return _configure
 
