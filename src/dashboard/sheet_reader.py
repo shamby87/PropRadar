@@ -157,13 +157,16 @@ def _flush_group(
             break
     if profit is None:
         return
+    propradar_legs = [leg for leg in legs if not leg.is_promo]
+    promo_legs = [leg for leg in legs if leg.is_promo]
     entries.append(
         ParlayEntry(
             platform=platform,
             date=meta[0]["date"],
             profit=profit,
-            legs=legs,
+            legs=propradar_legs,
             wager=wager,
+            promo_legs=promo_legs,
         )
     )
 
@@ -190,14 +193,16 @@ def parse_rows(rows: list[list[str]], platform: str) -> list[ParlayEntry]:
         result = (_col(row, config.COL_RESULT) or "").strip().upper()
         profit_raw = (_col(row, config.COL_PROFIT) or "").strip()
         profit = _parse_float(profit_raw) if profit_raw else None
+        league = (_col(row, config.COL_LEAGUE) or "").strip().upper()
         pending_legs.append(
             Leg(
                 name=(_col(row, config.COL_PLAYER) or "").strip(),
-                league=(_col(row, config.COL_LEAGUE) or "").strip().upper(),
+                league=league,
                 stat=(_col(row, config.COL_STAT) or "").strip(),
                 ou=(_col(row, config.COL_OU) or "").strip().upper(),
                 result=result,
                 payout=_parse_float(_col(row, config.COL_PAYOUT)),
+                is_promo=league in config.PROMO_LEAGUE_MARKERS,
             )
         )
         pending_meta.append(

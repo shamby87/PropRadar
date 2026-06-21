@@ -160,7 +160,8 @@ def enrich_entries(
 
     Entries with no API match keep their sheet data. When
     ``assume_promo_when_unmatched`` is set (Sleeper, where essentially every
-    parlay is a single promo pick plus PropRadar picks), each unmatched entry is
+    parlay is a single promo pick plus PropRadar picks), each unmatched entry
+    that does not already carry a promo leg (e.g. one persisted in the sheet) is
     credited with one assumed promo leg so the real parlay size is preserved even
     for history older than the API window.
     """
@@ -186,7 +187,10 @@ def enrich_entries(
                 candidates.remove(best)
                 matched = True
 
-        if not matched and assume_promo_when_unmatched:
+        # Only fall back to an assumed promo when the sheet itself has no promo
+        # leg; once promos are persisted in the sheet (marker league) we must not
+        # double-count by adding a placeholder on top of the real promo.
+        if not matched and assume_promo_when_unmatched and not entry.promo_legs:
             entry.promo_legs = [_assumed_promo_leg()]
 
     return entries

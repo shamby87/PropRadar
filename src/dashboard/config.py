@@ -13,7 +13,7 @@ leg row, followed by a blank separator row.
     G   O/U             ("O" or "U")
     H   Result          ("H" hit, "M" miss, "P" push)
     I   Profit          (parlay-level P/L, only on the last leg row)
-    J   Wager           (OPTIONAL stake; not written today, read if present)
+    J   Wager           (parlay-level stake; written on the last leg row)
 
 The "Random" / "Random Shit" misc P/L columns are intentionally ignored.
 """
@@ -33,7 +33,7 @@ COL_PAYOUT = 6    # F
 COL_OU = 7        # G
 COL_RESULT = 8    # H
 COL_PROFIT = 9    # I
-COL_WAGER = 10    # J (optional, read-only)
+COL_WAGER = 10    # J
 
 VALID_RESULTS = {"H", "M", "P"}
 
@@ -52,6 +52,12 @@ DEFAULT_SLEEPER_WAGER = 10.0
 # only recover it for recent parlays, so for older/unmatched entries we credit
 # one assumed promo leg to keep the real parlay size (avg legs) accurate.
 ASSUME_SLEEPER_PROMO_LEG = True
+
+# League-column markers that saveSleeper.py writes for Sleeper-provided promo
+# legs (see saveSleeper.getPromoLeague). The sheet reader upper-cases the league
+# column, so these are stored upper-cased. Legs in any of these "leagues" are
+# routed into promo_legs and excluded from PropRadar sport/stat/hit-rate views.
+PROMO_LEAGUE_MARKERS = {"OVER BOOST", "LINE DISCOUNT", "PROMO"}
 
 # Minimum number of legs a league must have to be shown in the league-based
 # views (the "Hit Rate by League" chart and the per-sport "By Stat" groups).

@@ -71,6 +71,41 @@ def test_parse_four_digit_year_and_sleeper_style_grouping():
     assert entries[1].profit == 30.5
 
 
+def test_parse_routes_promo_marker_legs_into_promo_legs():
+    rows = [
+        ["", "06/05/25", "Player A", "NBA", "Pts", "1.5", "O", "H", ""],
+        ["", "06/05/25", "Promo Guy", "Line Discount", "Reb", "1.4", "O", "H", "$12.00"],
+    ]
+    entries = parse_rows(rows, "sleeper")
+    assert len(entries) == 1
+    entry = entries[0]
+    # PropRadar pick stays in legs; the promo marker leg is routed to promo_legs.
+    assert [leg.name for leg in entry.legs] == ["Player A"]
+    assert [leg.name for leg in entry.promo_legs] == ["Promo Guy"]
+    assert entry.promo_legs[0].is_promo is True
+    assert entry.legs[0].is_promo is False
+    assert entry.total_legs == 2
+
+
+def test_promo_marker_excluded_from_skill_stats_but_counts_avg_legs():
+    rows = [
+        ["", "06/05/25", "Player A", "NBA", "Pts", "2.0", "O", "H", ""],
+        # A juicy Over Boost promo that would wreck Est. Edge if it were counted.
+        ["", "06/05/25", "Promo Guy", "Over Boost", "Reb", "9.0", "O", "H", "$12.00"],
+    ]
+    entries = parse_rows(rows, "sleeper")
+    totals = stats.compute_platform_stats(entries)["totals"]
+    assert totals["legs"] == 1  # promo excluded from PropRadar leg count
+    assert totals["leg_hits"] == 1
+    assert totals["avg_legs_per_parlay"] == pytest.approx(2.0)  # promo still counts
+    # Only the 2.0 PropRadar pick feeds Est. Edge: 2.0 / 1 - 1 = +100%.
+    assert totals["avg_ev"] == pytest.approx(100.0, abs=0.01)
+
+    # The promo marker never appears as a league bucket.
+    league_keys = {r["key"] for r in stats._breakdown(entries, lambda leg: leg.league)}
+    assert league_keys == {"NBA"}
+
+
 # ---- stats ----
 
 def test_totals_core_metrics(sample_entries):
@@ -332,6 +367,20 @@ def test_enrich_assumes_promo_leg_when_unmatched():
     assert totals["legs"] == 1
     assert totals["leg_hits"] == 1
     assert totals["avg_ev"] == pytest.approx(50.0, abs=0.01)  # 1.5/1 - 1
+
+
+def test_enrich_does_not_add_assumed_promo_when_sheet_has_one():
+    # The promo is now persisted in the sheet (Line Discount marker). Even with
+    # the assume flag on and no API match, we must not stack a second placeholder.
+    rows = [
+        ["", "06/05/25", "Player A", "NBA", "Pts", "1.5", "O", "H", ""],
+        ["", "06/05/25", "Promo Guy", "Line Discount", "Reb", "1.4", "O", "H", "$12.00"],
+    ]
+    entry = parse_rows(rows, "sleeper")[0]
+    assert len(entry.promo_legs) == 1
+    sleeper_enrich.enrich_entries([entry], [], assume_promo_when_unmatched=True)
+    assert len(entry.promo_legs) == 1
+    assert entry.promo_legs[0].name == "Promo Guy"
 
 
 def test_enrich_matched_entry_does_not_get_assumed_promo(completed_parlays):
