@@ -7,6 +7,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import os
 
 from .pp import prizepicks_cookie
+from ..dashboard import export as dashboard_export
 
 def prizepicks_entries_headers():
     """Headers for authenticated JSON API (e.g. v1/entries)."""
@@ -85,6 +86,7 @@ def main():
         entryPredictions = entry['relationships']['predictions']['data']
         promo = entry['relationships']['promotion']['data']
         date = datetime.fromisoformat(attributes['created_at']).date().strftime('%m/%d/%y')
+        wager = attributes['amount_bet_cents']/100.0
         profit = (attributes['amount_won_cents'] - attributes['amount_bet_cents'])/100.0
         if promo != None:
             type = promotions[promo['id']]['attributes']['type']
@@ -116,12 +118,14 @@ def main():
                 row += 1
             
             worksheet.update_acell(f'I{row-1}', profit)
+            worksheet.update_acell(f'J{row-1}', wager)
             row += 1
         elif recordMisc():
             worksheet.update_cell(miscRow, miscCol, date)
             worksheet.update_cell(miscRow, miscCol+1, profit)
             miscRow += 1
 
+    dashboard_export.export_all()
     exit()
 
 def getStatName(name):

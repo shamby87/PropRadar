@@ -10,6 +10,7 @@ import os
 import pytz
 from . import sleepUtils
 from .. import utils
+from ..dashboard import export as dashboard_export
 
 def main():
     tz = pytz.timezone('US/Central')
@@ -84,6 +85,7 @@ def main():
             continue
         date = date.date().strftime('%m/%d/%y')
 
+        wager = float(entry['currency_amount'])
         profit = (float(entry['graded_payout']) - entry['currency_amount'])
         promo = entry['display_data'].get('promo_type', '')
         if promo == 'protected_pick':
@@ -114,11 +116,14 @@ def main():
                 row += 1
             
             worksheet.update_acell(f'I{row-1}', profit)
+            worksheet.update_acell(f'J{row-1}', wager)
             row += 1
         elif recordMisc():
             worksheet.update_cell(miscRow, miscCol, date)
             worksheet.update_cell(miscRow, miscCol+1, profit)
             miscRow += 1
+
+    dashboard_export.export_all()
 
 def getStatName(name):
     match name:

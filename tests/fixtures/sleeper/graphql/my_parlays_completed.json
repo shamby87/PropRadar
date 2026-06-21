@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "source": "sleeper graphql",
+    "operation": "my_parlays"
+  },
+  "data": {
+    "my_parlays": [
+      {
+        "parlay_id": "9000000000000000001",
+        "status": "lost",
+        "created": 1748800000000,
+        "currency_amount": 10,
+        "currency_type": "USD",
+        "graded_payout": 22.0,
+        "multiplier": 4.2,
+        "display_data": { "promo_type": "line_discount" },
+        "legs": [
+          {
+            "line_id": "1",
+            "status": "won",
+            "line": {
+              "line_id": "1",
+              "subject": { "first_name": "LeBron", "last_name": "James" },
+              "outcome": "over",
+              "sport": "nba",
+              "wager_type": "points",
+              "payout_multiplier": "1.50",
+              "metadata": {}
+            }
+          },
+          {
+            "line_id": "2",
+            "status": "won",
+            "line": {
+              "line_id": "2",
+              "subject": { "first_name": "Stephen", "last_name": "Curry" },
+              "outcome": "over",
+              "sport": "nba",
+              "wager_type": "points",
+              "payout_multiplier": "2.00",
+              "metadata": {}
+            }
+          },
+          {
+            "line_id": "3",
+            "status": "won",
+            "line": {
+              "line_id": "3",
+              "subject": { "first_name": "Anthony", "last_name": "Davis" },
+              "outcome": "over",
+              "sport": "nba",
+              "wager_type": "rebounds",
+              "payout_multiplier": "1.40",
+              "metadata": {
+                "promotion": "true",
+                "promotion_type": "line_discount"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "parlay_id": "9000000000000000002",
+        "status": "lost",
+        "created": 1748900000000,
+        "currency_amount": 10,
+        "currency_type": "USD",
+        "graded_payout": 0.0,
+        "multiplier": 2.0,
+        "display_data": {},
+        "legs": [
+          {
+            "line_id": "4",
+            "status": "lost",
+            "line": {
+              "line_id": "4",
+              "subject": { "first_name": "Kevin", "last_name": "Durant" },
+              "outcome": "under",
+              "sport": "nba",
+              "wager_type": "points",
+              "payout_multiplier": "1.90",
+              "metadata": {}
+            }
+          },
+          {
+            "line_id": "5",
+            "status": "canceled",
+            "line": {
+              "line_id": "5",
+              "subject": { "first_name": "Ja", "last_name": "Morant" },
+              "outcome": "over",
+              "sport": "nba",
+              "wager_type": "assists",
+              "payout_multiplier": "1.70",
+              "metadata": {}
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

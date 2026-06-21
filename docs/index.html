@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PropRadar — Performance</title>
+  <meta name="description" content="PropRadar sports betting model performance dashboard." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="js/charts.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="radar-dot" aria-hidden="true"></span>
+      <h1 id="site-title">PropRadar</h1>
+    </div>
+    <p id="site-tagline" class="tagline">Sports betting model performance</p>
+    <nav class="tabs" id="tabs" role="tablist">
+      <button class="tab is-active" data-platform="overall" role="tab">Overall</button>
+      <button class="tab" data-platform="sleeper" role="tab">Sleeper</button>
+      <button class="tab" data-platform="prizepicks" role="tab">PrizePicks</button>
+    </nav>
+  </header>
+
+  <main id="dashboard" class="dashboard" aria-live="polite">
+    <p id="status" class="status">Loading performance data…</p>
+  </main>
+
+  <footer class="site-footer">
+    <span id="generated-at"></span>
+    <span class="sep">·</span>
+    <span id="date-range"></span>
+  </footer>
+
+  <template id="card-template">
+    <div class="card stat-card">
+      <span class="stat-label"></span>
+      <span class="stat-value"></span>
+      <span class="stat-sub"></span>
+    </div>
+  </template>
+</body>
+</html>
