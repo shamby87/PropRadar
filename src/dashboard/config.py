@@ -53,6 +53,11 @@ DEFAULT_SLEEPER_WAGER = 10.0
 # one assumed promo leg to keep the real parlay size (avg legs) accurate.
 ASSUME_SLEEPER_PROMO_LEG = True
 
+# Minimum number of legs a league must have to be shown in the league-based
+# views (the "Hit Rate by League" chart and the per-sport "By Stat" groups).
+# Leagues below this are hidden as too small a sample to be meaningful.
+MIN_LEAGUE_LEGS = 50
+
 # Number of most-recent entries to surface per platform.
 RECENT_LIMIT = 50
 
@@ -65,6 +70,53 @@ TOP_LIST_SIZE = 5
 # Cells are read verbatim (formula results) and shown alongside computed values.
 SLEEPER_SUMMARY_CELLS: dict[str, str] = {}
 PRIZEPICKS_SUMMARY_CELLS: dict[str, str] = {}
+
+# Full, human-readable stat names. Keys are lower-cased so the many source
+# spellings/abbreviations (e.g. "Pts"/"Points", "Rush Yards"/"Rush yards") all
+# collapse onto one display name. Unmapped stats fall back to a prettified form.
+STAT_FULL_NAMES = {
+    # NBA / WNBA
+    "pts": "Points",
+    "points": "Points",
+    "reb": "Rebounds",
+    "ast": "Assists",
+    "pa": "Points + Assists",
+    "pr": "Points + Rebounds",
+    "ra": "Rebounds + Assists",
+    "ar": "Assists + Rebounds",
+    "pra": "Points + Rebounds + Assists",
+    # NFL
+    "comp": "Pass Completions",
+    "completions": "Pass Completions",
+    "pass yards": "Passing Yards",
+    "passing_touchdowns": "Passing Touchdowns",
+    "anytime_touchdowns": "Anytime Touchdowns",
+    "rec": "Receptions",
+    "receptions": "Receptions",
+    "rec yards": "Receiving Yards",
+    "rush yards": "Rushing Yards",
+    # NHL
+    "sog": "Shots on Goal",
+    # MLB
+    "k": "Strikeouts",
+    "strikeouts": "Strikeouts",
+    "outs": "Outs Recorded",
+    "er": "Earned Runs",
+    "hits": "Hits",
+    "bases": "Total Bases",
+    "hrrbi": "Hits + Runs + RBIs",
+}
+
+
+def full_stat_name(stat: str | None) -> str:
+    """Map a raw stat abbreviation to its full display name."""
+    if not stat:
+        return "Unknown"
+    key = stat.strip().lower()
+    if key in STAT_FULL_NAMES:
+        return STAT_FULL_NAMES[key]
+    return stat.replace("_", " ").strip().title()
+
 
 # Branding (anonymous public showcase).
 SITE_TITLE = "PropRadar"

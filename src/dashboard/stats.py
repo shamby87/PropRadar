@@ -142,6 +142,53 @@ def _breakdown(entries: list[ParlayEntry], key) -> list[dict]:
     return rows
 
 
+def _breakdown_by_sport(entries: list[ParlayEntry]) -> list[dict]:
+    """Stat hit-rate breakdown grouped by sport, then sorted by hit rate.
+
+    Stats use their full display names (merging abbreviation variants). Sports
+    are ordered by total leg volume (most active first); within each sport stats
+    are sorted by hit rate descending, with ungraded stats last.
+    """
+    sports: dict[str, dict[str, dict]] = defaultdict(
+        lambda: defaultdict(lambda: {"hits": 0, "misses": 0, "pushes": 0, "legs": 0})
+    )
+    for entry in entries:
+        for leg in entry.legs:
+            sport = (leg.league or "Unknown").strip() or "Unknown"
+            name = config.full_stat_name(leg.stat)
+            bucket = sports[sport][name]
+            bucket["legs"] += 1
+            if leg.result == "H":
+                bucket["hits"] += 1
+            elif leg.result == "M":
+                bucket["misses"] += 1
+            else:
+                bucket["pushes"] += 1
+
+    groups = []
+    for sport, stat_buckets in sports.items():
+        stat_rows = []
+        for name, bucket in stat_buckets.items():
+            graded = bucket["hits"] + bucket["misses"]
+            stat_rows.append({
+                "key": name,
+                "legs": bucket["legs"],
+                "hits": bucket["hits"],
+                "misses": bucket["misses"],
+                "pushes": bucket["pushes"],
+                "hit_rate": _round(100.0 * bucket["hits"] / graded) if graded else None,
+            })
+        stat_rows.sort(key=lambda r: (r["hit_rate"] is None, -(r["hit_rate"] or 0.0)))
+        groups.append({
+            "sport": sport,
+            "legs": sum(r["legs"] for r in stat_rows),
+            "stats": stat_rows,
+        })
+
+    groups.sort(key=lambda g: g["legs"], reverse=True)
+    return groups
+
+
 def _profit_over_time(entries: list[ParlayEntry]) -> list[dict]:
     daily: dict = defaultdict(float)
     for entry in entries:
@@ -199,11 +246,15 @@ def compute_platform_stats(
     """Full analytics block for a single platform (or the combined set)."""
     recent = sorted(entries, key=lambda e: (e.date, e.profit), reverse=True)[: config.RECENT_LIMIT]
     best, worst = _top_entries(entries, config.TOP_LIST_SIZE)
+    min_legs = config.MIN_LEAGUE_LEGS
+    by_league = [r for r in _breakdown(entries, lambda leg: leg.league) if r["legs"] >= min_legs]
+    by_stat_by_sport = [g for g in _breakdown_by_sport(entries) if g["legs"] >= min_legs]
     return {
         "totals": _totals(entries, default_wager),
         "breakdowns": {
-            "by_league": _breakdown(entries, lambda leg: leg.league),
+            "by_league": by_league,
             "by_stat": _breakdown(entries, lambda leg: leg.stat),
+            "by_stat_by_sport": by_stat_by_sport,
             "by_ou": _breakdown(entries, lambda leg: {"O": "Over", "U": "Under"}.get(leg.ou, leg.ou)),
         },
         "profit_over_time": _profit_over_time(entries),

@@ -60,7 +60,7 @@ function render(platform) {
     t.date_start && t.date_end ? `${t.date_start} – ${t.date_end}` : "";
 
   root.innerHTML = [
-    statCards(t),
+    statCards(t, platform),
     chartsSection(),
     streaksAndTops(block),
     recentSection(block.recent),
@@ -68,9 +68,9 @@ function render(platform) {
   ].join("");
 
   PropRadarCharts.renderProfit(document.getElementById("profit-chart"), block.profit_over_time);
-  PropRadarCharts.renderBreakdown(document.getElementById("breakdown-chart"), block.breakdowns.by_league);
+  renderBars("league-bars", block.breakdowns.by_league);
   renderBars("ou-bars", block.breakdowns.by_ou);
-  renderBars("stat-bars", block.breakdowns.by_stat.slice(0, 8));
+  renderStatGroups("stat-bars", block.breakdowns.by_stat_by_sport);
 }
 
 function labelFor(platform) {
@@ -91,25 +91,44 @@ function signClass(v) {
   return v > 0 ? "pos" : "neg";
 }
 
-function card(label, value, sub, cls = "") {
-  return `<div class="card stat-card">
+function card(label, value, sub, cls = "", title = "") {
+  const titleAttr = title ? ` title="${title}"` : "";
+  return `<div class="card stat-card"${titleAttr}>
     <span class="stat-label">${label}</span>
     <span class="stat-value ${cls}">${value}</span>
     <span class="stat-sub">${sub || ""}</span>
   </div>`;
 }
 
-function statCards(t) {
+function statCards(t, platform) {
   const evLabel = t.avg_ev == null ? "—" : `${t.avg_ev > 0 ? "+" : ""}${t.avg_ev.toFixed(1)}%`;
-  const roiLabel = pct(t.roi) + (t.roi_estimated && t.roi != null ? "*" : "");
+  const roiEstimated = t.roi_estimated && t.roi != null;
+  const roiLabel = pct(t.roi) + (roiEstimated ? "*" : "");
+  const roiTitle = roiEstimated
+    ? "* Some stakes are assumed at $10 where the original wager wasn't recorded."
+    : "";
+
+  const netProfit = card("Net Profit", money(t.profit), `${t.entries} entries`, signClass(t.profit));
+  const legHitRate = card("Leg Hit Rate", pct(t.leg_hit_rate), `${t.leg_hits}/${t.leg_hits + t.leg_misses} legs`);
+  const roi = card("ROI", roiLabel, "net profit ÷ total staked", signClass(t.roi), roiTitle);
+
+  // The Overall (cross-platform) view only shows the metrics that are
+  // comparable across platforms; per-platform tabs show the full set.
+  const cards =
+    platform === "overall"
+      ? [netProfit, legHitRate, roi]
+      : [
+          netProfit,
+          card("Parlay Win Rate", pct(t.parlay_win_rate), `${t.wins}W · ${t.losses}L${t.pushes ? ` · ${t.pushes}P` : ""}`),
+          legHitRate,
+          roi,
+          card("Avg Est. Edge", evLabel, "per PropRadar pick", signClass(t.avg_ev)),
+          card("Avg Legs", t.avg_legs_per_parlay == null ? "—" : t.avg_legs_per_parlay.toFixed(2), "per parlay (incl. promo)"),
+        ];
+
   return `<section class="section">
     <div class="stat-grid">
-      ${card("Net Profit", money(t.profit), `${t.entries} entries`, signClass(t.profit))}
-      ${card("Parlay Win Rate", pct(t.parlay_win_rate), `${t.wins}W · ${t.losses}L${t.pushes ? ` · ${t.pushes}P` : ""}`)}
-      ${card("Leg Hit Rate", pct(t.leg_hit_rate), `${t.leg_hits}/${t.leg_hits + t.leg_misses} legs`)}
-      ${card("ROI", roiLabel, t.roi_estimated ? "estimated stakes" : "by wager", signClass(t.roi))}
-      ${card("Avg Est. Edge", evLabel, "per PropRadar pick", signClass(t.avg_ev))}
-      ${card("Avg Legs", t.avg_legs_per_parlay == null ? "—" : t.avg_legs_per_parlay.toFixed(2), "per parlay (incl. promo)")}
+      ${cards.join("\n      ")}
     </div>
   </section>`;
 }
@@ -119,20 +138,30 @@ function chartsSection() {
     <h2>Profit Over Time</h2>
     <div class="card chart-card"><canvas id="profit-chart"></canvas></div>
   </section>
-  <section class="section">
-    <h2>Hit Rate by League</h2>
-    <div class="card chart-card"><canvas id="breakdown-chart"></canvas></div>
-  </section>
   <section class="section two-col">
+    <div>
+      <h2>Hit Rate by League</h2>
+      <div class="card" id="league-bars"></div>
+    </div>
     <div>
       <h2>Over / Under</h2>
       <div class="card" id="ou-bars"></div>
     </div>
-    <div>
-      <h2>By Stat</h2>
-      <div class="card" id="stat-bars"></div>
-    </div>
+  </section>
+  <section class="section">
+    <h2>By Stat</h2>
+    <div class="card" id="stat-bars"></div>
   </section>`;
+}
+
+function barRow(r) {
+  const rate = r.hit_rate == null ? 0 : r.hit_rate;
+  const fillClass = r.hit_rate == null ? "" : r.hit_rate >= 50 ? "pos" : "neg";
+  return `<div class="bar-row">
+    <span class="bar-label">${r.key}</span>
+    <span class="bar-track"><span class="bar-fill ${fillClass}" style="width:${rate}%"></span></span>
+    <span class="bar-val">${pct(r.hit_rate)} <small>(${r.legs})</small></span>
+  </div>`;
 }
 
 function renderBars(containerId, rows) {
@@ -142,13 +171,22 @@ function renderBars(containerId, rows) {
     el.innerHTML = `<p class="empty">No data</p>`;
     return;
   }
-  el.innerHTML = rows
-    .map((r) => {
-      const rate = r.hit_rate == null ? 0 : r.hit_rate;
-      return `<div class="bar-row">
-        <span class="bar-label">${r.key}</span>
-        <span class="bar-track"><span class="bar-fill" style="width:${rate}%"></span></span>
-        <span class="bar-val">${pct(r.hit_rate)} <small>(${r.legs})</small></span>
+  el.innerHTML = rows.map(barRow).join("");
+}
+
+function renderStatGroups(containerId, sports) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  if (!sports || !sports.length) {
+    el.innerHTML = `<p class="empty">No data</p>`;
+    return;
+  }
+  el.innerHTML = sports
+    .map((s) => {
+      const bars = s.stats.map(barRow).join("");
+      return `<div class="stat-group">
+        <div class="stat-group-head">${s.sport} <small>(${s.legs})</small></div>
+        ${bars}
       </div>`;
     })
     .join("");

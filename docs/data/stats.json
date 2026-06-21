@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-06-21T02:45:37.482167+00:00",
+  "generated_at": "2026-06-21T03:17:02.113200+00:00",
   "site_title": "PropRadar",
   "site_tagline": "Sports betting model performance",
   "baseline_odds": 1.05,
   "platforms": {
     "overall": {
       "totals": {
-        "profit": 2357.4,
-        "entries": 453,
-        "wins": 132,
-        "losses": 243,
-        "pushes": 78,
-        "parlay_win_rate": 35.2,
-        "legs": 1235,
-        "leg_hits": 665,
-        "leg_misses": 555,
+        "profit": 2394.2,
+        "entries": 441,
+        "wins": 131,
+        "losses": 237,
+        "pushes": 73,
+        "parlay_win_rate": 35.6,
+        "legs": 1202,
+        "leg_hits": 656,
+        "leg_misses": 531,
         "leg_pushes": 15,
-        "leg_hit_rate": 54.51,
-        "avg_legs_per_parlay": 3.34,
-        "roi": 52.04,
+        "leg_hit_rate": 55.27,
+        "avg_legs_per_parlay": 3.33,
+        "roi": 54.29,
         "roi_estimated": true,
-        "avg_ev": 1489.77,
+        "avg_ev": 1555.67,
         "date_start": "08/11/23",
         "date_end": "11/23/25"
       },
@@ -44,27 +44,11 @@
           },
           {
             "key": "MLB",
-            "legs": 124,
-            "hits": 54,
-            "misses": 60,
+            "legs": 91,
+            "hits": 45,
+            "misses": 36,
             "pushes": 10,
-            "hit_rate": 47.37
-          },
-          {
-            "key": "NHL",
-            "legs": 6,
-            "hits": 3,
-            "misses": 1,
-            "pushes": 2,
-            "hit_rate": 75.0
-          },
-          {
-            "key": "WNBA",
-            "legs": 6,
-            "hits": 3,
-            "misses": 3,
-            "pushes": 0,
-            "hit_rate": 50.0
+            "hit_rate": 55.56
           }
         ],
         "by_stat": [
@@ -174,11 +158,11 @@
           },
           {
             "key": "Outs",
-            "legs": 29,
-            "hits": 13,
-            "misses": 16,
+            "legs": 14,
+            "hits": 9,
+            "misses": 5,
             "pushes": 0,
-            "hit_rate": 44.83
+            "hit_rate": 64.29
           },
           {
             "key": "Completions",
@@ -195,14 +179,6 @@
             "misses": 7,
             "pushes": 0,
             "hit_rate": 30.0
-          },
-          {
-            "key": "Bases",
-            "legs": 9,
-            "hits": 3,
-            "misses": 6,
-            "pushes": 0,
-            "hit_rate": 33.33
           },
           {
             "key": "SOG",
@@ -229,44 +205,12 @@
             "hit_rate": 50.0
           },
           {
-            "key": "K",
-            "legs": 3,
-            "hits": 1,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 33.33
-          },
-          {
             "key": "AR",
             "legs": 3,
             "hits": 1,
             "misses": 2,
             "pushes": 0,
             "hit_rate": 33.33
-          },
-          {
-            "key": "ER",
-            "legs": 2,
-            "hits": 0,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 0.0
-          },
-          {
-            "key": "Hits",
-            "legs": 2,
-            "hits": 1,
-            "misses": 1,
-            "pushes": 0,
-            "hit_rate": 50.0
-          },
-          {
-            "key": "HRRBI",
-            "legs": 2,
-            "hits": 0,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 0.0
           },
           {
             "key": "anytime_touchdowns",
@@ -285,22 +229,178 @@
             "hit_rate": 0.0
           }
         ],
+        "by_stat_by_sport": [
+          {
+            "sport": "NBA",
+            "legs": 735,
+            "stats": [
+              {
+                "key": "Assists",
+                "legs": 67,
+                "hits": 45,
+                "misses": 22,
+                "pushes": 0,
+                "hit_rate": 67.16
+              },
+              {
+                "key": "Points + Assists",
+                "legs": 193,
+                "hits": 112,
+                "misses": 81,
+                "pushes": 0,
+                "hit_rate": 58.03
+              },
+              {
+                "key": "Points + Rebounds + Assists",
+                "legs": 114,
+                "hits": 65,
+                "misses": 48,
+                "pushes": 1,
+                "hit_rate": 57.52
+              },
+              {
+                "key": "Points",
+                "legs": 170,
+                "hits": 95,
+                "misses": 75,
+                "pushes": 0,
+                "hit_rate": 55.88
+              },
+              {
+                "key": "Points + Rebounds",
+                "legs": 95,
+                "hits": 47,
+                "misses": 48,
+                "pushes": 0,
+                "hit_rate": 49.47
+              },
+              {
+                "key": "Rebounds",
+                "legs": 59,
+                "hits": 29,
+                "misses": 30,
+                "pushes": 0,
+                "hit_rate": 49.15
+              },
+              {
+                "key": "Rebounds + Assists",
+                "legs": 34,
+                "hits": 16,
+                "misses": 18,
+                "pushes": 0,
+                "hit_rate": 47.06
+              },
+              {
+                "key": "Assists + Rebounds",
+                "legs": 3,
+                "hits": 1,
+                "misses": 2,
+                "pushes": 0,
+                "hit_rate": 33.33
+              }
+            ]
+          },
+          {
+            "sport": "NFL",
+            "legs": 364,
+            "stats": [
+              {
+                "key": "Anytime Touchdowns",
+                "legs": 1,
+                "hits": 1,
+                "misses": 0,
+                "pushes": 0,
+                "hit_rate": 100.0
+              },
+              {
+                "key": "Passing Touchdowns",
+                "legs": 5,
+                "hits": 4,
+                "misses": 1,
+                "pushes": 0,
+                "hit_rate": 80.0
+              },
+              {
+                "key": "Receptions",
+                "legs": 44,
+                "hits": 25,
+                "misses": 17,
+                "pushes": 2,
+                "hit_rate": 59.52
+              },
+              {
+                "key": "Receiving Yards",
+                "legs": 129,
+                "hits": 76,
+                "misses": 53,
+                "pushes": 0,
+                "hit_rate": 58.91
+              },
+              {
+                "key": "Passing Yards",
+                "legs": 113,
+                "hits": 58,
+                "misses": 55,
+                "pushes": 0,
+                "hit_rate": 51.33
+              },
+              {
+                "key": "Pass Completions",
+                "legs": 23,
+                "hits": 11,
+                "misses": 12,
+                "pushes": 0,
+                "hit_rate": 47.83
+              },
+              {
+                "key": "Rushing Yards",
+                "legs": 49,
+                "hits": 20,
+                "misses": 29,
+                "pushes": 0,
+                "hit_rate": 40.82
+              }
+            ]
+          },
+          {
+            "sport": "MLB",
+            "legs": 91,
+            "stats": [
+              {
+                "key": "Outs Recorded",
+                "legs": 14,
+                "hits": 9,
+                "misses": 5,
+                "pushes": 0,
+                "hit_rate": 64.29
+              },
+              {
+                "key": "Strikeouts",
+                "legs": 77,
+                "hits": 36,
+                "misses": 31,
+                "pushes": 10,
+                "hit_rate": 53.73
+              }
+            ]
+          }
+        ],
         "by_ou": [
           {
             "key": "Under",
-            "legs": 824,
-            "hits": 453,
-            "misses": 362,
+            "legs": 811,
+            "hits": 450,
+            "misses": 352,
             "pushes": 9,
-            "hit_rate": 55.58
+            "hit_rate": 56.11
           },
           {
             "key": "Over",
-            "legs": 411,
-            "hits": 212,
-            "misses": 193,
+            "legs": 391,
+            "hits": 206,
+            "misses": 179,
             "pushes": 6,
-            "hit_rate": 52.35
+            "hit_rate": 53.51
           }
         ]
       },
@@ -711,1019 +811,979 @@
           "cumulative": 1413.65
         },
         {
-          "date": "2024-05-29",
-          "profit": -10.0,
-          "cumulative": 1403.65
-        },
-        {
           "date": "2024-05-30",
           "profit": -12.0,
-          "cumulative": 1391.65
+          "cumulative": 1401.65
         },
         {
           "date": "2024-06-04",
-          "profit": -30.0,
-          "cumulative": 1361.65
+          "profit": -20.0,
+          "cumulative": 1381.65
         },
         {
           "date": "2024-06-05",
           "profit": -20.0,
-          "cumulative": 1341.65
+          "cumulative": 1361.65
         },
         {
           "date": "2024-06-07",
           "profit": 0.0,
-          "cumulative": 1341.65
+          "cumulative": 1361.65
         },
         {
           "date": "2024-06-09",
           "profit": 20.0,
-          "cumulative": 1361.65
+          "cumulative": 1381.65
         },
         {
           "date": "2024-06-11",
           "profit": -20.0,
-          "cumulative": 1341.65
+          "cumulative": 1361.65
         },
         {
           "date": "2024-06-12",
           "profit": -10.0,
-          "cumulative": 1331.65
+          "cumulative": 1351.65
         },
         {
           "date": "2024-06-14",
           "profit": 0.0,
-          "cumulative": 1331.65
-        },
-        {
-          "date": "2024-06-16",
-          "profit": -10.0,
-          "cumulative": 1321.65
+          "cumulative": 1351.65
         },
         {
           "date": "2024-06-17",
           "profit": 40.0,
-          "cumulative": 1361.65
-        },
-        {
-          "date": "2024-06-19",
-          "profit": -10.0,
-          "cumulative": 1351.65
+          "cumulative": 1391.65
         },
         {
           "date": "2024-06-21",
           "profit": 0.0,
-          "cumulative": 1351.65
-        },
-        {
-          "date": "2024-06-23",
-          "profit": 23.2,
-          "cumulative": 1374.85
+          "cumulative": 1391.65
         },
         {
           "date": "2024-06-26",
           "profit": 10.0,
-          "cumulative": 1384.85
-        },
-        {
-          "date": "2024-07-02",
-          "profit": 0.0,
-          "cumulative": 1384.85
-        },
-        {
-          "date": "2024-07-03",
-          "profit": -10.0,
-          "cumulative": 1374.85
+          "cumulative": 1401.65
         },
         {
           "date": "2024-07-05",
           "profit": 0.0,
-          "cumulative": 1374.85
-        },
-        {
-          "date": "2024-07-07",
-          "profit": -10.0,
-          "cumulative": 1364.85
+          "cumulative": 1401.65
         },
         {
           "date": "2024-07-12",
           "profit": 0.0,
-          "cumulative": 1364.85
-        },
-        {
-          "date": "2024-08-07",
-          "profit": 0.0,
-          "cumulative": 1364.85
+          "cumulative": 1401.65
         },
         {
           "date": "2024-09-04",
           "profit": -5.0,
-          "cumulative": 1359.85
+          "cumulative": 1396.65
         },
         {
           "date": "2024-09-05",
           "profit": -10.0,
-          "cumulative": 1349.85
+          "cumulative": 1386.65
         },
         {
           "date": "2024-09-06",
           "profit": 0.0,
-          "cumulative": 1349.85
+          "cumulative": 1386.65
         },
         {
           "date": "2024-09-08",
           "profit": -4.3,
-          "cumulative": 1345.55
+          "cumulative": 1382.35
         },
         {
           "date": "2024-09-12",
           "profit": -15.0,
-          "cumulative": 1330.55
+          "cumulative": 1367.35
         },
         {
           "date": "2024-09-15",
           "profit": -5.0,
-          "cumulative": 1325.55
+          "cumulative": 1362.35
         },
         {
           "date": "2024-09-19",
           "profit": 20.0,
-          "cumulative": 1345.55
+          "cumulative": 1382.35
         },
         {
           "date": "2024-09-22",
           "profit": -19.0,
-          "cumulative": 1326.55
+          "cumulative": 1363.35
         },
         {
           "date": "2024-09-23",
           "profit": 0.0,
-          "cumulative": 1326.55
+          "cumulative": 1363.35
         },
         {
           "date": "2024-09-26",
           "profit": -10.0,
-          "cumulative": 1316.55
+          "cumulative": 1353.35
         },
         {
           "date": "2024-09-27",
           "profit": -10.0,
-          "cumulative": 1306.55
+          "cumulative": 1343.35
         },
         {
           "date": "2024-09-29",
           "profit": -15.0,
-          "cumulative": 1291.55
+          "cumulative": 1328.35
         },
         {
           "date": "2024-10-06",
           "profit": -10.0,
-          "cumulative": 1281.55
+          "cumulative": 1318.35
         },
         {
           "date": "2024-10-11",
           "profit": 0.0,
-          "cumulative": 1281.55
+          "cumulative": 1318.35
         },
         {
           "date": "2024-10-18",
           "profit": 0.0,
-          "cumulative": 1281.55
+          "cumulative": 1318.35
         },
         {
           "date": "2024-10-19",
           "profit": -5.0,
-          "cumulative": 1276.55
+          "cumulative": 1313.35
         },
         {
           "date": "2024-10-22",
           "profit": 0.0,
-          "cumulative": 1276.55
+          "cumulative": 1313.35
         },
         {
           "date": "2024-10-23",
           "profit": 10.0,
-          "cumulative": 1286.55
+          "cumulative": 1323.35
         },
         {
           "date": "2024-10-25",
           "profit": 0.0,
-          "cumulative": 1286.55
+          "cumulative": 1323.35
         },
         {
           "date": "2024-10-27",
           "profit": 0.0,
-          "cumulative": 1286.55
+          "cumulative": 1323.35
         },
         {
           "date": "2024-10-28",
           "profit": 0.0,
-          "cumulative": 1286.55
+          "cumulative": 1323.35
         },
         {
           "date": "2024-10-31",
           "profit": 25.2,
-          "cumulative": 1311.75
+          "cumulative": 1348.55
         },
         {
           "date": "2024-11-01",
           "profit": -10.0,
-          "cumulative": 1301.75
+          "cumulative": 1338.55
         },
         {
           "date": "2024-11-04",
           "profit": 0.0,
-          "cumulative": 1301.75
+          "cumulative": 1338.55
         },
         {
           "date": "2024-11-06",
           "profit": 60.6,
-          "cumulative": 1362.35
+          "cumulative": 1399.15
         },
         {
           "date": "2024-11-08",
           "profit": 63.8,
-          "cumulative": 1426.15
+          "cumulative": 1462.95
         },
         {
           "date": "2024-11-09",
           "profit": 20.0,
-          "cumulative": 1446.15
+          "cumulative": 1482.95
         },
         {
           "date": "2024-11-10",
           "profit": -15.0,
-          "cumulative": 1431.15
+          "cumulative": 1467.95
         },
         {
           "date": "2024-11-12",
           "profit": -5.0,
-          "cumulative": 1426.15
+          "cumulative": 1462.95
         },
         {
           "date": "2024-11-15",
           "profit": -3.0,
-          "cumulative": 1423.15
+          "cumulative": 1459.95
         },
         {
           "date": "2024-11-19",
           "profit": 0.0,
-          "cumulative": 1423.15
+          "cumulative": 1459.95
         },
         {
           "date": "2024-11-20",
           "profit": -10.0,
-          "cumulative": 1413.15
+          "cumulative": 1449.95
         },
         {
           "date": "2024-11-22",
           "profit": 0.0,
-          "cumulative": 1413.15
+          "cumulative": 1449.95
         },
         {
           "date": "2024-11-25",
           "profit": -5.0,
-          "cumulative": 1408.15
+          "cumulative": 1444.95
         },
         {
           "date": "2024-11-26",
           "profit": 20.0,
-          "cumulative": 1428.15
+          "cumulative": 1464.95
         },
         {
           "date": "2024-11-27",
           "profit": 43.8,
-          "cumulative": 1471.95
+          "cumulative": 1508.75
         },
         {
           "date": "2024-11-28",
           "profit": -30.0,
-          "cumulative": 1441.95
+          "cumulative": 1478.75
         },
         {
           "date": "2024-11-29",
           "profit": -5.0,
-          "cumulative": 1436.95
+          "cumulative": 1473.75
         },
         {
           "date": "2024-12-01",
           "profit": -10.0,
-          "cumulative": 1426.95
+          "cumulative": 1463.75
         },
         {
           "date": "2024-12-04",
           "profit": -10.0,
-          "cumulative": 1416.95
+          "cumulative": 1453.75
         },
         {
           "date": "2024-12-05",
           "profit": -20.0,
-          "cumulative": 1396.95
+          "cumulative": 1433.75
         },
         {
           "date": "2024-12-06",
           "profit": 0.0,
-          "cumulative": 1396.95
+          "cumulative": 1433.75
         },
         {
           "date": "2024-12-08",
           "profit": -20.0,
-          "cumulative": 1376.95
+          "cumulative": 1413.75
         },
         {
           "date": "2024-12-13",
           "profit": 0.0,
-          "cumulative": 1376.95
+          "cumulative": 1413.75
         },
         {
           "date": "2024-12-15",
           "profit": 5.0,
-          "cumulative": 1381.95
+          "cumulative": 1418.75
         },
         {
           "date": "2024-12-19",
           "profit": -6.0,
-          "cumulative": 1375.95
+          "cumulative": 1412.75
         },
         {
           "date": "2024-12-20",
           "profit": 125.0,
-          "cumulative": 1500.95
+          "cumulative": 1537.75
         },
         {
           "date": "2024-12-21",
           "profit": 0.0,
-          "cumulative": 1500.95
+          "cumulative": 1537.75
         },
         {
           "date": "2024-12-23",
           "profit": 34.1,
-          "cumulative": 1535.05
+          "cumulative": 1571.85
         },
         {
           "date": "2024-12-25",
           "profit": 27.2,
-          "cumulative": 1562.25
+          "cumulative": 1599.05
         },
         {
           "date": "2024-12-26",
           "profit": 0.0,
-          "cumulative": 1562.25
+          "cumulative": 1599.05
         },
         {
           "date": "2024-12-27",
           "profit": 0.0,
-          "cumulative": 1562.25
+          "cumulative": 1599.05
         },
         {
           "date": "2024-12-29",
           "profit": 45.4,
-          "cumulative": 1607.65
+          "cumulative": 1644.45
         },
         {
           "date": "2025-01-02",
           "profit": -20.0,
-          "cumulative": 1587.65
+          "cumulative": 1624.45
         },
         {
           "date": "2025-01-03",
           "profit": -20.0,
-          "cumulative": 1567.65
+          "cumulative": 1604.45
         },
         {
           "date": "2025-01-06",
           "profit": -10.0,
-          "cumulative": 1557.65
+          "cumulative": 1594.45
         },
         {
           "date": "2025-01-10",
           "profit": 5.0,
-          "cumulative": 1562.65
+          "cumulative": 1599.45
         },
         {
           "date": "2025-01-12",
           "profit": -6.0,
-          "cumulative": 1556.65
+          "cumulative": 1593.45
         },
         {
           "date": "2025-01-17",
           "profit": 2.5,
-          "cumulative": 1559.15
+          "cumulative": 1595.95
         },
         {
           "date": "2025-01-18",
           "profit": -20.0,
-          "cumulative": 1539.15
+          "cumulative": 1575.95
         },
         {
           "date": "2025-01-19",
           "profit": -10.0,
-          "cumulative": 1529.15
+          "cumulative": 1565.95
         },
         {
           "date": "2025-01-20",
           "profit": 5.0,
-          "cumulative": 1534.15
+          "cumulative": 1570.95
         },
         {
           "date": "2025-01-23",
           "profit": -5.0,
-          "cumulative": 1529.15
+          "cumulative": 1565.95
         },
         {
           "date": "2025-01-24",
           "profit": 0.0,
-          "cumulative": 1529.15
+          "cumulative": 1565.95
         },
         {
           "date": "2025-01-25",
           "profit": -13.0,
-          "cumulative": 1516.15
+          "cumulative": 1552.95
         },
         {
           "date": "2025-01-27",
           "profit": -5.0,
-          "cumulative": 1511.15
+          "cumulative": 1547.95
         },
         {
           "date": "2025-01-28",
           "profit": -5.0,
-          "cumulative": 1506.15
+          "cumulative": 1542.95
         },
         {
           "date": "2025-02-01",
           "profit": 64.4,
-          "cumulative": 1570.55
+          "cumulative": 1607.35
         },
         {
           "date": "2025-02-05",
           "profit": 16.9,
-          "cumulative": 1587.45
+          "cumulative": 1624.25
         },
         {
           "date": "2025-02-06",
           "profit": -10.0,
-          "cumulative": 1577.45
+          "cumulative": 1614.25
         },
         {
           "date": "2025-02-08",
           "profit": -5.0,
-          "cumulative": 1572.45
+          "cumulative": 1609.25
         },
         {
           "date": "2025-02-09",
           "profit": 15.2,
-          "cumulative": 1587.65
+          "cumulative": 1624.45
         },
         {
           "date": "2025-02-10",
           "profit": 10.0,
-          "cumulative": 1597.65
+          "cumulative": 1634.45
         },
         {
           "date": "2025-02-11",
           "profit": 44.3,
-          "cumulative": 1641.95
+          "cumulative": 1678.75
         },
         {
           "date": "2025-02-12",
           "profit": -10.8,
-          "cumulative": 1631.15
+          "cumulative": 1667.95
         },
         {
           "date": "2025-02-13",
           "profit": 0.0,
-          "cumulative": 1631.15
+          "cumulative": 1667.95
         },
         {
           "date": "2025-02-20",
           "profit": 64.6,
-          "cumulative": 1695.75
+          "cumulative": 1732.55
         },
         {
           "date": "2025-02-21",
           "profit": 0.0,
-          "cumulative": 1695.75
+          "cumulative": 1732.55
         },
         {
           "date": "2025-02-22",
           "profit": -10.0,
-          "cumulative": 1685.75
+          "cumulative": 1722.55
         },
         {
           "date": "2025-02-23",
           "profit": 5.0,
-          "cumulative": 1690.75
+          "cumulative": 1727.55
         },
         {
           "date": "2025-02-26",
           "profit": 26.6,
-          "cumulative": 1717.35
+          "cumulative": 1754.15
         },
         {
           "date": "2025-02-27",
           "profit": -20.0,
-          "cumulative": 1697.35
+          "cumulative": 1734.15
         },
         {
           "date": "2025-02-28",
           "profit": 53.4,
-          "cumulative": 1750.75
+          "cumulative": 1787.55
         },
         {
           "date": "2025-03-02",
           "profit": -10.0,
-          "cumulative": 1740.75
+          "cumulative": 1777.55
         },
         {
           "date": "2025-03-03",
           "profit": -10.0,
-          "cumulative": 1730.75
+          "cumulative": 1767.55
         },
         {
           "date": "2025-03-04",
           "profit": -45.0,
-          "cumulative": 1685.75
+          "cumulative": 1722.55
         },
         {
           "date": "2025-03-07",
           "profit": 0.0,
-          "cumulative": 1685.75
+          "cumulative": 1722.55
         },
         {
           "date": "2025-03-11",
           "profit": 55.0,
-          "cumulative": 1740.75
+          "cumulative": 1777.55
         },
         {
           "date": "2025-03-12",
           "profit": 11.8,
-          "cumulative": 1752.55
+          "cumulative": 1789.35
         },
         {
           "date": "2025-03-14",
           "profit": 54.4,
-          "cumulative": 1806.95
+          "cumulative": 1843.75
         },
         {
           "date": "2025-03-15",
           "profit": -10.0,
-          "cumulative": 1796.95
+          "cumulative": 1833.75
         },
         {
           "date": "2025-03-17",
           "profit": 100.0,
-          "cumulative": 1896.95
+          "cumulative": 1933.75
         },
         {
           "date": "2025-03-18",
           "profit": 26.2,
-          "cumulative": 1923.15
+          "cumulative": 1959.95
         },
         {
           "date": "2025-03-19",
           "profit": -10.0,
-          "cumulative": 1913.15
+          "cumulative": 1949.95
         },
         {
           "date": "2025-03-20",
           "profit": -20.0,
-          "cumulative": 1893.15
+          "cumulative": 1929.95
         },
         {
           "date": "2025-03-21",
           "profit": 31.35,
-          "cumulative": 1924.5
+          "cumulative": 1961.3
         },
         {
           "date": "2025-03-22",
           "profit": 246.2,
-          "cumulative": 2170.7
+          "cumulative": 2207.5
         },
         {
           "date": "2025-03-23",
           "profit": -20.0,
-          "cumulative": 2150.7
+          "cumulative": 2187.5
         },
         {
           "date": "2025-03-24",
           "profit": 7.5,
-          "cumulative": 2158.2
+          "cumulative": 2195.0
         },
         {
           "date": "2025-03-25",
           "profit": -20.0,
-          "cumulative": 2138.2
+          "cumulative": 2175.0
         },
         {
           "date": "2025-03-26",
           "profit": -7.3,
-          "cumulative": 2130.9
+          "cumulative": 2167.7
         },
         {
           "date": "2025-03-27",
           "profit": 1.6,
-          "cumulative": 2132.5
+          "cumulative": 2169.3
         },
         {
           "date": "2025-03-28",
           "profit": 29.1,
-          "cumulative": 2161.6
+          "cumulative": 2198.4
         },
         {
           "date": "2025-03-29",
           "profit": 5.5,
-          "cumulative": 2167.1
+          "cumulative": 2203.9
         },
         {
           "date": "2025-03-30",
           "profit": -27.5,
-          "cumulative": 2139.6
+          "cumulative": 2176.4
         },
         {
           "date": "2025-03-31",
           "profit": 83.8,
-          "cumulative": 2223.4
+          "cumulative": 2260.2
         },
         {
           "date": "2025-04-01",
           "profit": -10.0,
-          "cumulative": 2213.4
+          "cumulative": 2250.2
         },
         {
           "date": "2025-04-02",
           "profit": -10.0,
-          "cumulative": 2203.4
+          "cumulative": 2240.2
         },
         {
           "date": "2025-04-03",
           "profit": -10.0,
-          "cumulative": 2193.4
+          "cumulative": 2230.2
         },
         {
           "date": "2025-04-04",
           "profit": -20.0,
-          "cumulative": 2173.4
+          "cumulative": 2210.2
         },
         {
           "date": "2025-04-05",
           "profit": -20.0,
-          "cumulative": 2153.4
+          "cumulative": 2190.2
         },
         {
           "date": "2025-04-06",
           "profit": -40.0,
-          "cumulative": 2113.4
+          "cumulative": 2150.2
         },
         {
           "date": "2025-04-07",
           "profit": 29.5,
-          "cumulative": 2142.9
+          "cumulative": 2179.7
         },
         {
           "date": "2025-04-08",
           "profit": 4.5,
-          "cumulative": 2147.4
+          "cumulative": 2184.2
         },
         {
           "date": "2025-04-09",
           "profit": -20.0,
-          "cumulative": 2127.4
+          "cumulative": 2164.2
         },
         {
           "date": "2025-04-10",
           "profit": 58.7,
-          "cumulative": 2186.1
+          "cumulative": 2222.9
         },
         {
           "date": "2025-04-11",
           "profit": 15.9,
-          "cumulative": 2202.0
+          "cumulative": 2238.8
         },
         {
           "date": "2025-04-13",
           "profit": -40.0,
-          "cumulative": 2162.0
+          "cumulative": 2198.8
         },
         {
           "date": "2025-04-16",
           "profit": 19.3,
-          "cumulative": 2181.3
+          "cumulative": 2218.1
         },
         {
           "date": "2025-04-18",
           "profit": 32.7,
-          "cumulative": 2214.0
+          "cumulative": 2250.8
         },
         {
           "date": "2025-04-19",
           "profit": -30.0,
-          "cumulative": 2184.0
+          "cumulative": 2220.8
         },
         {
           "date": "2025-04-20",
           "profit": -50.0,
-          "cumulative": 2134.0
+          "cumulative": 2170.8
         },
         {
           "date": "2025-04-21",
           "profit": 17.2,
-          "cumulative": 2151.2
+          "cumulative": 2188.0
         },
         {
           "date": "2025-04-22",
           "profit": -20.0,
-          "cumulative": 2131.2
+          "cumulative": 2168.0
         },
         {
           "date": "2025-04-23",
           "profit": -30.0,
-          "cumulative": 2101.2
+          "cumulative": 2138.0
         },
         {
           "date": "2025-04-24",
           "profit": 13.6,
-          "cumulative": 2114.8
+          "cumulative": 2151.6
         },
         {
           "date": "2025-04-25",
           "profit": 14.1,
-          "cumulative": 2128.9
+          "cumulative": 2165.7
         },
         {
           "date": "2025-04-26",
           "profit": -20.0,
-          "cumulative": 2108.9
+          "cumulative": 2145.7
         },
         {
           "date": "2025-04-27",
           "profit": 6.6,
-          "cumulative": 2115.5
+          "cumulative": 2152.3
         },
         {
           "date": "2025-04-28",
           "profit": 13.1,
-          "cumulative": 2128.6
+          "cumulative": 2165.4
         },
         {
           "date": "2025-04-29",
           "profit": 28.1,
-          "cumulative": 2156.7
+          "cumulative": 2193.5
         },
         {
           "date": "2025-05-01",
           "profit": 21.8,
-          "cumulative": 2178.5
+          "cumulative": 2215.3
         },
         {
           "date": "2025-05-02",
           "profit": -10.0,
-          "cumulative": 2168.5
+          "cumulative": 2205.3
         },
         {
           "date": "2025-05-03",
           "profit": -10.0,
-          "cumulative": 2158.5
+          "cumulative": 2195.3
         },
         {
           "date": "2025-05-05",
           "profit": 35.6,
-          "cumulative": 2194.1
+          "cumulative": 2230.9
         },
         {
           "date": "2025-05-07",
           "profit": 14.1,
-          "cumulative": 2208.2
+          "cumulative": 2245.0
         },
         {
           "date": "2025-05-08",
           "profit": 14.1,
-          "cumulative": 2222.3
+          "cumulative": 2259.1
         },
         {
           "date": "2025-05-09",
           "profit": 2.2,
-          "cumulative": 2224.5
+          "cumulative": 2261.3
         },
         {
           "date": "2025-05-10",
           "profit": 26.9,
-          "cumulative": 2251.4
+          "cumulative": 2288.2
         },
         {
           "date": "2025-05-12",
           "profit": 38.7,
-          "cumulative": 2290.1
+          "cumulative": 2326.9
         },
         {
           "date": "2025-05-13",
           "profit": 44.1,
-          "cumulative": 2334.2
+          "cumulative": 2371.0
         },
         {
           "date": "2025-05-14",
           "profit": -20.0,
-          "cumulative": 2314.2
+          "cumulative": 2351.0
         },
         {
           "date": "2025-05-15",
           "profit": -10.0,
-          "cumulative": 2304.2
+          "cumulative": 2341.0
         },
         {
           "date": "2025-05-16",
           "profit": 22.7,
-          "cumulative": 2326.9
+          "cumulative": 2363.7
         },
         {
           "date": "2025-05-18",
           "profit": -10.0,
-          "cumulative": 2316.9
+          "cumulative": 2353.7
         },
         {
           "date": "2025-05-22",
           "profit": -20.0,
-          "cumulative": 2296.9
+          "cumulative": 2333.7
         },
         {
           "date": "2025-05-23",
           "profit": 19.4,
-          "cumulative": 2316.3
+          "cumulative": 2353.1
         },
         {
           "date": "2025-05-25",
           "profit": -10.0,
-          "cumulative": 2306.3
+          "cumulative": 2343.1
         },
         {
           "date": "2025-05-26",
           "profit": -10.0,
-          "cumulative": 2296.3
+          "cumulative": 2333.1
         },
         {
           "date": "2025-05-27",
           "profit": -10.0,
-          "cumulative": 2286.3
+          "cumulative": 2323.1
         },
         {
           "date": "2025-06-08",
           "profit": -20.0,
-          "cumulative": 2266.3
+          "cumulative": 2303.1
         },
         {
           "date": "2025-06-22",
           "profit": 24.7,
-          "cumulative": 2291.0
+          "cumulative": 2327.8
         },
         {
           "date": "2025-09-04",
           "profit": 23.9,
-          "cumulative": 2314.9
+          "cumulative": 2351.7
         },
         {
           "date": "2025-09-07",
           "profit": 56.2,
-          "cumulative": 2371.1
+          "cumulative": 2407.9
         },
         {
           "date": "2025-09-11",
           "profit": -10.0,
-          "cumulative": 2361.1
+          "cumulative": 2397.9
         },
         {
           "date": "2025-09-14",
           "profit": -20.0,
-          "cumulative": 2341.1
+          "cumulative": 2377.9
         },
         {
           "date": "2025-09-18",
           "profit": 32.5,
-          "cumulative": 2373.6
+          "cumulative": 2410.4
         },
         {
           "date": "2025-09-22",
           "profit": 21.6,
-          "cumulative": 2395.2
+          "cumulative": 2432.0
         },
         {
           "date": "2025-09-26",
           "profit": -10.0,
-          "cumulative": 2385.2
+          "cumulative": 2422.0
         },
         {
           "date": "2025-09-28",
           "profit": 29.3,
-          "cumulative": 2414.5
+          "cumulative": 2451.3
         },
         {
           "date": "2025-09-29",
           "profit": -10.0,
-          "cumulative": 2404.5
+          "cumulative": 2441.3
         },
         {
           "date": "2025-10-02",
           "profit": -30.0,
-          "cumulative": 2374.5
+          "cumulative": 2411.3
         },
         {
           "date": "2025-10-05",
           "profit": -20.0,
-          "cumulative": 2354.5
+          "cumulative": 2391.3
         },
         {
           "date": "2025-10-12",
           "profit": -10.0,
-          "cumulative": 2344.5
+          "cumulative": 2381.3
         },
         {
           "date": "2025-10-16",
           "profit": 25.7,
-          "cumulative": 2370.2
+          "cumulative": 2407.0
         },
         {
           "date": "2025-10-17",
           "profit": -10.0,
-          "cumulative": 2360.2
+          "cumulative": 2397.0
         },
         {
           "date": "2025-10-19",
           "profit": 73.9,
-          "cumulative": 2434.1
+          "cumulative": 2470.9
         },
         {
           "date": "2025-10-20",
           "profit": -20.0,
-          "cumulative": 2414.1
+          "cumulative": 2450.9
         },
         {
           "date": "2025-10-24",
           "profit": -10.0,
-          "cumulative": 2404.1
+          "cumulative": 2440.9
         },
         {
           "date": "2025-10-25",
           "profit": -10.0,
-          "cumulative": 2394.1
+          "cumulative": 2430.9
         },
         {
           "date": "2025-10-27",
           "profit": -10.0,
-          "cumulative": 2384.1
+          "cumulative": 2420.9
         },
         {
           "date": "2025-11-01",
           "profit": -30.0,
-          "cumulative": 2354.1
+          "cumulative": 2390.9
         },
         {
           "date": "2025-11-02",
           "profit": 27.2,
-          "cumulative": 2381.3
+          "cumulative": 2418.1
         },
         {
           "date": "2025-11-06",
           "profit": -10.0,
-          "cumulative": 2371.3
+          "cumulative": 2408.1
         },
         {
           "date": "2025-11-07",
           "profit": -10.0,
-          "cumulative": 2361.3
+          "cumulative": 2398.1
         },
         {
           "date": "2025-11-08",
           "profit": -20.0,
-          "cumulative": 2341.3
+          "cumulative": 2378.1
         },
         {
           "date": "2025-11-12",
           "profit": 22.9,
-          "cumulative": 2364.2
+          "cumulative": 2401.0
         },
         {
           "date": "2025-11-16",
           "profit": -10.0,
-          "cumulative": 2354.2
+          "cumulative": 2391.0
         },
         {
           "date": "2025-11-17",
           "profit": -10.0,
-          "cumulative": 2344.2
+          "cumulative": 2381.0
         },
         {
           "date": "2025-11-20",
           "profit": 25.4,
-          "cumulative": 2369.6
+          "cumulative": 2406.4
         },
         {
           "date": "2025-11-22",
           "profit": 7.8,
-          "cumulative": 2377.4
+          "cumulative": 2414.2
         },
         {
           "date": "2025-11-23",
           "profit": -20.0,
-          "cumulative": 2357.4
+          "cumulative": 2394.2
         }
       ],
       "streaks": {
@@ -3848,21 +3908,21 @@
     },
     "sleeper": {
       "totals": {
-        "profit": 728.15,
-        "entries": 277,
-        "wins": 87,
-        "losses": 175,
-        "pushes": 15,
-        "parlay_win_rate": 33.21,
-        "legs": 386,
-        "leg_hits": 197,
-        "leg_misses": 189,
+        "profit": 764.95,
+        "entries": 265,
+        "wins": 86,
+        "losses": 169,
+        "pushes": 10,
+        "parlay_win_rate": 33.73,
+        "legs": 353,
+        "leg_hits": 188,
+        "leg_misses": 165,
         "leg_pushes": 0,
-        "leg_hit_rate": 51.04,
-        "avg_legs_per_parlay": 2.39,
-        "roi": 26.29,
+        "leg_hit_rate": 53.26,
+        "avg_legs_per_parlay": 2.33,
+        "roi": 28.87,
         "roi_estimated": true,
-        "avg_ev": -1.61,
+        "avg_ev": 1.95,
         "date_start": "04/07/24",
         "date_end": "11/23/25"
       },
@@ -3883,14 +3943,6 @@
             "misses": 36,
             "pushes": 0,
             "hit_rate": 52.63
-          },
-          {
-            "key": "MLB",
-            "legs": 33,
-            "hits": 9,
-            "misses": 24,
-            "pushes": 0,
-            "hit_rate": 27.27
           }
         ],
         "by_stat": [
@@ -3959,14 +4011,6 @@
             "hit_rate": 44.44
           },
           {
-            "key": "Outs",
-            "legs": 15,
-            "hits": 4,
-            "misses": 11,
-            "pushes": 0,
-            "hit_rate": 26.67
-          },
-          {
             "key": "Rec Yards",
             "legs": 11,
             "hits": 6,
@@ -3981,14 +4025,6 @@
             "misses": 7,
             "pushes": 0,
             "hit_rate": 30.0
-          },
-          {
-            "key": "Bases",
-            "legs": 9,
-            "hits": 3,
-            "misses": 6,
-            "pushes": 0,
-            "hit_rate": 33.33
           },
           {
             "key": "Rush Yards",
@@ -4007,44 +4043,12 @@
             "hit_rate": 80.0
           },
           {
-            "key": "K",
-            "legs": 3,
-            "hits": 1,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 33.33
-          },
-          {
             "key": "AR",
             "legs": 3,
             "hits": 1,
             "misses": 2,
             "pushes": 0,
             "hit_rate": 33.33
-          },
-          {
-            "key": "ER",
-            "legs": 2,
-            "hits": 0,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 0.0
-          },
-          {
-            "key": "Hits",
-            "legs": 2,
-            "hits": 1,
-            "misses": 1,
-            "pushes": 0,
-            "hit_rate": 50.0
-          },
-          {
-            "key": "HRRBI",
-            "legs": 2,
-            "hits": 0,
-            "misses": 2,
-            "pushes": 0,
-            "hit_rate": 0.0
           },
           {
             "key": "Points",
@@ -4063,22 +4067,148 @@
             "hit_rate": 100.0
           }
         ],
+        "by_stat_by_sport": [
+          {
+            "sport": "NBA",
+            "legs": 277,
+            "stats": [
+              {
+                "key": "Assists",
+                "legs": 67,
+                "hits": 45,
+                "misses": 22,
+                "pushes": 0,
+                "hit_rate": 67.16
+              },
+              {
+                "key": "Points",
+                "legs": 46,
+                "hits": 26,
+                "misses": 20,
+                "pushes": 0,
+                "hit_rate": 56.52
+              },
+              {
+                "key": "Points + Rebounds + Assists",
+                "legs": 27,
+                "hits": 14,
+                "misses": 13,
+                "pushes": 0,
+                "hit_rate": 51.85
+              },
+              {
+                "key": "Rebounds",
+                "legs": 59,
+                "hits": 29,
+                "misses": 30,
+                "pushes": 0,
+                "hit_rate": 49.15
+              },
+              {
+                "key": "Rebounds + Assists",
+                "legs": 34,
+                "hits": 16,
+                "misses": 18,
+                "pushes": 0,
+                "hit_rate": 47.06
+              },
+              {
+                "key": "Points + Assists",
+                "legs": 18,
+                "hits": 8,
+                "misses": 10,
+                "pushes": 0,
+                "hit_rate": 44.44
+              },
+              {
+                "key": "Points + Rebounds",
+                "legs": 23,
+                "hits": 9,
+                "misses": 14,
+                "pushes": 0,
+                "hit_rate": 39.13
+              },
+              {
+                "key": "Assists + Rebounds",
+                "legs": 3,
+                "hits": 1,
+                "misses": 2,
+                "pushes": 0,
+                "hit_rate": 33.33
+              }
+            ]
+          },
+          {
+            "sport": "NFL",
+            "legs": 76,
+            "stats": [
+              {
+                "key": "Anytime Touchdowns",
+                "legs": 1,
+                "hits": 1,
+                "misses": 0,
+                "pushes": 0,
+                "hit_rate": 100.0
+              },
+              {
+                "key": "Passing Touchdowns",
+                "legs": 5,
+                "hits": 4,
+                "misses": 1,
+                "pushes": 0,
+                "hit_rate": 80.0
+              },
+              {
+                "key": "Receptions",
+                "legs": 40,
+                "hits": 24,
+                "misses": 16,
+                "pushes": 0,
+                "hit_rate": 60.0
+              },
+              {
+                "key": "Receiving Yards",
+                "legs": 11,
+                "hits": 6,
+                "misses": 5,
+                "pushes": 0,
+                "hit_rate": 54.55
+              },
+              {
+                "key": "Pass Completions",
+                "legs": 10,
+                "hits": 3,
+                "misses": 7,
+                "pushes": 0,
+                "hit_rate": 30.0
+              },
+              {
+                "key": "Rushing Yards",
+                "legs": 9,
+                "hits": 2,
+                "misses": 7,
+                "pushes": 0,
+                "hit_rate": 22.22
+              }
+            ]
+          }
+        ],
         "by_ou": [
           {
             "key": "Under",
-            "legs": 281,
-            "hits": 149,
-            "misses": 132,
+            "legs": 268,
+            "hits": 146,
+            "misses": 122,
             "pushes": 0,
-            "hit_rate": 53.02
+            "hit_rate": 54.48
           },
           {
             "key": "Over",
-            "legs": 105,
-            "hits": 48,
-            "misses": 57,
+            "legs": 85,
+            "hits": 42,
+            "misses": 43,
             "pushes": 0,
-            "hit_rate": 45.71
+            "hit_rate": 49.41
           }
         ]
       },
@@ -4174,764 +4304,704 @@
           "cumulative": 145.1
         },
         {
-          "date": "2024-05-24",
-          "profit": 0.0,
-          "cumulative": 145.1
-        },
-        {
-          "date": "2024-05-29",
-          "profit": -10.0,
-          "cumulative": 135.1
-        },
-        {
-          "date": "2024-06-04",
-          "profit": -10.0,
-          "cumulative": 125.1
-        },
-        {
           "date": "2024-06-09",
           "profit": 20.0,
-          "cumulative": 145.1
+          "cumulative": 165.1
         },
         {
           "date": "2024-06-12",
           "profit": -10.0,
-          "cumulative": 135.1
-        },
-        {
-          "date": "2024-06-16",
-          "profit": -10.0,
-          "cumulative": 125.1
-        },
-        {
-          "date": "2024-06-19",
-          "profit": -10.0,
-          "cumulative": 115.1
-        },
-        {
-          "date": "2024-06-23",
-          "profit": 23.2,
-          "cumulative": 138.3
-        },
-        {
-          "date": "2024-06-26",
-          "profit": 0.0,
-          "cumulative": 138.3
-        },
-        {
-          "date": "2024-07-02",
-          "profit": 0.0,
-          "cumulative": 138.3
-        },
-        {
-          "date": "2024-07-03",
-          "profit": -10.0,
-          "cumulative": 128.3
-        },
-        {
-          "date": "2024-07-07",
-          "profit": -10.0,
-          "cumulative": 118.3
-        },
-        {
-          "date": "2024-08-07",
-          "profit": 0.0,
-          "cumulative": 118.3
+          "cumulative": 155.1
         },
         {
           "date": "2024-09-05",
           "profit": -10.0,
-          "cumulative": 108.3
+          "cumulative": 145.1
         },
         {
           "date": "2024-09-08",
           "profit": 15.7,
-          "cumulative": 124.0
+          "cumulative": 160.8
         },
         {
           "date": "2024-09-12",
           "profit": -10.0,
-          "cumulative": 114.0
+          "cumulative": 150.8
         },
         {
           "date": "2024-09-15",
           "profit": 0.0,
-          "cumulative": 114.0
+          "cumulative": 150.8
         },
         {
           "date": "2024-09-22",
           "profit": -10.0,
-          "cumulative": 104.0
+          "cumulative": 140.8
         },
         {
           "date": "2024-09-23",
           "profit": 0.0,
-          "cumulative": 104.0
+          "cumulative": 140.8
         },
         {
           "date": "2024-09-26",
           "profit": -10.0,
-          "cumulative": 94.0
+          "cumulative": 130.8
         },
         {
           "date": "2024-09-27",
           "profit": -10.0,
-          "cumulative": 84.0
+          "cumulative": 120.8
         },
         {
           "date": "2024-10-22",
           "profit": 0.0,
-          "cumulative": 84.0
-        },
-        {
-          "date": "2024-10-25",
-          "profit": 0.0,
-          "cumulative": 84.0
+          "cumulative": 120.8
         },
         {
           "date": "2024-10-31",
           "profit": 25.2,
-          "cumulative": 109.2
+          "cumulative": 146.0
         },
         {
           "date": "2024-11-04",
           "profit": 0.0,
-          "cumulative": 109.2
+          "cumulative": 146.0
         },
         {
           "date": "2024-11-06",
           "profit": 65.6,
-          "cumulative": 174.8
+          "cumulative": 211.6
         },
         {
           "date": "2024-11-08",
           "profit": 63.8,
-          "cumulative": 238.6
+          "cumulative": 275.4
         },
         {
           "date": "2024-11-10",
           "profit": -10.0,
-          "cumulative": 228.6
+          "cumulative": 265.4
         },
         {
           "date": "2024-11-15",
           "profit": 0.0,
-          "cumulative": 228.6
+          "cumulative": 265.4
         },
         {
           "date": "2024-11-19",
           "profit": 0.0,
-          "cumulative": 228.6
+          "cumulative": 265.4
         },
         {
           "date": "2024-11-20",
           "profit": -10.0,
-          "cumulative": 218.6
+          "cumulative": 255.4
         },
         {
           "date": "2024-11-27",
           "profit": 43.8,
-          "cumulative": 262.4
+          "cumulative": 299.2
         },
         {
           "date": "2024-11-28",
           "profit": -30.0,
-          "cumulative": 232.4
+          "cumulative": 269.2
         },
         {
           "date": "2024-12-01",
           "profit": -10.0,
-          "cumulative": 222.4
+          "cumulative": 259.2
         },
         {
           "date": "2024-12-04",
           "profit": -10.0,
-          "cumulative": 212.4
+          "cumulative": 249.2
         },
         {
           "date": "2024-12-05",
           "profit": -10.0,
-          "cumulative": 202.4
+          "cumulative": 239.2
         },
         {
           "date": "2024-12-08",
           "profit": -20.0,
-          "cumulative": 182.4
+          "cumulative": 219.2
         },
         {
           "date": "2024-12-23",
           "profit": 34.1,
-          "cumulative": 216.5
+          "cumulative": 253.3
         },
         {
           "date": "2024-12-25",
           "profit": 25.2,
-          "cumulative": 241.7
+          "cumulative": 278.5
         },
         {
           "date": "2024-12-29",
           "profit": 45.4,
-          "cumulative": 287.1
+          "cumulative": 323.9
         },
         {
           "date": "2025-01-03",
           "profit": -20.0,
-          "cumulative": 267.1
+          "cumulative": 303.9
         },
         {
           "date": "2025-01-10",
           "profit": 0.0,
-          "cumulative": 267.1
+          "cumulative": 303.9
         },
         {
           "date": "2025-01-17",
           "profit": 0.0,
-          "cumulative": 267.1
+          "cumulative": 303.9
         },
         {
           "date": "2025-01-18",
           "profit": -10.0,
-          "cumulative": 257.1
+          "cumulative": 293.9
         },
         {
           "date": "2025-01-25",
           "profit": -20.0,
-          "cumulative": 237.1
+          "cumulative": 273.9
         },
         {
           "date": "2025-02-01",
           "profit": 64.4,
-          "cumulative": 301.5
+          "cumulative": 338.3
         },
         {
           "date": "2025-02-05",
           "profit": 16.9,
-          "cumulative": 318.4
+          "cumulative": 355.2
         },
         {
           "date": "2025-02-06",
           "profit": -10.0,
-          "cumulative": 308.4
+          "cumulative": 345.2
         },
         {
           "date": "2025-02-08",
           "profit": -20.0,
-          "cumulative": 288.4
+          "cumulative": 325.2
         },
         {
           "date": "2025-02-09",
           "profit": 20.2,
-          "cumulative": 308.6
+          "cumulative": 345.4
         },
         {
           "date": "2025-02-10",
           "profit": -10.0,
-          "cumulative": 298.6
+          "cumulative": 335.4
         },
         {
           "date": "2025-02-11",
           "profit": 47.3,
-          "cumulative": 345.9
+          "cumulative": 382.7
         },
         {
           "date": "2025-02-20",
           "profit": 64.6,
-          "cumulative": 410.5
+          "cumulative": 447.3
         },
         {
           "date": "2025-02-26",
           "profit": 26.6,
-          "cumulative": 437.1
+          "cumulative": 473.9
         },
         {
           "date": "2025-02-28",
           "profit": 53.4,
-          "cumulative": 490.5
+          "cumulative": 527.3
         },
         {
           "date": "2025-03-02",
           "profit": -10.0,
-          "cumulative": 480.5
+          "cumulative": 517.3
         },
         {
           "date": "2025-03-03",
           "profit": -10.0,
-          "cumulative": 470.5
+          "cumulative": 507.3
         },
         {
           "date": "2025-03-04",
           "profit": -40.0,
-          "cumulative": 430.5
+          "cumulative": 467.3
         },
         {
           "date": "2025-03-12",
           "profit": 6.8,
-          "cumulative": 437.3
+          "cumulative": 474.1
         },
         {
           "date": "2025-03-14",
           "profit": 54.4,
-          "cumulative": 491.7
+          "cumulative": 528.5
         },
         {
           "date": "2025-03-15",
           "profit": -10.0,
-          "cumulative": 481.7
+          "cumulative": 518.5
         },
         {
           "date": "2025-03-17",
           "profit": -20.0,
-          "cumulative": 461.7
+          "cumulative": 498.5
         },
         {
           "date": "2025-03-18",
           "profit": 31.2,
-          "cumulative": 492.9
+          "cumulative": 529.7
         },
         {
           "date": "2025-03-19",
           "profit": -10.0,
-          "cumulative": 482.9
+          "cumulative": 519.7
         },
         {
           "date": "2025-03-20",
           "profit": -20.0,
-          "cumulative": 462.9
+          "cumulative": 499.7
         },
         {
           "date": "2025-03-21",
           "profit": 31.35,
-          "cumulative": 494.25
+          "cumulative": 531.05
         },
         {
           "date": "2025-03-22",
           "profit": 2.2,
-          "cumulative": 496.45
+          "cumulative": 533.25
         },
         {
           "date": "2025-03-23",
           "profit": -20.0,
-          "cumulative": 476.45
+          "cumulative": 513.25
         },
         {
           "date": "2025-03-24",
           "profit": 12.5,
-          "cumulative": 488.95
+          "cumulative": 525.75
         },
         {
           "date": "2025-03-25",
           "profit": -20.0,
-          "cumulative": 468.95
+          "cumulative": 505.75
         },
         {
           "date": "2025-03-26",
           "profit": 12.7,
-          "cumulative": 481.65
+          "cumulative": 518.45
         },
         {
           "date": "2025-03-27",
           "profit": 1.6,
-          "cumulative": 483.25
+          "cumulative": 520.05
         },
         {
           "date": "2025-03-28",
           "profit": 29.1,
-          "cumulative": 512.35
+          "cumulative": 549.15
         },
         {
           "date": "2025-03-29",
           "profit": 5.5,
-          "cumulative": 517.85
+          "cumulative": 554.65
         },
         {
           "date": "2025-03-30",
           "profit": -27.5,
-          "cumulative": 490.35
+          "cumulative": 527.15
         },
         {
           "date": "2025-03-31",
           "profit": 83.8,
-          "cumulative": 574.15
+          "cumulative": 610.95
         },
         {
           "date": "2025-04-01",
           "profit": -10.0,
-          "cumulative": 564.15
+          "cumulative": 600.95
         },
         {
           "date": "2025-04-02",
           "profit": -10.0,
-          "cumulative": 554.15
+          "cumulative": 590.95
         },
         {
           "date": "2025-04-03",
           "profit": -10.0,
-          "cumulative": 544.15
+          "cumulative": 580.95
         },
         {
           "date": "2025-04-04",
           "profit": -20.0,
-          "cumulative": 524.15
+          "cumulative": 560.95
         },
         {
           "date": "2025-04-05",
           "profit": -20.0,
-          "cumulative": 504.15
+          "cumulative": 540.95
         },
         {
           "date": "2025-04-06",
           "profit": -20.0,
-          "cumulative": 484.15
+          "cumulative": 520.95
         },
         {
           "date": "2025-04-07",
           "profit": 29.5,
-          "cumulative": 513.65
+          "cumulative": 550.45
         },
         {
           "date": "2025-04-08",
           "profit": 4.5,
-          "cumulative": 518.15
+          "cumulative": 554.95
         },
         {
           "date": "2025-04-09",
           "profit": -20.0,
-          "cumulative": 498.15
+          "cumulative": 534.95
         },
         {
           "date": "2025-04-10",
           "profit": 58.7,
-          "cumulative": 556.85
+          "cumulative": 593.65
         },
         {
           "date": "2025-04-11",
           "profit": 15.9,
-          "cumulative": 572.75
+          "cumulative": 609.55
         },
         {
           "date": "2025-04-13",
           "profit": -40.0,
-          "cumulative": 532.75
+          "cumulative": 569.55
         },
         {
           "date": "2025-04-16",
           "profit": 19.3,
-          "cumulative": 552.05
+          "cumulative": 588.85
         },
         {
           "date": "2025-04-18",
           "profit": 32.7,
-          "cumulative": 584.75
+          "cumulative": 621.55
         },
         {
           "date": "2025-04-19",
           "profit": -30.0,
-          "cumulative": 554.75
+          "cumulative": 591.55
         },
         {
           "date": "2025-04-20",
           "profit": -50.0,
-          "cumulative": 504.75
+          "cumulative": 541.55
         },
         {
           "date": "2025-04-21",
           "profit": 17.2,
-          "cumulative": 521.95
+          "cumulative": 558.75
         },
         {
           "date": "2025-04-22",
           "profit": -20.0,
-          "cumulative": 501.95
+          "cumulative": 538.75
         },
         {
           "date": "2025-04-23",
           "profit": -30.0,
-          "cumulative": 471.95
+          "cumulative": 508.75
         },
         {
           "date": "2025-04-24",
           "profit": 13.6,
-          "cumulative": 485.55
+          "cumulative": 522.35
         },
         {
           "date": "2025-04-25",
           "profit": 14.1,
-          "cumulative": 499.65
+          "cumulative": 536.45
         },
         {
           "date": "2025-04-26",
           "profit": -20.0,
-          "cumulative": 479.65
+          "cumulative": 516.45
         },
         {
           "date": "2025-04-27",
           "profit": 6.6,
-          "cumulative": 486.25
+          "cumulative": 523.05
         },
         {
           "date": "2025-04-28",
           "profit": 13.1,
-          "cumulative": 499.35
+          "cumulative": 536.15
         },
         {
           "date": "2025-04-29",
           "profit": 28.1,
-          "cumulative": 527.45
+          "cumulative": 564.25
         },
         {
           "date": "2025-05-01",
           "profit": 21.8,
-          "cumulative": 549.25
+          "cumulative": 586.05
         },
         {
           "date": "2025-05-02",
           "profit": -10.0,
-          "cumulative": 539.25
+          "cumulative": 576.05
         },
         {
           "date": "2025-05-03",
           "profit": -10.0,
-          "cumulative": 529.25
+          "cumulative": 566.05
         },
         {
           "date": "2025-05-05",
           "profit": 35.6,
-          "cumulative": 564.85
+          "cumulative": 601.65
         },
         {
           "date": "2025-05-07",
           "profit": 14.1,
-          "cumulative": 578.95
+          "cumulative": 615.75
         },
         {
           "date": "2025-05-08",
           "profit": 14.1,
-          "cumulative": 593.05
+          "cumulative": 629.85
         },
         {
           "date": "2025-05-09",
           "profit": 2.2,
-          "cumulative": 595.25
+          "cumulative": 632.05
         },
         {
           "date": "2025-05-10",
           "profit": 26.9,
-          "cumulative": 622.15
+          "cumulative": 658.95
         },
         {
           "date": "2025-05-12",
           "profit": 38.7,
-          "cumulative": 660.85
+          "cumulative": 697.65
         },
         {
           "date": "2025-05-13",
           "profit": 44.1,
-          "cumulative": 704.95
+          "cumulative": 741.75
         },
         {
           "date": "2025-05-14",
           "profit": -20.0,
-          "cumulative": 684.95
+          "cumulative": 721.75
         },
         {
           "date": "2025-05-15",
           "profit": -10.0,
-          "cumulative": 674.95
+          "cumulative": 711.75
         },
         {
           "date": "2025-05-16",
           "profit": 22.7,
-          "cumulative": 697.65
+          "cumulative": 734.45
         },
         {
           "date": "2025-05-18",
           "profit": -10.0,
-          "cumulative": 687.65
+          "cumulative": 724.45
         },
         {
           "date": "2025-05-22",
           "profit": -20.0,
-          "cumulative": 667.65
+          "cumulative": 704.45
         },
         {
           "date": "2025-05-23",
           "profit": 19.4,
-          "cumulative": 687.05
+          "cumulative": 723.85
         },
         {
           "date": "2025-05-25",
           "profit": -10.0,
-          "cumulative": 677.05
+          "cumulative": 713.85
         },
         {
           "date": "2025-05-26",
           "profit": -10.0,
-          "cumulative": 667.05
+          "cumulative": 703.85
         },
         {
           "date": "2025-05-27",
           "profit": -10.0,
-          "cumulative": 657.05
+          "cumulative": 693.85
         },
         {
           "date": "2025-06-08",
           "profit": -20.0,
-          "cumulative": 637.05
+          "cumulative": 673.85
         },
         {
           "date": "2025-06-22",
           "profit": 24.7,
-          "cumulative": 661.75
+          "cumulative": 698.55
         },
         {
           "date": "2025-09-04",
           "profit": 23.9,
-          "cumulative": 685.65
+          "cumulative": 722.45
         },
         {
           "date": "2025-09-07",
           "profit": 56.2,
-          "cumulative": 741.85
+          "cumulative": 778.65
         },
         {
           "date": "2025-09-11",
           "profit": -10.0,
-          "cumulative": 731.85
+          "cumulative": 768.65
         },
         {
           "date": "2025-09-14",
           "profit": -20.0,
-          "cumulative": 711.85
+          "cumulative": 748.65
         },
         {
           "date": "2025-09-18",
           "profit": 32.5,
-          "cumulative": 744.35
+          "cumulative": 781.15
         },
         {
           "date": "2025-09-22",
           "profit": 21.6,
-          "cumulative": 765.95
+          "cumulative": 802.75
         },
         {
           "date": "2025-09-26",
           "profit": -10.0,
-          "cumulative": 755.95
+          "cumulative": 792.75
         },
         {
           "date": "2025-09-28",
           "profit": 29.3,
-          "cumulative": 785.25
+          "cumulative": 822.05
         },
         {
           "date": "2025-09-29",
           "profit": -10.0,
-          "cumulative": 775.25
+          "cumulative": 812.05
         },
         {
           "date": "2025-10-02",
           "profit": -30.0,
-          "cumulative": 745.25
+          "cumulative": 782.05
         },
         {
           "date": "2025-10-05",
           "profit": -20.0,
-          "cumulative": 725.25
+          "cumulative": 762.05
         },
         {
           "date": "2025-10-12",
           "profit": -10.0,
-          "cumulative": 715.25
+          "cumulative": 752.05
         },
         {
           "date": "2025-10-16",
           "profit": 25.7,
-          "cumulative": 740.95
+          "cumulative": 777.75
         },
         {
           "date": "2025-10-17",
           "profit": -10.0,
-          "cumulative": 730.95
+          "cumulative": 767.75
         },
         {
           "date": "2025-10-19",
           "profit": 73.9,
-          "cumulative": 804.85
+          "cumulative": 841.65
         },
         {
           "date": "2025-10-20",
           "profit": -20.0,
-          "cumulative": 784.85
+          "cumulative": 821.65
         },
         {
           "date": "2025-10-24",
           "profit": -10.0,
-          "cumulative": 774.85
+          "cumulative": 811.65
         },
         {
           "date": "2025-10-25",
           "profit": -10.0,
-          "cumulative": 764.85
+          "cumulative": 801.65
         },
         {
           "date": "2025-10-27",
           "profit": -10.0,
-          "cumulative": 754.85
+          "cumulative": 791.65
         },
         {
           "date": "2025-11-01",
           "profit": -30.0,
-          "cumulative": 724.85
+          "cumulative": 761.65
         },
         {
           "date": "2025-11-02",
           "profit": 27.2,
-          "cumulative": 752.05
+          "cumulative": 788.85
         },
         {
           "date": "2025-11-06",
           "profit": -10.0,
-          "cumulative": 742.05
+          "cumulative": 778.85
         },
         {
           "date": "2025-11-07",
           "profit": -10.0,
-          "cumulative": 732.05
+          "cumulative": 768.85
         },
         {
           "date": "2025-11-08",
           "profit": -20.0,
-          "cumulative": 712.05
+          "cumulative": 748.85
         },
         {
           "date": "2025-11-12",
           "profit": 22.9,
-          "cumulative": 734.95
+          "cumulative": 771.75
         },
         {
           "date": "2025-11-16",
           "profit": -10.0,
-          "cumulative": 724.95
+          "cumulative": 761.75
         },
         {
           "date": "2025-11-17",
           "profit": -10.0,
-          "cumulative": 714.95
+          "cumulative": 751.75
         },
         {
           "date": "2025-11-20",
           "profit": 25.4,
-          "cumulative": 740.35
+          "cumulative": 777.15
         },
         {
           "date": "2025-11-22",
           "profit": 7.8,
-          "cumulative": 748.15
+          "cumulative": 784.95
         },
         {
           "date": "2025-11-23",
           "profit": -20.0,
-          "cumulative": 728.15
+          "cumulative": 764.95
         }
       ],
       "streaks": {
@@ -7032,22 +7102,6 @@
             "misses": 36,
             "pushes": 10,
             "hit_rate": 55.56
-          },
-          {
-            "key": "NHL",
-            "legs": 6,
-            "hits": 3,
-            "misses": 1,
-            "pushes": 2,
-            "hit_rate": 75.0
-          },
-          {
-            "key": "WNBA",
-            "legs": 6,
-            "hits": 3,
-            "misses": 3,
-            "pushes": 0,
-            "hit_rate": 50.0
           }
         ],
         "by_stat": [
@@ -7154,6 +7208,114 @@
             "misses": 1,
             "pushes": 0,
             "hit_rate": 0.0
+          }
+        ],
+        "by_stat_by_sport": [
+          {
+            "sport": "NBA",
+            "legs": 458,
+            "stats": [
+              {
+                "key": "Points + Assists",
+                "legs": 175,
+                "hits": 104,
+                "misses": 71,
+                "pushes": 0,
+                "hit_rate": 59.43
+              },
+              {
+                "key": "Points + Rebounds + Assists",
+                "legs": 87,
+                "hits": 51,
+                "misses": 35,
+                "pushes": 1,
+                "hit_rate": 59.3
+              },
+              {
+                "key": "Points",
+                "legs": 124,
+                "hits": 69,
+                "misses": 55,
+                "pushes": 0,
+                "hit_rate": 55.65
+              },
+              {
+                "key": "Points + Rebounds",
+                "legs": 72,
+                "hits": 38,
+                "misses": 34,
+                "pushes": 0,
+                "hit_rate": 52.78
+              }
+            ]
+          },
+          {
+            "sport": "NFL",
+            "legs": 288,
+            "stats": [
+              {
+                "key": "Pass Completions",
+                "legs": 13,
+                "hits": 8,
+                "misses": 5,
+                "pushes": 0,
+                "hit_rate": 61.54
+              },
+              {
+                "key": "Receiving Yards",
+                "legs": 118,
+                "hits": 70,
+                "misses": 48,
+                "pushes": 0,
+                "hit_rate": 59.32
+              },
+              {
+                "key": "Passing Yards",
+                "legs": 113,
+                "hits": 58,
+                "misses": 55,
+                "pushes": 0,
+                "hit_rate": 51.33
+              },
+              {
+                "key": "Receptions",
+                "legs": 4,
+                "hits": 1,
+                "misses": 1,
+                "pushes": 2,
+                "hit_rate": 50.0
+              },
+              {
+                "key": "Rushing Yards",
+                "legs": 40,
+                "hits": 18,
+                "misses": 22,
+                "pushes": 0,
+                "hit_rate": 45.0
+              }
+            ]
+          },
+          {
+            "sport": "MLB",
+            "legs": 91,
+            "stats": [
+              {
+                "key": "Outs Recorded",
+                "legs": 14,
+                "hits": 9,
+                "misses": 5,
+                "pushes": 0,
+                "hit_rate": 64.29
+              },
+              {
+                "key": "Strikeouts",
+                "legs": 77,
+                "hits": 36,
+                "misses": 31,
+                "pushes": 10,
+                "hit_rate": 53.73
+              }
+            ]
           }
         ],
         "by_ou": [

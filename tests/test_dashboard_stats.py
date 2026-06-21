@@ -172,6 +172,66 @@ def test_breakdowns_by_ou(sample_entries):
     assert keys == {"Over", "Under"}
 
 
+def test_full_stat_name_mapping_and_fallback():
+    from src.dashboard import config
+
+    assert config.full_stat_name("PRA") == "Points + Rebounds + Assists"
+    assert config.full_stat_name("Pts") == "Points"
+    assert config.full_stat_name("Rush yards") == "Rushing Yards"  # case-insensitive merge
+    assert config.full_stat_name("anytime_touchdowns") == "Anytime Touchdowns"
+    assert config.full_stat_name("weird_stat") == "Weird Stat"  # prettified fallback
+    assert config.full_stat_name("") == "Unknown"
+
+
+def test_low_volume_leagues_excluded_from_league_views():
+    from src.dashboard import config
+
+    legs = []
+    legs += [Leg(f"big{i}", "NBA", "Pts", "O", "H") for i in range(config.MIN_LEAGUE_LEGS)]
+    legs += [Leg("small1", "NHL", "SOG", "O", "H"), Leg("small2", "NHL", "SOG", "O", "M")]
+    entries = [ParlayEntry("sleeper", date(2025, 6, 1), 5.0, legs)]
+
+    breakdowns = stats.compute_platform_stats(entries)["breakdowns"]
+    league_keys = {r["key"] for r in breakdowns["by_league"]}
+    sport_keys = {g["sport"] for g in breakdowns["by_stat_by_sport"]}
+    assert league_keys == {"NBA"}  # NHL (2 legs) dropped from the league chart
+    assert sport_keys == {"NBA"}  # ...and from the per-sport stat groups
+
+
+def test_breakdown_by_sport_groups_orders_and_merges():
+    entries = [
+        ParlayEntry(
+            "sleeper",
+            date(2025, 6, 1),
+            5.0,
+            [
+                Leg("A", "NBA", "Pts", "O", "H"),
+                Leg("B", "NBA", "Points", "O", "M"),  # merges with "Pts" -> Points
+                Leg("C", "NBA", "PRA", "O", "H"),
+                Leg("D", "NFL", "Rush Yards", "O", "H"),
+                Leg("E", "NFL", "Rush yards", "O", "H"),  # merges with "Rush Yards"
+            ],
+        )
+    ]
+    # Call the helper directly so the small-sample league filter doesn't apply.
+    groups = stats._breakdown_by_sport(entries)
+
+    # Sports ordered by leg volume (NBA 3 > NFL 2).
+    assert [g["sport"] for g in groups] == ["NBA", "NFL"]
+
+    nba = groups[0]
+    nba_names = {r["key"] for r in nba["stats"]}
+    assert "Points" in nba_names and "Pts" not in nba_names  # variant merged + full name
+    # Within a sport, sorted by hit rate desc: PRA (100%) before Points (50%).
+    assert nba["stats"][0]["key"] == "Points + Rebounds + Assists"
+    assert nba["stats"][0]["hit_rate"] == 100.0
+
+    nfl = groups[1]
+    assert len(nfl["stats"]) == 1  # both spellings merged
+    assert nfl["stats"][0]["key"] == "Rushing Yards"
+    assert nfl["stats"][0]["legs"] == 2
+
+
 def test_profit_over_time_is_cumulative(sample_entries):
     series = stats.compute_platform_stats(sample_entries)["profit_over_time"]
     assert [p["cumulative"] for p in series] == [15.0, 5.0, 5.0]
