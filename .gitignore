@@ -10,3 +10,4 @@ data.txt
 googlesheets-credentials.json
 *.log
 .coverage
+docs/data/stats.json
