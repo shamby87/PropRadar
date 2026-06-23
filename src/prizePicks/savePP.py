@@ -54,10 +54,10 @@ def main():
     miscCol = 0
     miscRow = 0
     try:
-        miscCol = worksheet.find('Random Shit').col
+        miscCol = worksheet.find('Random').col
         miscRow = len(worksheet.col_values(miscCol)) + 1
     except Exception:
-        print('failed to find random shit')
+        print('failed to find random')
         exit()
 
     url = 'https://api.prizepicks.com/v1/entries?filter=settled'
@@ -109,16 +109,16 @@ def main():
 
             fullEntry.append({'name': player['name'], 'league': player['league'], 'stat': stat, 'ou': ou, 'result': checkResult(ou, line, score)})
 
-        print(f'Date: {date}, Profit: {profit}, Promo:{None if promo == None else type}')
+        print(f'Date: {date}, Wager: {wager}, Profit: {profit}, Promo:{None if promo == None else type}')
         for e in fullEntry:
             print(e)
         if recordEntry():
-            for e in fullEntry:
-                worksheet.update([[date, e['name'], e['league'], e['stat'], '', e['ou'], e['result']]], f'B{row}:H{row}', raw=False)
+            for i, e in enumerate(fullEntry):
+                is_last = i == len(fullEntry) - 1
+                row_values = formatSheetRow(date, e, profit if is_last else None, wager if is_last else None)
+                end_col = 'J' if is_last else 'H'
+                worksheet.update([row_values], f'B{row}:{end_col}{row}', raw=False)
                 row += 1
-            
-            worksheet.update_acell(f'I{row-1}', profit)
-            worksheet.update_acell(f'J{row-1}', wager)
             row += 1
         elif recordMisc():
             worksheet.update_cell(miscRow, miscCol, date)
@@ -127,6 +127,21 @@ def main():
 
     dashboard_export.export_all()
     exit()
+
+
+def formatSheetRow(date, leg, profit=None, wager=None):
+    """Build one worksheet row (columns B onward) for a leg.
+
+    Profit and wager are entry-level fields written only on the final leg row
+    (columns I and J); intermediate legs leave those columns blank.
+    """
+    row = [date, leg['name'], leg['league'], leg['stat'], '', leg['ou'], leg['result']]
+    if profit is not None:
+        row.append(profit)
+    if wager is not None:
+        row.append(wager)
+    return row
+
 
 def getStatName(name):
     match name:

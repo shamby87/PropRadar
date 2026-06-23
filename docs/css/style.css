@@ -10,6 +10,10 @@
   --loss: #f85149;
   --loss-soft: rgba(248, 81, 73, 0.15);
   --accent: #2f81f7;
+  --pp: #a855f7;
+  --pp-soft: rgba(168, 85, 247, 0.12);
+  --sleeper: #6b8cae;
+  --sleeper-soft: rgba(107, 140, 174, 0.14);
   --push: #8b95a5;
   --radius: 12px;
   --mono: "SFMono-Regular", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
@@ -217,6 +221,67 @@ tr:last-child td { border-bottom: 0; }
 .leg-res.P { color: var(--push); }
 .promo-leg { opacity: 0.7; font-style: italic; }
 .promo-leg small { text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7em; }
+
+tr.row-pp { background: var(--pp-soft); }
+tr.row-sleeper { background: var(--sleeper-soft); }
+tr.row-pp td:first-child,
+tr.row-sleeper td:first-child { box-shadow: inset 3px 0 0 var(--pp); }
+tr.row-sleeper td:first-child { box-shadow: inset 3px 0 0 var(--sleeper); }
+
+.platform-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.platform-pill.prizepicks { background: var(--pp-soft); color: var(--pp); }
+.platform-pill.sleeper { background: var(--sleeper-soft); color: var(--sleeper); }
+
+.recent-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.legend-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+.legend-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-right: 2px;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.legend-swatch.prizepicks { background: var(--pp); }
+.legend-swatch.sleeper { background: var(--sleeper); }
+.legend-code {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+}
 
 .bar-row {
   display: grid;

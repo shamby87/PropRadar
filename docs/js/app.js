@@ -63,7 +63,7 @@ function render(platform) {
     statCards(t, platform),
     chartsSection(),
     streaksAndTops(block),
-    recentSection(block.recent),
+    recentSection(block.recent, platform),
     crossCheck(block.sheet_summaries, t),
   ].join("");
 
@@ -102,15 +102,10 @@ function card(label, value, sub, cls = "", title = "") {
 
 function statCards(t, platform) {
   const evLabel = t.avg_ev == null ? "—" : `${t.avg_ev > 0 ? "+" : ""}${t.avg_ev.toFixed(1)}%`;
-  const roiEstimated = t.roi_estimated && t.roi != null;
-  const roiLabel = pct(t.roi) + (roiEstimated ? "*" : "");
-  const roiTitle = roiEstimated
-    ? "* Some stakes are assumed at $10 where the original wager wasn't recorded."
-    : "";
 
   const netProfit = card("Net Profit", money(t.profit), `${t.entries} entries`, signClass(t.profit));
   const legHitRate = card("Leg Hit Rate", pct(t.leg_hit_rate), `${t.leg_hits}/${t.leg_hits + t.leg_misses} legs`);
-  const roi = card("ROI", roiLabel, "net profit ÷ total staked", signClass(t.roi), roiTitle);
+  const roi = card("ROI", pct(t.roi), "net profit ÷ total staked", signClass(t.roi));
 
   // The Overall (cross-platform) view only shows the metrics that are
   // comparable across platforms; per-platform tabs show the full set.
@@ -226,8 +221,68 @@ function topRow(label, entry) {
   </div>`;
 }
 
-function recentSection(recent) {
+function platformRowClass(platform) {
+  if (platform === "prizepicks") return "row-pp";
+  if (platform === "sleeper") return "row-sleeper";
+  return "";
+}
+
+function platformBadge(platform) {
+  if (platform === "prizepicks") return `<span class="platform-pill prizepicks">PrizePicks</span>`;
+  if (platform === "sleeper") return `<span class="platform-pill sleeper">Sleeper</span>`;
+  return `<span class="platform-pill">${platform || "—"}</span>`;
+}
+
+function recentLegend(showPlatforms) {
+  const legCodes = [
+    ["OH", "Over hit"],
+    ["OM", "Over miss"],
+    ["OP", "Over push"],
+    ["UH", "Under hit"],
+    ["UM", "Under miss"],
+    ["UP", "Under push"],
+  ];
+  const parlayCodes = [
+    ["W", "Parlay win"],
+    ["L", "Parlay loss"],
+    ["P", "Parlay push"],
+  ];
+  const codeItems = (pairs) =>
+    pairs
+      .map(
+        ([code, label]) =>
+          `<span class="legend-item"><span class="legend-code">${code}</span> ${label}</span>`
+      )
+      .join("");
+
+  const platformGroup = showPlatforms
+    ? `<div class="legend-group">
+        <span class="legend-title">Platforms</span>
+        <span class="legend-item"><span class="legend-swatch prizepicks" aria-hidden="true"></span> PrizePicks</span>
+        <span class="legend-item"><span class="legend-swatch sleeper" aria-hidden="true"></span> Sleeper</span>
+      </div>`
+    : "";
+
+  return `<div class="recent-legend" aria-label="Legend">
+    ${platformGroup}
+    <div class="legend-group">
+      <span class="legend-title">Leg codes</span>
+      ${codeItems(legCodes)}
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Parlay</span>
+      ${codeItems(parlayCodes)}
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Other</span>
+      <span class="legend-item"><span class="legend-code">promo</span> Sleeper promo leg</span>
+    </div>
+  </div>`;
+}
+
+function recentSection(recent, platform) {
   if (!recent || !recent.length) return "";
+  const showPlatform = platform === "overall";
   const rows = recent
     .map((e) => {
       const legParts = e.legs.map(
@@ -238,7 +293,10 @@ function recentSection(recent) {
           `<span class="promo-leg">${l.name} <span class="leg-res ${l.result}">${l.ou}${l.result}</span> <small>promo</small></span>`
       );
       const legs = legParts.concat(promoParts).join(" · ");
-      return `<tr>
+      const rowClass = showPlatform ? platformRowClass(e.platform) : "";
+      const platformCell = showPlatform ? `<td>${platformBadge(e.platform)}</td>` : "";
+      return `<tr class="${rowClass}">
+        ${platformCell}
         <td>${e.date}</td>
         <td><span class="pill ${e.outcome}">${e.outcome === "win" ? "W" : e.outcome === "loss" ? "L" : "P"}</span></td>
         <td class="legs-cell">${legs}</td>
@@ -246,13 +304,15 @@ function recentSection(recent) {
       </tr>`;
     })
     .join("");
+  const platformHeader = showPlatform ? "<th>Platform</th>" : "";
   return `<section class="section">
     <h2>Recent Picks (${recent.length})</h2>
     <div class="card" style="overflow-x:auto;padding:0">
       <table>
-        <thead><tr><th>Date</th><th>Result</th><th>Legs</th><th class="num">Profit</th></tr></thead>
+        <thead><tr>${platformHeader}<th>Date</th><th>Result</th><th>Legs</th><th class="num">Profit</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
+      ${recentLegend(showPlatform)}
     </div>
   </section>`;
 }
