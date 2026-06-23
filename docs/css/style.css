@@ -140,6 +140,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .stat-label {
@@ -153,7 +154,9 @@ body {
   font-family: var(--mono);
   font-size: 1.9rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .stat-sub { font-size: 0.78rem; color: var(--text-dim); }
@@ -390,5 +393,4 @@ details.crosscheck summary {
 
 @media (max-width: 560px) {
   .brand h1 { font-size: 1.9rem; }
-  .stat-value { font-size: 1.5rem; }
 }

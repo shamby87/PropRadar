@@ -71,6 +71,29 @@ function render(platform) {
   renderBars("league-bars", block.breakdowns.by_league);
   renderBars("ou-bars", block.breakdowns.by_ou);
   renderStatGroups("stat-bars", block.breakdowns.by_stat_by_sport);
+  fitStatValues(root);
+}
+
+let statFitObserver;
+function fitStatValues(scope) {
+  const minPx = 0.85 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+  function shrink(el) {
+    el.style.fontSize = "";
+    let size = parseFloat(getComputedStyle(el).fontSize);
+    while (el.scrollWidth > el.clientWidth && size > minPx) {
+      size -= 0.5;
+      el.style.fontSize = `${size}px`;
+    }
+  }
+
+  scope.querySelectorAll(".stat-value").forEach(shrink);
+
+  statFitObserver?.disconnect();
+  statFitObserver = new ResizeObserver(() => {
+    scope.querySelectorAll(".stat-value").forEach(shrink);
+  });
+  scope.querySelectorAll(".stat-grid").forEach((grid) => statFitObserver.observe(grid));
 }
 
 function labelFor(platform) {
