@@ -231,18 +231,36 @@ function renderStatGroups(containerId, sports) {
     .join("");
 }
 
+function streakDateRange(streak) {
+  if (!streak || !streak.date_start) return "";
+  return streak.date_start === streak.date_end
+    ? streak.date_start
+    : `${streak.date_start} – ${streak.date_end}`;
+}
+
+function streakValue(streak, pillClass) {
+  const dates = streakDateRange(streak);
+  const dateHtml = dates ? ` <span class="stat-sub">${dates}</span>` : "";
+  return `<span><span class="pill ${pillClass}">${streak.length}</span>${dateHtml}</span>`;
+}
+
+function streakRow(label, streak, pillClass) {
+  return `<div class="bar-row" style="grid-template-columns:1fr auto">
+    <span>${label}</span>
+    ${streakValue(streak, pillClass)}
+  </div>`;
+}
+
 function streaksAndTops(block) {
   const s = block.streaks;
-  const cur = s.current && s.current.type
-    ? `<span class="pill ${s.current.type}">${s.current.length}</span> ${s.current.type} streak`
-    : "—";
+  const cur = s.current && s.current.type ? streakValue(s.current, s.current.type) : "—";
   return `<section class="section two-col">
     <div>
-      <h2>Streaks</h2>
+      <h2>Pick Streaks</h2>
       <div class="card">
-        <div class="bar-row" style="grid-template-columns:1fr auto"><span>Current</span><span>${cur}</span></div>
-        <div class="bar-row" style="grid-template-columns:1fr auto"><span>Longest win streak</span><span class="pill win">${s.longest_win}</span></div>
-        <div class="bar-row" style="grid-template-columns:1fr auto"><span>Longest loss streak</span><span class="pill loss">${s.longest_loss}</span></div>
+        <div class="bar-row" style="grid-template-columns:1fr auto"><span>Current streak</span><span>${cur}</span></div>
+        ${streakRow("Longest win streak", s.longest_win, "win")}
+        ${streakRow("Longest loss streak", s.longest_loss, "loss")}
       </div>
     </div>
     <div>

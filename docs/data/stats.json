@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T20:51:09.800732+00:00",
+  "generated_at": "2026-06-23T21:07:21.611585+00:00",
   "site_title": "PropRadar",
   "site_tagline": "Sports betting model performance",
   "baseline_odds": 1.05,
@@ -2122,11 +2122,21 @@
       ],
       "streaks": {
         "current": {
-          "type": "loss",
-          "length": 4
+          "type": "win",
+          "length": 2,
+          "date_start": "06/10/26",
+          "date_end": "06/13/26"
         },
-        "longest_win": 11,
-        "longest_loss": 11
+        "longest_win": {
+          "length": 9,
+          "date_start": "12/20/24",
+          "date_end": "12/21/24"
+        },
+        "longest_loss": {
+          "length": 10,
+          "date_start": "12/08/24",
+          "date_end": "12/15/24"
+        }
       },
       "best": [
         {
@@ -5699,11 +5709,21 @@
       ],
       "streaks": {
         "current": {
-          "type": "loss",
-          "length": 4
+          "type": "win",
+          "length": 2,
+          "date_start": "06/10/26",
+          "date_end": "06/13/26"
         },
-        "longest_win": 4,
-        "longest_loss": 10
+        "longest_win": {
+          "length": 8,
+          "date_start": "09/15/24",
+          "date_end": "09/26/24"
+        },
+        "longest_loss": {
+          "length": 7,
+          "date_start": "02/01/26",
+          "date_end": "02/11/26"
+        }
       },
       "best": [
         {
@@ -8852,10 +8872,20 @@
       "streaks": {
         "current": {
           "type": "loss",
-          "length": 1
+          "length": 1,
+          "date_start": "02/08/26",
+          "date_end": "02/08/26"
         },
-        "longest_win": 11,
-        "longest_loss": 6
+        "longest_win": {
+          "length": 9,
+          "date_start": "12/20/24",
+          "date_end": "12/21/24"
+        },
+        "longest_loss": {
+          "length": 13,
+          "date_start": "12/05/24",
+          "date_end": "12/15/24"
+        }
       },
       "best": [
         {

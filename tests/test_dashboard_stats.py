@@ -290,8 +290,35 @@ def test_profit_over_time_is_cumulative(sample_entries):
 
 def test_streaks(sample_entries):
     streaks = stats.compute_platform_stats(sample_entries)["streaks"]
-    assert streaks["longest_win"] == 1
-    assert streaks["longest_loss"] == 1
+    assert streaks["longest_win"] == {"length": 2, "date_start": "06/01/25", "date_end": "06/01/25"}
+    assert streaks["longest_loss"] == {"length": 1, "date_start": "06/02/25", "date_end": "06/02/25"}
+    assert streaks["current"] == {
+        "type": "win",
+        "length": 1,
+        "date_start": "06/03/25",
+        "date_end": "06/03/25",
+    }
+
+
+def test_streaks_per_pick_not_parlay():
+    entries = [
+        ParlayEntry(
+            "sleeper",
+            date(2025, 6, 1),
+            -10.0,
+            [Leg("A", "NBA", "Pts", "O", "M"), Leg("B", "NBA", "Pts", "O", "M")],
+        ),
+        ParlayEntry(
+            "sleeper",
+            date(2025, 6, 2),
+            15.0,
+            [Leg("C", "NBA", "Pts", "O", "H")],
+        ),
+    ]
+    streaks = stats.compute_platform_stats(entries)["streaks"]
+    assert streaks["longest_loss"] == {"length": 2, "date_start": "06/01/25", "date_end": "06/01/25"}
+    assert streaks["current"]["type"] == "win"
+    assert streaks["current"]["length"] == 1
 
 
 def test_recent_and_top_lists(sample_entries):

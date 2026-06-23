@@ -190,28 +190,74 @@ def _profit_over_time(entries: list[ParlayEntry]) -> list[dict]:
     return series
 
 
+def _fmt_streak_date(day: date | None) -> str | None:
+    return day.strftime("%m/%d/%y") if day else None
+
+
+def _streak_dates(start: date | None, end: date | None) -> dict:
+    return {"date_start": _fmt_streak_date(start), "date_end": _fmt_streak_date(end)}
+
+
+def _graded_picks(entries: list[ParlayEntry]) -> list[tuple[date, str]]:
+    """Chronological graded PropRadar picks (hits and misses only)."""
+    picks: list[tuple[date, str]] = []
+    for entry in sorted(entries, key=lambda e: e.date):
+        for leg in entry.legs:
+            if leg.result == "H":
+                picks.append((entry.date, "win"))
+            elif leg.result == "M":
+                picks.append((entry.date, "loss"))
+    return picks
+
+
 def _streaks(entries: list[ParlayEntry]) -> dict:
-    ordered = [e for e in sorted(entries, key=lambda e: e.date) if e.outcome != "push"]
+    empty_current = {"type": None, "length": 0, "date_start": None, "date_end": None}
+    empty_longest = {"length": 0, "date_start": None, "date_end": None}
+    picks = _graded_picks(entries)
+    if not picks:
+        return {
+            "current": empty_current,
+            "longest_win": empty_longest,
+            "longest_loss": empty_longest,
+        }
 
     longest_win = longest_loss = 0
-    run_type = None
-    run_len = 0
-    for entry in ordered:
-        if entry.outcome == run_type:
-            run_len += 1
-        else:
-            run_type = entry.outcome
-            run_len = 1
-        if run_type == "win":
-            longest_win = max(longest_win, run_len)
-        else:
-            longest_loss = max(longest_loss, run_len)
+    best_win_dates = best_loss_dates = (None, None)
 
-    current = {"type": run_type, "length": run_len} if ordered else {"type": None, "length": 0}
+    run_type: str | None = None
+    run_len = 0
+    run_start: date | None = None
+    run_end: date | None = None
+
+    def _record_longest() -> None:
+        nonlocal longest_win, longest_loss, best_win_dates, best_loss_dates
+        if run_type == "win" and run_len >= longest_win:
+            longest_win = run_len
+            best_win_dates = (run_start, run_end)
+        elif run_type == "loss" and run_len >= longest_loss:
+            longest_loss = run_len
+            best_loss_dates = (run_start, run_end)
+
+    for pick_date, outcome in picks:
+        if outcome == run_type:
+            run_len += 1
+            run_end = pick_date
+        else:
+            _record_longest()
+            run_type = outcome
+            run_len = 1
+            run_start = pick_date
+            run_end = pick_date
+    _record_longest()
+
     return {
-        "current": current,
-        "longest_win": longest_win,
-        "longest_loss": longest_loss,
+        "current": {
+            "type": run_type,
+            "length": run_len,
+            **_streak_dates(run_start, run_end),
+        },
+        "longest_win": {"length": longest_win, **_streak_dates(*best_win_dates)},
+        "longest_loss": {"length": longest_loss, **_streak_dates(*best_loss_dates)},
     }
 
 
