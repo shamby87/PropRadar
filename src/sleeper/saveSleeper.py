@@ -92,6 +92,9 @@ def main():
             profit = max(profit, 0)
 
         fullEntry = buildLegRows(entry)
+        if not fullEntry:
+            utils.logMsg(f"saveSleeper: skipping parlay {entry.get('parlay_id', '')} with no recordable legs")
+            continue
 
         utils.logMsg(f'Date: {date}, Profit: {profit}, Promo: {promo}')
         for e in fullEntry:

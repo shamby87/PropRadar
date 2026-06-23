@@ -34,14 +34,27 @@ function applyBranding(data) {
 }
 
 function bindTabs() {
-  document.querySelectorAll(".tab").forEach((tab) => {
+  const tabs = Array.from(document.querySelectorAll(".tab"));
+
+  function setActive(active) {
+    tabs.forEach((t) => {
+      const isActive = t === active;
+      t.classList.toggle("is-active", isActive);
+      t.setAttribute("aria-selected", isActive ? "true" : "false");
+      t.tabIndex = isActive ? 0 : -1;
+    });
+  }
+
+  tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("is-active"));
-      tab.classList.add("is-active");
+      setActive(tab);
       activePlatform = tab.dataset.platform;
       render(activePlatform);
     });
   });
+
+  const initiallyActive = tabs.find((t) => t.classList.contains("is-active")) || tabs[0];
+  if (initiallyActive) setActive(initiallyActive);
 }
 
 function render(platform) {
@@ -347,12 +360,14 @@ function recentSection(recent, platform) {
   const showPlatform = platform === "overall";
   const rows = recent
     .map((e) => {
+      const esc = (v) =>
+        String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
       const legParts = e.legs.map(
-        (l) => `${l.name} <span class="leg-res ${l.result}">${l.ou}${l.result}</span>`
+        (l) => `${esc(l.name)} <span class="leg-res ${l.result}">${l.ou}${l.result}</span>`
       );
       const promoParts = (e.promo_legs || []).map(
         (l) =>
-          `<span class="promo-leg">${l.name} <span class="leg-res ${l.result}">${l.ou}${l.result}</span> <small>promo</small></span>`
+          `<span class="promo-leg">${esc(l.name)} <span class="leg-res ${l.result}">${l.ou}${l.result}</span> <small>promo</small></span>`
       );
       const legs = legParts.concat(promoParts).join(" · ");
       const rowClass = showPlatform ? platformRowClass(e.platform) : "";

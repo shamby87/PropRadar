@@ -1,5 +1,5 @@
 // Chart.js rendering helpers for the PropRadar dashboard.
-// Exposes window.PropRadarCharts with render helpers; instances are tracked so
+// Exposes global `PropRadarCharts` with render helpers; instances are tracked so
 // they can be destroyed when switching platform tabs.
 
 const PropRadarCharts = (() => {

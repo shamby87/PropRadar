@@ -109,6 +109,9 @@ def main():
 
             fullEntry.append({'name': player['name'], 'league': player['league'], 'stat': stat, 'ou': ou, 'result': checkResult(ou, line, score)})
 
+        if not fullEntry:
+            continue
+
         print(f'Date: {date}, Wager: {wager}, Profit: {profit}, Promo:{None if promo == None else type}')
         for e in fullEntry:
             print(e)
