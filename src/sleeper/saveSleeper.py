@@ -10,6 +10,7 @@ import os
 import pytz
 from . import sleepUtils
 from .. import utils
+from ..dashboard import export as dashboard_export
 
 def main():
     tz = pytz.timezone('US/Central')
@@ -84,41 +85,92 @@ def main():
             continue
         date = date.date().strftime('%m/%d/%y')
 
+        wager = float(entry['currency_amount'])
         profit = (float(entry['graded_payout']) - entry['currency_amount'])
         promo = entry['display_data'].get('promo_type', '')
         if promo == 'protected_pick':
             profit = max(profit, 0)
 
-        fullEntry = []
-        legs = entry['legs']
-        for p in legs:
-            winLoss = p['status']
-            line = p['line']
-            if winLoss == 'canceled' or line['metadata'].get('promotion', '') == 'true':
-                continue
-            ou = 'O' if line['outcome'] == 'over' else 'U'
-            payout = line['payout_multiplier']
-            name = f"{line['subject']['first_name']} {line['subject']['last_name']}"
-            league = line['sport'].upper()
-            stat = getStatName(line['wager_type'])
-            result = 'H' if winLoss == 'won' else ('M' if winLoss == 'lost' else 'P')
-
-            fullEntry.append({'name': name, 'league': league, 'stat': stat, 'payout': payout, 'ou': ou, 'result': result})
+        fullEntry = buildLegRows(entry)
+        if not fullEntry:
+            utils.logMsg(f"saveSleeper: skipping parlay {entry.get('parlay_id', '')} with no recordable legs")
+            continue
 
         utils.logMsg(f'Date: {date}, Profit: {profit}, Promo: {promo}')
         for e in fullEntry:
             utils.logMsg(e)
         if recordEntry():
-            for e in fullEntry:
-                worksheet.update([[date, e['name'], e['league'], e['stat'], e['payout'], e['ou'], e['result']]], f'B{row}:H{row}', raw=False)
+            for i, e in enumerate(fullEntry):
+                is_last = i == len(fullEntry) - 1
+                row_values = formatSheetRow(date, e, profit if is_last else None, wager if is_last else None)
+                end_col = 'J' if is_last else 'H'
+                worksheet.update([row_values], f'B{row}:{end_col}{row}', raw=False)
                 row += 1
-            
-            worksheet.update_acell(f'I{row-1}', profit)
             row += 1
         elif recordMisc():
             worksheet.update_cell(miscRow, miscCol, date)
             worksheet.update_cell(miscRow, miscCol+1, profit)
             miscRow += 1
+
+    dashboard_export.export_all()
+
+def formatSheetRow(date, leg, profit=None, wager=None):
+    """Build one worksheet row (columns B onward) for a leg.
+
+    Profit and wager are parlay-level fields written only on the final leg row
+    (columns I and J); intermediate legs leave those columns blank.
+    """
+    row = [date, leg['name'], leg['league'], leg['stat'], leg['payout'], leg['ou'], leg['result']]
+    if profit is not None:
+        row.append(profit)
+    if wager is not None:
+        row.append(wager)
+    return row
+
+
+def buildLegRows(entry):
+    """Build the sheet rows (one dict per leg) for a single parlay ``entry``.
+
+    Canceled legs are skipped. Promo legs (Sleeper-provided discount/boost) are
+    kept but written with a marker league (see :func:`getPromoLeague`) so the
+    dashboard excludes them from PropRadar's own sport/stat/hit-rate analytics
+    while still recording the leg's stat/payout/O-U/result.
+    """
+    parlayPromo = entry.get('display_data', {}).get('promo_type', '')
+    fullEntry = []
+    for p in entry['legs']:
+        winLoss = p['status']
+        line = p['line']
+        if winLoss == 'canceled':
+            continue
+        ou = 'O' if line['outcome'] == 'over' else 'U'
+        payout = line['payout_multiplier']
+        name = f"{line['subject']['first_name']} {line['subject']['last_name']}"
+        stat = getStatName(line['wager_type'])
+        result = 'H' if winLoss == 'won' else ('M' if winLoss == 'lost' else 'P')
+
+        if line['metadata'].get('promotion', '') == 'true':
+            promoType = line['metadata'].get('promotion_type') or parlayPromo
+            league = getPromoLeague(promoType)
+        else:
+            league = line['sport'].upper()
+
+        fullEntry.append({'name': name, 'league': league, 'stat': stat, 'payout': payout, 'ou': ou, 'result': result})
+    return fullEntry
+
+def getPromoLeague(promoType):
+    """Map a Sleeper promo type to the marker written in the League column.
+
+    The dashboard treats these markers as promo (non-PropRadar) legs. Values
+    mirror the ``promotion_type`` / ``display_data.promo_type`` strings returned
+    by the ``my_parlays`` API.
+    """
+    match (promoType or '').lower():
+        case 'over_boost':
+            return 'Over Boost'
+        case 'line_discount':
+            return 'Line Discount'
+    return 'Promo'
 
 def getStatName(name):
     match name:
