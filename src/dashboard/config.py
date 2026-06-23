@@ -9,7 +9,8 @@ leg row, followed by a blank separator row.
     C   Player
     D   League / sport
     E   Stat            (abbreviated, see saveSleeper.getStatName)
-    F   Payout          (Sleeper payout multiplier; empty for PrizePicks)
+    F   Payout          (Sleeper payout multiplier; blank for PrizePicks — the
+                         dashboard assigns the standard -119 leg price instead)
     G   O/U             ("O" or "U")
     H   Result          ("H" hit, "M" miss, "P" push)
     I   Profit          (parlay-level P/L, only on the last leg row)
@@ -41,6 +42,11 @@ VALID_RESULTS = {"H", "M", "P"}
 # uses a realized formula (avg payout multiplier of hitting picks - 1) rather
 # than this baseline, but the value is still surfaced in the exported payload.
 FAIR_ODDS_BASELINE = 1.05
+
+# PrizePicks prices standard legs at -119 (based on 5-6 leg flex plays).
+# Decimal payout multiplier = 1 + 100/119; used as the synthetic per-leg price
+# when computing Est. Edge (column F is blank on PrizePicks sheet rows).
+PRIZEPICKS_STANDARD_LEG_PAYOUT = 1.0 + 100.0 / 119.0
 
 # Essentially every recorded Sleeper parlay is a single Sleeper promo pick plus
 # one or more PropRadar picks. Older sheet rows omit the promo leg, so we credit

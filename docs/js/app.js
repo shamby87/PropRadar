@@ -91,33 +91,54 @@ function signClass(v) {
   return v > 0 ? "pos" : "neg";
 }
 
-function card(label, value, sub, cls = "", title = "") {
-  const titleAttr = title ? ` title="${title}"` : "";
-  return `<div class="card stat-card"${titleAttr}>
+function card(label, value, sub, cls = "", tooltip = "") {
+  const tooltipClass = tooltip ? " has-tooltip" : "";
+  const tooltipHtml = tooltip
+    ? `<span class="stat-tooltip" role="tooltip">${tooltip}</span>`
+    : "";
+  const tabIndex = tooltip ? ' tabindex="0"' : "";
+  return `<div class="card stat-card${tooltipClass}"${tabIndex}>
     <span class="stat-label">${label}</span>
     <span class="stat-value ${cls}">${value}</span>
     <span class="stat-sub">${sub || ""}</span>
+    ${tooltipHtml}
   </div>`;
 }
 
 function statCards(t, platform) {
   const evLabel = t.avg_ev == null ? "—" : `${t.avg_ev > 0 ? "+" : ""}${t.avg_ev.toFixed(1)}%`;
+  const evSubByPlatform = {
+    overall: "per pick across all platforms",
+    prizepicks: "per PropRadar pick (assuming -119 legs)",
+  };
+  const evSub = evSubByPlatform[platform] || "per PropRadar pick";
 
   const netProfit = card("Net Profit", money(t.profit), `${t.entries} entries`, signClass(t.profit));
   const legHitRate = card("Leg Hit Rate", pct(t.leg_hit_rate), `${t.leg_hits}/${t.leg_hits + t.leg_misses} legs`);
   const roi = card("ROI", pct(t.roi), "net profit ÷ total staked", signClass(t.roi));
+  const edgeTooltipByPlatform = {
+    overall:
+      "Leg-pooled across all graded picks. Sleeper uses posted line prices; PrizePicks legs assume -119 (≈1.84× payout).",
+    prizepicks:
+      "Est. Edge assumes each PrizePicks leg has an implied price at -119 (≈1.84× payout). Calculated from 5 and 6 leg flex play payouts.",
+  };
+  const avgEdge = card(
+    "Avg Est. Edge",
+    evLabel,
+    evSub,
+    signClass(t.avg_ev),
+    edgeTooltipByPlatform[platform] || ""
+  );
 
-  // The Overall (cross-platform) view only shows the metrics that are
-  // comparable across platforms; per-platform tabs show the full set.
   const cards =
     platform === "overall"
-      ? [netProfit, legHitRate, roi]
+      ? [netProfit, legHitRate, roi, avgEdge]
       : [
           netProfit,
           card("Parlay Win Rate", pct(t.parlay_win_rate), `${t.wins}W · ${t.losses}L${t.pushes ? ` · ${t.pushes}P` : ""}`),
           legHitRate,
           roi,
-          card("Avg Est. Edge", evLabel, "per PropRadar pick", signClass(t.avg_ev)),
+          avgEdge,
           card("Avg Legs", t.avg_legs_per_parlay == null ? "—" : t.avg_legs_per_parlay.toFixed(2), "per parlay (incl. promo)"),
         ];
 
@@ -275,7 +296,7 @@ function recentLegend(showPlatforms) {
     </div>
     <div class="legend-group">
       <span class="legend-title">Other</span>
-      <span class="legend-item"><span class="legend-code">promo</span> Sleeper promo leg</span>
+      <span class="legend-item"><span class="legend-code">promo</span> Promo leg</span>
     </div>
   </div>`;
 }

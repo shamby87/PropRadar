@@ -194,6 +194,12 @@ def parse_rows(rows: list[list[str]], platform: str) -> list[ParlayEntry]:
         profit_raw = (_col(row, config.COL_PROFIT) or "").strip()
         profit = _parse_float(profit_raw) if profit_raw else None
         league = (_col(row, config.COL_LEAGUE) or "").strip().upper()
+        # PrizePicks rows leave column F blank (older rows may still have the prop
+        # line there). Assign the standard -119 leg price instead of reading F.
+        if platform == "prizepicks":
+            payout = config.PRIZEPICKS_STANDARD_LEG_PAYOUT
+        else:
+            payout = _parse_float(_col(row, config.COL_PAYOUT))
         pending_legs.append(
             Leg(
                 name=(_col(row, config.COL_PLAYER) or "").strip(),
@@ -201,7 +207,7 @@ def parse_rows(rows: list[list[str]], platform: str) -> list[ParlayEntry]:
                 stat=(_col(row, config.COL_STAT) or "").strip(),
                 ou=(_col(row, config.COL_OU) or "").strip().upper(),
                 result=result,
-                payout=_parse_float(_col(row, config.COL_PAYOUT)),
+                payout=payout,
                 is_promo=league in config.PROMO_LEAGUE_MARKERS,
             )
         )

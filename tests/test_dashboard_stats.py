@@ -182,6 +182,8 @@ def test_avg_legs_includes_promo_legs():
 
 
 def test_parse_prizepicks_wager_column():
+    from src.dashboard import config
+
     rows = [
         ["", "Date", "Player", "League", "Stat", "Payout", "O/U", "Result", "Profit", "Wager"],
         ["", "06/01/25", "LeBron James", "NBA", "Pts", "", "O", "H", "", ""],
@@ -194,8 +196,25 @@ def test_parse_prizepicks_wager_column():
     assert entries[0].wager == pytest.approx(25.0)
     assert entries[0].profit == pytest.approx(15.0)
     assert entries[1].wager == pytest.approx(10.0)
+    assert all(leg.payout == config.PRIZEPICKS_STANDARD_LEG_PAYOUT for leg in entries[0].legs)
     totals = stats.compute_platform_stats(entries)["totals"]
     assert totals["roi"] == pytest.approx(14.29, abs=0.01)
+    # 2 hits, 1 miss at -119: (2 * 1.84) / 3 - 1 ≈ +22.7%
+    assert totals["avg_ev"] == pytest.approx(22.69, abs=0.1)
+
+
+def test_parse_prizepicks_ignores_legacy_line_column_for_edge():
+    """Older PP sheet rows stored the prop line in column F, not a payout multiplier."""
+    from src.dashboard import config
+
+    rows = [
+        ["", "11/05/23", "JaMarr Chase", "NFL", "Rec Yards", "88.5", "U", "H", ""],
+        ["", "11/05/23", "Stefon Diggs", "NFL", "Rec Yards", "90.5", "U", "H", "500.00", "20"],
+    ]
+    entries = parse_rows(rows, "prizepicks")
+    assert all(leg.payout == config.PRIZEPICKS_STANDARD_LEG_PAYOUT for leg in entries[0].legs)
+    # Both legs hit at the standard -119 price: 1.84 / 1 - 1 ≈ +84%.
+    assert stats.compute_platform_stats(entries)["totals"]["avg_ev"] == pytest.approx(84.03, abs=0.1)
 
 
 def test_breakdowns_by_ou(sample_entries):

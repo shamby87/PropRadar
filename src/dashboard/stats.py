@@ -37,10 +37,10 @@ def _avg_ev(entries: list[ParlayEntry]) -> float | None:
     """Realized average per-pick edge (percent) over PropRadar's own picks.
 
     edge = (sum of payout multipliers for graded picks that HIT / number of
-    graded PropRadar picks) - 1, expressed as a percentage. This treats each
-    pick as a standalone $1 bet: a value above 0 means the picks returned more
-    than the stake on average. Pushes and unpriced legs (e.g. PrizePicks) are
-    excluded; promo legs are not PropRadar picks and never counted.
+    graded PropRadar picks) - 1, expressed as a percentage: a value above 0 
+    means the picks returned more than the stake on average. Pushes and legs
+    without a payout are excluded; PrizePicks legs use the standard -119
+    price from config; promo legs are not PropRadar picks and never counted.
     """
     graded_picks = 0
     won_payout = 0.0

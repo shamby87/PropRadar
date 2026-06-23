@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T17:56:42.425625+00:00",
+  "generated_at": "2026-06-23T20:51:09.800732+00:00",
   "site_title": "PropRadar",
   "site_tagline": "Sports betting model performance",
   "baseline_odds": 1.05,
@@ -19,7 +19,7 @@
         "leg_hit_rate": 55.61,
         "avg_legs_per_parlay": 3.1,
         "roi": 46.86,
-        "avg_ev": 1388.53,
+        "avg_ev": 3.48,
         "date_start": "08/11/23",
         "date_end": "06/13/26"
       },
@@ -2143,7 +2143,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 88.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2152,7 +2152,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 90.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2161,7 +2161,7 @@
               "stat": "Rush Yards",
               "ou": "O",
               "result": "H",
-              "payout": 40.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2170,7 +2170,7 @@
               "stat": "Completions",
               "ou": "U",
               "result": "H",
-              "payout": 26.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2179,7 +2179,7 @@
               "stat": "Completions",
               "ou": "U",
               "result": "H",
-              "payout": 21.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2188,7 +2188,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 93.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -2210,7 +2210,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2219,7 +2219,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2228,7 +2228,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2237,7 +2237,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2246,7 +2246,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -2268,7 +2268,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2277,7 +2277,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "H",
-              "payout": 6.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2286,7 +2286,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "H",
-              "payout": 7.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2295,7 +2295,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "P",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2304,7 +2304,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2313,7 +2313,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -2335,7 +2335,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": 21.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2344,7 +2344,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": 26.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2353,7 +2353,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": 31.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -2375,7 +2375,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2384,7 +2384,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2393,7 +2393,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2402,7 +2402,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2411,7 +2411,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -2420,7 +2420,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -3789,7 +3789,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -3798,7 +3798,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -3807,7 +3807,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -3816,7 +3816,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -7783,7 +7783,7 @@
         "leg_hit_rate": 56.07,
         "avg_legs_per_parlay": 4.68,
         "roi": 90.27,
-        "avg_ev": 2883.66,
+        "avg_ev": 3.2,
         "date_start": "08/11/23",
         "date_end": "02/08/26"
       },
@@ -8872,7 +8872,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 88.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8881,7 +8881,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 90.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8890,7 +8890,7 @@
               "stat": "Rush Yards",
               "ou": "O",
               "result": "H",
-              "payout": 40.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8899,7 +8899,7 @@
               "stat": "Completions",
               "ou": "U",
               "result": "H",
-              "payout": 26.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8908,7 +8908,7 @@
               "stat": "Completions",
               "ou": "U",
               "result": "H",
-              "payout": 21.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8917,7 +8917,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": 93.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -8939,7 +8939,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8948,7 +8948,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8957,7 +8957,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8966,7 +8966,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -8975,7 +8975,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -8997,7 +8997,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9006,7 +9006,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "H",
-              "payout": 6.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9015,7 +9015,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "H",
-              "payout": 7.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9024,7 +9024,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "P",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9033,7 +9033,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9042,7 +9042,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9064,7 +9064,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": 21.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9073,7 +9073,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": 26.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9082,7 +9082,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": 31.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9104,7 +9104,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9113,7 +9113,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9122,7 +9122,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9131,7 +9131,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9140,7 +9140,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9149,7 +9149,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9173,7 +9173,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": 15.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9182,7 +9182,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": 74.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9204,7 +9204,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": 26.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9213,7 +9213,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": 27.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9222,7 +9222,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": 21.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9231,7 +9231,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": 32.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9253,7 +9253,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": 16.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9262,7 +9262,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": 52.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9284,7 +9284,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "H",
-              "payout": 27.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9293,7 +9293,7 @@
               "stat": "Outs",
               "ou": "O",
               "result": "M",
-              "payout": 15.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9302,7 +9302,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "H",
-              "payout": 4.5,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9324,7 +9324,7 @@
               "stat": "Strikeouts",
               "ou": "O",
               "result": "M",
-              "payout": 5.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9333,7 +9333,7 @@
               "stat": "Strikeouts",
               "ou": "U",
               "result": "M",
-              "payout": 6.0,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9357,7 +9357,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9366,7 +9366,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9375,7 +9375,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9384,7 +9384,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9406,7 +9406,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9415,7 +9415,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9424,7 +9424,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9433,7 +9433,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9442,7 +9442,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9451,7 +9451,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9473,7 +9473,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9482,7 +9482,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9504,7 +9504,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9513,7 +9513,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9522,7 +9522,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9531,7 +9531,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9540,7 +9540,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9562,7 +9562,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9571,7 +9571,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9580,7 +9580,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9589,7 +9589,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9598,7 +9598,7 @@
               "stat": "Rec Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9620,7 +9620,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9629,7 +9629,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9638,7 +9638,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9660,7 +9660,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9669,7 +9669,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9678,7 +9678,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9687,7 +9687,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9696,7 +9696,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9718,7 +9718,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9727,7 +9727,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9736,7 +9736,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9745,7 +9745,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9754,7 +9754,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9763,7 +9763,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9785,7 +9785,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9794,7 +9794,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9803,7 +9803,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9812,7 +9812,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9821,7 +9821,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9843,7 +9843,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9852,7 +9852,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9861,7 +9861,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9883,7 +9883,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9892,7 +9892,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9901,7 +9901,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9910,7 +9910,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9932,7 +9932,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9941,7 +9941,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9950,7 +9950,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9959,7 +9959,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9968,7 +9968,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -9977,7 +9977,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -9999,7 +9999,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10008,7 +10008,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10017,7 +10017,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10026,7 +10026,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10035,7 +10035,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10057,7 +10057,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10066,7 +10066,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10075,7 +10075,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10084,7 +10084,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10093,7 +10093,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10102,7 +10102,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10124,7 +10124,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10133,7 +10133,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10142,7 +10142,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10151,7 +10151,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10160,7 +10160,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10182,7 +10182,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10191,7 +10191,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10200,7 +10200,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10209,7 +10209,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10218,7 +10218,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10240,7 +10240,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10249,7 +10249,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10258,7 +10258,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10267,7 +10267,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10276,7 +10276,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10285,7 +10285,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10307,7 +10307,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10316,7 +10316,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10325,7 +10325,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10334,7 +10334,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10343,7 +10343,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10365,7 +10365,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10374,7 +10374,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10383,7 +10383,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10405,7 +10405,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10414,7 +10414,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10423,7 +10423,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10432,7 +10432,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10441,7 +10441,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10450,7 +10450,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10472,7 +10472,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10481,7 +10481,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10490,7 +10490,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10499,7 +10499,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10521,7 +10521,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10530,7 +10530,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10539,7 +10539,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10548,7 +10548,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10557,7 +10557,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10579,7 +10579,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10588,7 +10588,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10597,7 +10597,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10606,7 +10606,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10615,7 +10615,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10624,7 +10624,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10646,7 +10646,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10655,7 +10655,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10664,7 +10664,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10673,7 +10673,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10682,7 +10682,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10704,7 +10704,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10713,7 +10713,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10722,7 +10722,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10731,7 +10731,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10740,7 +10740,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10749,7 +10749,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10771,7 +10771,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10780,7 +10780,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10789,7 +10789,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10798,7 +10798,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10807,7 +10807,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10829,7 +10829,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10838,7 +10838,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10847,7 +10847,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10856,7 +10856,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10865,7 +10865,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10874,7 +10874,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10896,7 +10896,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10918,7 +10918,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10940,7 +10940,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10962,7 +10962,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -10984,7 +10984,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -10993,7 +10993,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11002,7 +11002,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11011,7 +11011,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11033,7 +11033,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11042,7 +11042,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11051,7 +11051,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11060,7 +11060,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11069,7 +11069,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11091,7 +11091,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11100,7 +11100,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11109,7 +11109,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11118,7 +11118,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11127,7 +11127,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11149,7 +11149,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11158,7 +11158,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11167,7 +11167,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11176,7 +11176,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11198,7 +11198,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11207,7 +11207,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11216,7 +11216,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11225,7 +11225,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11234,7 +11234,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11256,7 +11256,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11265,7 +11265,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11274,7 +11274,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11296,7 +11296,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11305,7 +11305,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11314,7 +11314,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11323,7 +11323,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11332,7 +11332,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11341,7 +11341,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11363,7 +11363,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11372,7 +11372,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11394,7 +11394,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11403,7 +11403,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11412,7 +11412,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11421,7 +11421,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11430,7 +11430,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11439,7 +11439,7 @@
               "stat": "PR",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11461,7 +11461,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11470,7 +11470,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11479,7 +11479,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11488,7 +11488,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11497,7 +11497,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11506,7 +11506,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11528,7 +11528,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11537,7 +11537,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11546,7 +11546,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11555,7 +11555,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11577,7 +11577,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11586,7 +11586,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11595,7 +11595,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11604,7 +11604,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11613,7 +11613,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11622,7 +11622,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11644,7 +11644,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11653,7 +11653,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11662,7 +11662,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11684,7 +11684,7 @@
               "stat": "PRA",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11693,7 +11693,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11702,7 +11702,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11711,7 +11711,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11720,7 +11720,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11742,7 +11742,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11751,7 +11751,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11760,7 +11760,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11769,7 +11769,7 @@
               "stat": "PA",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11778,7 +11778,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11787,7 +11787,7 @@
               "stat": "PR",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11809,7 +11809,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11818,7 +11818,7 @@
               "stat": "Pass Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11827,7 +11827,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11836,7 +11836,7 @@
               "stat": "Pass Yards",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11845,7 +11845,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11867,7 +11867,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11876,7 +11876,7 @@
               "stat": "PRA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11885,7 +11885,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11894,7 +11894,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11916,7 +11916,7 @@
               "stat": "PA",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11925,7 +11925,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11934,7 +11934,7 @@
               "stat": "Points",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11943,7 +11943,7 @@
               "stat": "Points",
               "ou": "O",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
@@ -11965,7 +11965,7 @@
               "stat": "Rush Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11974,7 +11974,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11983,7 +11983,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "H",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -11992,7 +11992,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             },
             {
@@ -12001,7 +12001,7 @@
               "stat": "Rec Yards",
               "ou": "U",
               "result": "M",
-              "payout": null,
+              "payout": 1.8403361344537816,
               "is_promo": false
             }
           ],
