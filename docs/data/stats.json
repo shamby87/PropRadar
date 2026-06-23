@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T16:30:27.924360+00:00",
+  "generated_at": "2026-06-23T17:56:42.425625+00:00",
   "site_title": "PropRadar",
   "site_tagline": "Sports betting model performance",
   "baseline_odds": 1.05,
@@ -17,7 +17,7 @@
         "leg_misses": 578,
         "leg_pushes": 15,
         "leg_hit_rate": 55.61,
-        "avg_legs_per_parlay": 3.09,
+        "avg_legs_per_parlay": 3.1,
         "roi": 46.86,
         "avg_ev": 1388.53,
         "date_start": "08/11/23",
@@ -2649,7 +2649,7 @@
           "promo_legs": [
             {
               "name": "Alex Pereira",
-              "league": "MMA",
+              "league": "LINE DISCOUNT",
               "stat": "significant_strikes",
               "ou": "O",
               "result": "M",
@@ -2658,7 +2658,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1371565065907470336"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2681,7 +2681,7 @@
           "promo_legs": [
             {
               "name": "Diego Lopes",
-              "league": "MMA",
+              "league": "OVER BOOST",
               "stat": "total_fight_time",
               "ou": "O",
               "result": "M",
@@ -2690,7 +2690,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1370537041216958464"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2713,7 +2713,7 @@
           "promo_legs": [
             {
               "name": "Allisha Gray",
-              "league": "WNBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -2722,7 +2722,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1369041367916871680"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2745,7 +2745,7 @@
           "promo_legs": [
             {
               "name": "Ronald Acu\u00f1a",
-              "league": "MLB",
+              "league": "LINE DISCOUNT",
               "stat": "hits_runs_rbis",
               "ou": "O",
               "result": "H",
@@ -2754,7 +2754,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1366491635763904512"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2777,7 +2777,7 @@
           "promo_legs": [
             {
               "name": "Corbin Carroll",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "hits_runs_rbis",
               "ou": "O",
               "result": "H",
@@ -2786,7 +2786,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1364355056127721472"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2809,7 +2809,7 @@
           "promo_legs": [
             {
               "name": "Reid Detmers",
-              "league": "MLB",
+              "league": "LINE DISCOUNT",
               "stat": "strike_outs",
               "ou": "O",
               "result": "H",
@@ -2818,7 +2818,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1364317308671004672"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2841,7 +2841,7 @@
           "promo_legs": [
             {
               "name": "Jalen Brunson",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -2850,7 +2850,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1363992670287962112"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2870,9 +2870,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1361780593758572544"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2895,7 +2905,7 @@
           "promo_legs": [
             {
               "name": "Dearica Hamby",
-              "league": "WNBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -2904,7 +2914,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1361114962994429952"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2927,7 +2937,7 @@
           "promo_legs": [
             {
               "name": "RJ Barrett",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -2936,7 +2946,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1356744917463863296"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2959,7 +2969,7 @@
           "promo_legs": [
             {
               "name": "Victor Wembanyama",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -2968,7 +2978,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1351633755168571392"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -2991,7 +3001,7 @@
           "promo_legs": [
             {
               "name": "Jalen Duren",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3000,7 +3010,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1351634114079363072"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3020,9 +3030,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1348431472603709440"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3045,7 +3065,7 @@
           "promo_legs": [
             {
               "name": "Brandon Ingram",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3054,7 +3074,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1346598130501586944"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3077,7 +3097,7 @@
           "promo_legs": [
             {
               "name": "Tyler Herro",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3086,7 +3106,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1345169939937366016"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3109,7 +3129,7 @@
           "promo_legs": [
             {
               "name": "Yoshinobu Yamamoto",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "strike_outs",
               "ou": "O",
               "result": "M",
@@ -3118,7 +3138,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1345169988008288256"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3150,7 +3170,7 @@
           "promo_legs": [
             {
               "name": "Kawhi Leonard",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3159,7 +3179,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807534610874368"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3191,7 +3211,7 @@
           "promo_legs": [
             {
               "name": "Shohei Ohtani",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "strike_outs",
               "ou": "O",
               "result": "M",
@@ -3200,7 +3220,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807582560190464"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3232,7 +3252,7 @@
           "promo_legs": [
             {
               "name": "Andrei Vasilevskiy",
-              "league": "NHL",
+              "league": "LINE DISCOUNT",
               "stat": "saves",
               "ou": "O",
               "result": "M",
@@ -3241,7 +3261,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807636943519744"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3264,7 +3284,7 @@
           "promo_legs": [
             {
               "name": "Ja'Kobi Gillespie",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3273,7 +3293,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1344023619935694848"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3296,7 +3316,7 @@
           "promo_legs": [
             {
               "name": "Zion Williamson",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3305,7 +3325,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1344061382538051585"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3328,7 +3348,7 @@
           "promo_legs": [
             {
               "name": "AJ Dybantsa",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3337,7 +3357,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1340491283390533632"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3360,7 +3380,7 @@
           "promo_legs": [
             {
               "name": "Lamar Wilkerson",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3369,7 +3389,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333891916558790656"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3392,7 +3412,7 @@
           "promo_legs": [
             {
               "name": "Jalen Duren",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3401,7 +3421,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333929661742198784"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3424,7 +3444,7 @@
           "promo_legs": [
             {
               "name": "Luka Don\u010di\u0107",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3433,7 +3453,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333567229320531968"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3456,7 +3476,7 @@
           "promo_legs": [
             {
               "name": "Jaylen Brown",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3465,7 +3485,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333226234691194880"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3488,7 +3508,7 @@
           "promo_legs": [
             {
               "name": "Nate Bittle",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3497,7 +3517,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1332501463909277696"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3520,7 +3540,7 @@
           "promo_legs": [
             {
               "name": "Auston Matthews",
-              "league": "NHL",
+              "league": "OVER BOOST",
               "stat": "shots",
               "ou": "O",
               "result": "M",
@@ -3529,7 +3549,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1332139119924490240"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3552,7 +3572,7 @@
           "promo_legs": [
             {
               "name": "Nick Boyd",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3561,7 +3581,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1331392950067789824"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3584,7 +3604,7 @@
           "promo_legs": [
             {
               "name": "Kawhi Leonard",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3593,7 +3613,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1331392999912919040"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3616,7 +3636,7 @@
           "promo_legs": [
             {
               "name": "Austin Reaves",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3625,7 +3645,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330689548836937728"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3648,7 +3668,7 @@
           "promo_legs": [
             {
               "name": "Lamar Wilkerson",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3657,7 +3677,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330689597021114368"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3680,7 +3700,7 @@
           "promo_legs": [
             {
               "name": "Paolo Banchero",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3689,7 +3709,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330327177001971712"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3712,7 +3732,7 @@
           "promo_legs": [
             {
               "name": "Brice Sensabaugh",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3721,7 +3741,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1327790413309808640"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3744,7 +3764,7 @@
           "promo_legs": [
             {
               "name": "Kevin Porter",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3753,7 +3773,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1327428097351352320"
+          "parlay_id": null
         },
         {
           "platform": "prizepicks",
@@ -3822,9 +3842,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1325957165411753984"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3847,7 +3877,7 @@
           "promo_legs": [
             {
               "name": "Hannes Steinbach",
-              "league": "CBB",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3856,7 +3886,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324891327460052992"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3879,7 +3909,7 @@
           "promo_legs": [
             {
               "name": "Victor Wembanyama",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3888,7 +3918,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324891376088809472"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3911,7 +3941,7 @@
           "promo_legs": [
             {
               "name": "Thijs De Ridder",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -3920,7 +3950,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324528967151017984"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3943,7 +3973,7 @@
           "promo_legs": [
             {
               "name": "LeBron James",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3952,7 +3982,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1323782797445337088"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -3975,7 +4005,7 @@
           "promo_legs": [
             {
               "name": "Keaton Wagler",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -3984,7 +4014,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1323782843775614976"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4007,7 +4037,7 @@
           "promo_legs": [
             {
               "name": "Sam Darnold",
-              "league": "NFL",
+              "league": "LINE DISCOUNT",
               "stat": "passing_yards",
               "ou": "O",
               "result": "H",
@@ -4016,7 +4046,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1322807522913955840"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4039,7 +4069,7 @@
           "promo_legs": [
             {
               "name": "Julius Randle",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -4048,7 +4078,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1322354627340931072"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4071,7 +4101,7 @@
           "promo_legs": [
             {
               "name": "DeMar DeRozan",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -4080,7 +4110,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321992229983641600"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4103,7 +4133,7 @@
           "promo_legs": [
             {
               "name": "Evan Mobley",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -4112,7 +4142,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321629824694898688"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4135,7 +4165,7 @@
           "promo_legs": [
             {
               "name": "Ezra Ausar",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -4144,7 +4174,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321204495157301248"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4167,7 +4197,7 @@
           "promo_legs": [
             {
               "name": "De'Andre Hunter",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -4176,7 +4206,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320542663698571264"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4199,7 +4229,7 @@
           "promo_legs": [
             {
               "name": "Russell Westbrook",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -4208,7 +4238,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320542710590902272"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -4231,7 +4261,7 @@
           "promo_legs": [
             {
               "name": "Kayden Mingo",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -4240,7 +4270,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320180284670345216"
+          "parlay_id": null
         }
       ],
       "sheet_summaries": {}
@@ -4258,7 +4288,7 @@
         "leg_misses": 202,
         "leg_pushes": 0,
         "leg_hit_rate": 54.71,
-        "avg_legs_per_parlay": 2.25,
+        "avg_legs_per_parlay": 2.26,
         "roi": 24.7,
         "avg_ev": 4.02,
         "date_start": "04/07/24",
@@ -6129,7 +6159,7 @@
           "promo_legs": [
             {
               "name": "Alex Pereira",
-              "league": "MMA",
+              "league": "LINE DISCOUNT",
               "stat": "significant_strikes",
               "ou": "O",
               "result": "M",
@@ -6138,7 +6168,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1371565065907470336"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6161,7 +6191,7 @@
           "promo_legs": [
             {
               "name": "Diego Lopes",
-              "league": "MMA",
+              "league": "OVER BOOST",
               "stat": "total_fight_time",
               "ou": "O",
               "result": "M",
@@ -6170,7 +6200,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1370537041216958464"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6193,7 +6223,7 @@
           "promo_legs": [
             {
               "name": "Allisha Gray",
-              "league": "WNBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6202,7 +6232,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1369041367916871680"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6225,7 +6255,7 @@
           "promo_legs": [
             {
               "name": "Ronald Acu\u00f1a",
-              "league": "MLB",
+              "league": "LINE DISCOUNT",
               "stat": "hits_runs_rbis",
               "ou": "O",
               "result": "H",
@@ -6234,7 +6264,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1366491635763904512"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6257,7 +6287,7 @@
           "promo_legs": [
             {
               "name": "Corbin Carroll",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "hits_runs_rbis",
               "ou": "O",
               "result": "H",
@@ -6266,7 +6296,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1364355056127721472"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6289,7 +6319,7 @@
           "promo_legs": [
             {
               "name": "Reid Detmers",
-              "league": "MLB",
+              "league": "LINE DISCOUNT",
               "stat": "strike_outs",
               "ou": "O",
               "result": "H",
@@ -6298,7 +6328,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1364317308671004672"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6321,7 +6351,7 @@
           "promo_legs": [
             {
               "name": "Jalen Brunson",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6330,7 +6360,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1363992670287962112"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6350,9 +6380,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1361780593758572544"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6375,7 +6415,7 @@
           "promo_legs": [
             {
               "name": "Dearica Hamby",
-              "league": "WNBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6384,7 +6424,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1361114962994429952"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6407,7 +6447,7 @@
           "promo_legs": [
             {
               "name": "RJ Barrett",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6416,7 +6456,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1356744917463863296"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6439,7 +6479,7 @@
           "promo_legs": [
             {
               "name": "Victor Wembanyama",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6448,7 +6488,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1351633755168571392"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6471,7 +6511,7 @@
           "promo_legs": [
             {
               "name": "Jalen Duren",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6480,7 +6520,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1351634114079363072"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6500,9 +6540,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1348431472603709440"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6525,7 +6575,7 @@
           "promo_legs": [
             {
               "name": "Brandon Ingram",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6534,7 +6584,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1346598130501586944"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6557,7 +6607,7 @@
           "promo_legs": [
             {
               "name": "Tyler Herro",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6566,7 +6616,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1345169939937366016"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6589,7 +6639,7 @@
           "promo_legs": [
             {
               "name": "Yoshinobu Yamamoto",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "strike_outs",
               "ou": "O",
               "result": "M",
@@ -6598,7 +6648,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1345169988008288256"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6630,7 +6680,7 @@
           "promo_legs": [
             {
               "name": "Kawhi Leonard",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6639,7 +6689,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807534610874368"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6671,7 +6721,7 @@
           "promo_legs": [
             {
               "name": "Shohei Ohtani",
-              "league": "MLB",
+              "league": "OVER BOOST",
               "stat": "strike_outs",
               "ou": "O",
               "result": "M",
@@ -6680,7 +6730,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807582560190464"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6712,7 +6762,7 @@
           "promo_legs": [
             {
               "name": "Andrei Vasilevskiy",
-              "league": "NHL",
+              "league": "LINE DISCOUNT",
               "stat": "saves",
               "ou": "O",
               "result": "M",
@@ -6721,7 +6771,7 @@
             }
           ],
           "total_legs": 3,
-          "parlay_id": "1344807636943519744"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6744,7 +6794,7 @@
           "promo_legs": [
             {
               "name": "Ja'Kobi Gillespie",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6753,7 +6803,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1344023619935694848"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6776,7 +6826,7 @@
           "promo_legs": [
             {
               "name": "Zion Williamson",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6785,7 +6835,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1344061382538051585"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6808,7 +6858,7 @@
           "promo_legs": [
             {
               "name": "AJ Dybantsa",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6817,7 +6867,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1340491283390533632"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6840,7 +6890,7 @@
           "promo_legs": [
             {
               "name": "Lamar Wilkerson",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6849,7 +6899,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333891916558790656"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6872,7 +6922,7 @@
           "promo_legs": [
             {
               "name": "Jalen Duren",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6881,7 +6931,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333929661742198784"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6904,7 +6954,7 @@
           "promo_legs": [
             {
               "name": "Luka Don\u010di\u0107",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -6913,7 +6963,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333567229320531968"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6936,7 +6986,7 @@
           "promo_legs": [
             {
               "name": "Jaylen Brown",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6945,7 +6995,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1333226234691194880"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -6968,7 +7018,7 @@
           "promo_legs": [
             {
               "name": "Nate Bittle",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -6977,7 +7027,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1332501463909277696"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7000,7 +7050,7 @@
           "promo_legs": [
             {
               "name": "Auston Matthews",
-              "league": "NHL",
+              "league": "OVER BOOST",
               "stat": "shots",
               "ou": "O",
               "result": "M",
@@ -7009,7 +7059,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1332139119924490240"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7032,7 +7082,7 @@
           "promo_legs": [
             {
               "name": "Nick Boyd",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7041,7 +7091,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1331392950067789824"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7064,7 +7114,7 @@
           "promo_legs": [
             {
               "name": "Kawhi Leonard",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7073,7 +7123,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1331392999912919040"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7096,7 +7146,7 @@
           "promo_legs": [
             {
               "name": "Austin Reaves",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7105,7 +7155,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330689548836937728"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7128,7 +7178,7 @@
           "promo_legs": [
             {
               "name": "Lamar Wilkerson",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7137,7 +7187,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330689597021114368"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7160,7 +7210,7 @@
           "promo_legs": [
             {
               "name": "Paolo Banchero",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7169,7 +7219,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1330327177001971712"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7192,7 +7242,7 @@
           "promo_legs": [
             {
               "name": "Brice Sensabaugh",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7201,7 +7251,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1327790413309808640"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7224,7 +7274,7 @@
           "promo_legs": [
             {
               "name": "Kevin Porter",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7233,7 +7283,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1327428097351352320"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7253,9 +7303,19 @@
               "is_promo": false
             }
           ],
-          "promo_legs": [],
-          "total_legs": 1,
-          "parlay_id": "1325957165411753984"
+          "promo_legs": [
+            {
+              "name": "Promo",
+              "league": "",
+              "stat": "",
+              "ou": "",
+              "result": "",
+              "payout": null,
+              "is_promo": true
+            }
+          ],
+          "total_legs": 2,
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7278,7 +7338,7 @@
           "promo_legs": [
             {
               "name": "Hannes Steinbach",
-              "league": "CBB",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7287,7 +7347,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324891327460052992"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7310,7 +7370,7 @@
           "promo_legs": [
             {
               "name": "Victor Wembanyama",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7319,7 +7379,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324891376088809472"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7342,7 +7402,7 @@
           "promo_legs": [
             {
               "name": "Thijs De Ridder",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7351,7 +7411,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1324528967151017984"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7374,7 +7434,7 @@
           "promo_legs": [
             {
               "name": "LeBron James",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7383,7 +7443,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1323782797445337088"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7406,7 +7466,7 @@
           "promo_legs": [
             {
               "name": "Keaton Wagler",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7415,7 +7475,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1323782843775614976"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7438,7 +7498,7 @@
           "promo_legs": [
             {
               "name": "Sam Darnold",
-              "league": "NFL",
+              "league": "LINE DISCOUNT",
               "stat": "passing_yards",
               "ou": "O",
               "result": "H",
@@ -7447,7 +7507,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1322807522913955840"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7470,7 +7530,7 @@
           "promo_legs": [
             {
               "name": "Julius Randle",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7479,7 +7539,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1322354627340931072"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7502,7 +7562,7 @@
           "promo_legs": [
             {
               "name": "DeMar DeRozan",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7511,7 +7571,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321992229983641600"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7534,7 +7594,7 @@
           "promo_legs": [
             {
               "name": "Evan Mobley",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7543,7 +7603,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321629824694898688"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7566,7 +7626,7 @@
           "promo_legs": [
             {
               "name": "Ezra Ausar",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "H",
@@ -7575,7 +7635,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1321204495157301248"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7598,7 +7658,7 @@
           "promo_legs": [
             {
               "name": "De'Andre Hunter",
-              "league": "NBA",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7607,7 +7667,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320542663698571264"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7630,7 +7690,7 @@
           "promo_legs": [
             {
               "name": "Russell Westbrook",
-              "league": "NBA",
+              "league": "OVER BOOST",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7639,7 +7699,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320542710590902272"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7662,7 +7722,7 @@
           "promo_legs": [
             {
               "name": "Kayden Mingo",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7671,7 +7731,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1320180284670345216"
+          "parlay_id": null
         },
         {
           "platform": "sleeper",
@@ -7694,7 +7754,7 @@
           "promo_legs": [
             {
               "name": "Xaivian Lee",
-              "league": "CBB",
+              "league": "LINE DISCOUNT",
               "stat": "Pts",
               "ou": "O",
               "result": "M",
@@ -7703,7 +7763,7 @@
             }
           ],
           "total_legs": 2,
-          "parlay_id": "1319455498948321280"
+          "parlay_id": null
         }
       ],
       "sheet_summaries": {}

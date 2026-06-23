@@ -16,36 +16,21 @@ def _round(value: float | None, digits: int = 2) -> float | None:
     return None if value is None else round(value, digits)
 
 
-def _entry_wager(entry: ParlayEntry, default_wager: float | None = None) -> float | None:
-    """Best-available stake for an entry.
-
-    Uses the explicit wager column when present; otherwise falls back to
-    ``default_wager`` (e.g. the typical $10 Sleeper stake). As a last resort a
-    losing parlay's stake is derived from ``abs(profit)``. Returns ``None`` only
-    when no stake can be established.
-    """
-    if entry.wager is not None:
-        return entry.wager
-    if default_wager is not None:
-        return default_wager
-    if entry.profit < 0:
-        return abs(entry.profit)
-    return None
+def _entry_wager(entry: ParlayEntry) -> float | None:
+    """Return the recorded stake for ROI, or None when column J is missing."""
+    return entry.wager
 
 
-def _roi(entries: list[ParlayEntry], default_wager: float | None = None) -> tuple[float | None, bool]:
-    """Return (roi_percent, estimated). ROI is computed over the subset of
-    entries with a known stake so profit and wager stay internally consistent."""
-    known = [(e, _entry_wager(e, default_wager)) for e in entries]
-    known = [(e, w) for e, w in known if w is not None and w > 0]
+def _roi(entries: list[ParlayEntry]) -> float | None:
+    """Return ROI percent over entries with a recorded stake in column J."""
+    known = [(e, w) for e in entries if (w := _entry_wager(e)) is not None]
     if not known:
-        return None, False
+        return None
     total_wager = sum(w for _, w in known)
     total_profit = sum(e.profit for e, _ in known)
-    estimated = any(e.wager is None for e, _ in known)
     if total_wager == 0:
-        return None, estimated
-    return (total_profit / total_wager) * 100.0, estimated
+        return None
+    return (total_profit / total_wager) * 100.0
 
 
 def _avg_ev(entries: list[ParlayEntry]) -> float | None:
@@ -73,7 +58,7 @@ def _avg_ev(entries: list[ParlayEntry]) -> float | None:
     return (won_payout / graded_picks - 1.0) * 100.0
 
 
-def _totals(entries: list[ParlayEntry], default_wager: float | None = None) -> dict:
+def _totals(entries: list[ParlayEntry]) -> dict:
     wins = sum(1 for e in entries if e.outcome == "win")
     losses = sum(1 for e in entries if e.outcome == "loss")
     pushes = sum(1 for e in entries if e.outcome == "push")
@@ -89,7 +74,7 @@ def _totals(entries: list[ParlayEntry], default_wager: float | None = None) -> d
     # Avg legs reflects the real parlay size, including recovered promo legs.
     total_legs = sum(e.total_legs for e in entries)
 
-    roi, roi_estimated = _roi(entries, default_wager)
+    roi = _roi(entries)
     ordered = sorted(entries, key=lambda e: e.date)
 
     return {
@@ -106,7 +91,6 @@ def _totals(entries: list[ParlayEntry], default_wager: float | None = None) -> d
         "leg_hit_rate": _round(100.0 * leg_hits / graded_legs) if graded_legs else None,
         "avg_legs_per_parlay": _round(total_legs / len(entries)) if entries else None,
         "roi": _round(roi),
-        "roi_estimated": roi_estimated,
         "avg_ev": _round(_avg_ev(entries)),
         "date_start": ordered[0].date.strftime("%m/%d/%y") if ordered else None,
         "date_end": ordered[-1].date.strftime("%m/%d/%y") if ordered else None,
@@ -241,7 +225,6 @@ def _top_entries(entries: list[ParlayEntry], size: int) -> tuple[list[dict], lis
 def compute_platform_stats(
     entries: list[ParlayEntry],
     summaries: dict | None = None,
-    default_wager: float | None = None,
 ) -> dict:
     """Full analytics block for a single platform (or the combined set)."""
     recent = sorted(entries, key=lambda e: (e.date, e.profit), reverse=True)[: config.RECENT_LIMIT]
@@ -250,7 +233,7 @@ def compute_platform_stats(
     by_league = [r for r in _breakdown(entries, lambda leg: leg.league) if r["legs"] >= min_legs]
     by_stat_by_sport = [g for g in _breakdown_by_sport(entries) if g["legs"] >= min_legs]
     return {
-        "totals": _totals(entries, default_wager),
+        "totals": _totals(entries),
         "breakdowns": {
             "by_league": by_league,
             "by_stat": _breakdown(entries, lambda leg: leg.stat),

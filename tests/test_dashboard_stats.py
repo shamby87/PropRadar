@@ -4,17 +4,10 @@ from pathlib import Path
 
 import pytest
 
-from src.dashboard import sleeper_enrich, stats
-from src.dashboard.sheet_reader import Leg, ParlayEntry, parse_rows
+from src.dashboard import stats
+from src.dashboard.sheet_reader import Leg, ParlayEntry, apply_assumed_sleeper_promos, parse_rows
 
 FIXTURE = Path(__file__).resolve().parent / "fixtures" / "dashboard" / "sample_sheet_rows.json"
-PARLAYS_FIXTURE = (
-    Path(__file__).resolve().parent
-    / "fixtures"
-    / "sleeper"
-    / "graphql"
-    / "my_parlays_completed.json"
-)
 
 
 @pytest.fixture
@@ -124,18 +117,16 @@ def test_roi_uses_explicit_wagers(sample_entries):
     totals = stats.compute_platform_stats(sample_entries)["totals"]
     # 5 profit / 28 staked
     assert totals["roi"] == pytest.approx(17.86, abs=0.01)
-    assert totals["roi_estimated"] is False
 
 
-def test_roi_estimated_when_wager_derived():
+def test_roi_excludes_entries_without_wager():
     entries = [
         ParlayEntry("sleeper", date(2025, 6, 1), -10.0, [Leg("A", "NBA", "Pts", "O", "M")]),
-        ParlayEntry("sleeper", date(2025, 6, 2), 20.0, [Leg("B", "NBA", "Pts", "O", "H")]),
+        ParlayEntry("sleeper", date(2025, 6, 2), 20.0, [Leg("B", "NBA", "Pts", "O", "H")], wager=10.0),
     ]
     totals = stats.compute_platform_stats(entries)["totals"]
-    # Only the loss has a derivable stake (abs profit = 10); the win's stake is unknown.
-    assert totals["roi"] == pytest.approx(-100.0, abs=0.01)
-    assert totals["roi_estimated"] is True
+    # Only the entry with column J counts toward ROI.
+    assert totals["roi"] == pytest.approx(200.0, abs=0.01)
 
 
 def test_avg_ev_excludes_unpriced_legs():
@@ -190,15 +181,21 @@ def test_avg_legs_includes_promo_legs():
     assert totals["avg_legs_per_parlay"] == pytest.approx(2.0, abs=0.01)
 
 
-def test_default_wager_counts_winning_parlays():
-    entries = [
-        ParlayEntry("sleeper", date(2025, 6, 1), -10.0, [Leg("A", "NBA", "Pts", "O", "M", payout=1.8)]),
-        ParlayEntry("sleeper", date(2025, 6, 2), 20.0, [Leg("B", "NBA", "Pts", "O", "H", payout=3.0)]),
+def test_parse_prizepicks_wager_column():
+    rows = [
+        ["", "Date", "Player", "League", "Stat", "Payout", "O/U", "Result", "Profit", "Wager"],
+        ["", "06/01/25", "LeBron James", "NBA", "Pts", "", "O", "H", "", ""],
+        ["", "06/01/25", "Stephen Curry", "NBA", "Pts", "", "O", "H", "15.00", "25"],
+        [""],
+        ["", "06/02/25", "Joel Embiid", "NBA", "Reb", "", "U", "M", "-10.00", "10"],
     ]
-    totals = stats.compute_platform_stats(entries, default_wager=10.0)["totals"]
-    # Both parlays assumed a $10 stake: net +10 profit on $20 staked -> 50% ROI.
-    assert totals["roi"] == pytest.approx(50.0, abs=0.01)
-    assert totals["roi_estimated"] is True
+    entries = parse_rows(rows, "prizepicks")
+    assert len(entries) == 2
+    assert entries[0].wager == pytest.approx(25.0)
+    assert entries[0].profit == pytest.approx(15.0)
+    assert entries[1].wager == pytest.approx(10.0)
+    totals = stats.compute_platform_stats(entries)["totals"]
+    assert totals["roi"] == pytest.approx(14.29, abs=0.01)
 
 
 def test_breakdowns_by_ou(sample_entries):
@@ -292,73 +289,18 @@ def test_empty_entries_safe():
     assert block["recent"] == []
 
 
-# ---- sleeper_enrich ----
-
-@pytest.fixture
-def completed_parlays():
-    raw = json.loads(PARLAYS_FIXTURE.read_text())["data"]["my_parlays"]
-    parlays = [sleeper_enrich.normalize_parlay(p) for p in raw]
-    return [p for p in parlays if p is not None]
+# ---- assumed Sleeper promo legs ----
 
 
-def test_normalize_parlay_splits_promo_and_skips_canceled(completed_parlays):
-    first, second = completed_parlays
-    # PropRadar legs are keyed by (name, O/U); the promo leg is held separately.
-    assert first["propradar_keys"] == {("lebron james", "O"), ("stephen curry", "O")}
-    assert len(first["promo_legs"]) == 1
-    assert first["promo_legs"][0].is_promo is True
-    assert first["total_legs"] == 3
-    assert first["profit"] == pytest.approx(12.0)  # graded_payout 22 - 10 stake
-    # The canceled leg is dropped from the second parlay's totals.
-    assert second["total_legs"] == 1
-    assert second["promo_legs"] == []
-
-
-def test_enrich_attaches_promo_and_overrides_money(completed_parlays):
-    parlay = completed_parlays[0]
-    entry = ParlayEntry(
-        "sleeper",
-        parlay["date"],
-        99.0,  # deliberately wrong; should be overridden by the API value
-        [
-            Leg("LeBron James", "NBA", "Pts", "O", "H", payout=1.5),
-            Leg("Stephen Curry", "NBA", "Pts", "O", "H", payout=2.0),
-        ],
-        wager=None,
-    )
-
-    sleeper_enrich.enrich_entries([entry], completed_parlays)
-
-    assert entry.parlay_id == "9000000000000000001"
-    assert len(entry.promo_legs) == 1 and entry.promo_legs[0].is_promo
-    assert entry.total_legs == 3
-    assert entry.profit == pytest.approx(12.0)
-    assert entry.wager == pytest.approx(10.0)
-
-
-def test_enrich_leaves_unmatched_entries_untouched(completed_parlays):
-    entry = ParlayEntry(
-        "sleeper",
-        completed_parlays[0]["date"],
-        5.0,
-        [Leg("Nobody Here", "NBA", "Pts", "O", "H", payout=1.5)],
-    )
-    sleeper_enrich.enrich_entries([entry], completed_parlays)
-    assert entry.promo_legs == []
-    assert entry.parlay_id is None
-    assert entry.profit == 5.0
-
-
-def test_enrich_no_parlays_is_noop():
+def test_assumed_promo_skips_when_disabled():
     entry = ParlayEntry("sleeper", date(2025, 6, 1), 5.0, [Leg("A", "NBA", "Pts", "O", "H", payout=1.5)])
-    sleeper_enrich.enrich_entries([entry], [])
+    apply_assumed_sleeper_promos([entry], enabled=False)
     assert entry.promo_legs == []
 
 
-def test_enrich_assumes_promo_leg_when_unmatched():
-    # No API data at all -> every entry is credited one assumed promo leg.
+def test_assumed_promo_leg_when_enabled():
     entry = ParlayEntry("sleeper", date(2025, 6, 1), 5.0, [Leg("A", "NBA", "Pts", "O", "H", payout=1.5)])
-    sleeper_enrich.enrich_entries([entry], [], assume_promo_when_unmatched=True)
+    apply_assumed_sleeper_promos([entry], enabled=True)
     assert len(entry.promo_legs) == 1
     assert entry.promo_legs[0].is_promo is True
     assert entry.total_legs == 2  # 1 PropRadar pick + 1 assumed promo
@@ -369,34 +311,13 @@ def test_enrich_assumes_promo_leg_when_unmatched():
     assert totals["avg_ev"] == pytest.approx(50.0, abs=0.01)  # 1.5/1 - 1
 
 
-def test_enrich_does_not_add_assumed_promo_when_sheet_has_one():
-    # The promo is now persisted in the sheet (Line Discount marker). Even with
-    # the assume flag on and no API match, we must not stack a second placeholder.
+def test_assumed_promo_not_added_when_sheet_has_one():
     rows = [
         ["", "06/05/25", "Player A", "NBA", "Pts", "1.5", "O", "H", ""],
         ["", "06/05/25", "Promo Guy", "Line Discount", "Reb", "1.4", "O", "H", "$12.00"],
     ]
     entry = parse_rows(rows, "sleeper")[0]
     assert len(entry.promo_legs) == 1
-    sleeper_enrich.enrich_entries([entry], [], assume_promo_when_unmatched=True)
+    apply_assumed_sleeper_promos([entry], enabled=True)
     assert len(entry.promo_legs) == 1
     assert entry.promo_legs[0].name == "Promo Guy"
-
-
-def test_enrich_matched_entry_does_not_get_assumed_promo(completed_parlays):
-    # A real API match wins even when the assume flag is on; we trust the API's
-    # promo legs (here exactly one real promo) rather than adding a placeholder.
-    parlay = completed_parlays[0]
-    entry = ParlayEntry(
-        "sleeper",
-        parlay["date"],
-        99.0,
-        [
-            Leg("LeBron James", "NBA", "Pts", "O", "H", payout=1.5),
-            Leg("Stephen Curry", "NBA", "Pts", "O", "H", payout=2.0),
-        ],
-    )
-    sleeper_enrich.enrich_entries([entry], completed_parlays, assume_promo_when_unmatched=True)
-    assert entry.parlay_id == "9000000000000000001"
-    assert len(entry.promo_legs) == 1
-    assert entry.promo_legs[0].name == "Anthony Davis"  # real promo, not the placeholder

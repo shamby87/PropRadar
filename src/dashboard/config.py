@@ -42,14 +42,8 @@ VALID_RESULTS = {"H", "M", "P"}
 # than this baseline, but the value is still surfaced in the exported payload.
 FAIR_ODDS_BASELINE = 1.05
 
-# Typical Sleeper stake. Most Sleeper parlays were $10; when an entry has no
-# explicit wager (column J) and can't be recovered from the API, assume this so
-# ROI counts winning parlays instead of collapsing to losses only.
-DEFAULT_SLEEPER_WAGER = 10.0
-
 # Essentially every recorded Sleeper parlay is a single Sleeper promo pick plus
-# one or more PropRadar picks. The sheet drops the promo leg, and the API can
-# only recover it for recent parlays, so for older/unmatched entries we credit
+# one or more PropRadar picks. Older sheet rows omit the promo leg, so we credit
 # one assumed promo leg to keep the real parlay size (avg legs) accurate.
 ASSUME_SLEEPER_PROMO_LEG = True
 

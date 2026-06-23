@@ -56,9 +56,9 @@ class ParlayEntry:
     """A settled parlay/entry: a group of legs with one parlay-level profit.
 
     ``legs`` holds only PropRadar's own picks (as read from the sheet) so that
-    skill metrics stay PropRadar-scoped. ``promo_legs`` holds the Sleeper-provided
-    promo picks recovered from the API during enrichment; they are excluded from
-    hit-rate/breakdowns but counted toward the real parlay size (avg legs).
+    skill metrics stay PropRadar-scoped. ``promo_legs`` holds Sleeper-provided
+    promo picks (from the sheet or an assumed placeholder for older entries);
+    they are excluded from hit-rate/breakdowns but counted toward avg legs.
     """
 
     platform: str
@@ -248,9 +248,37 @@ def read_platform(client: gspread.Client, worksheet_name: str, platform: str,
 
 def read_sleeper_performance(client: gspread.Client | None = None):
     client = client or get_gspread_client()
-    return read_platform(
+    entries, summaries = read_platform(
         client, config.SLEEPER_WORKSHEET, "sleeper", config.SLEEPER_SUMMARY_CELLS
     )
+    return apply_assumed_sleeper_promos(entries), summaries
+
+
+def _assumed_promo_leg() -> Leg:
+    """Placeholder for a Sleeper promo leg known to have existed but not recorded."""
+    return Leg(name="Promo", league="", stat="", ou="", result="", payout=None, is_promo=True)
+
+
+def apply_assumed_sleeper_promos(
+    entries: list[ParlayEntry],
+    *,
+    enabled: bool | None = None,
+) -> list[ParlayEntry]:
+    """Credit one assumed promo leg on Sleeper entries that do not already have one.
+
+    Older sheet rows omit the Sleeper-provided promo pick. The placeholder only
+    affects avg legs; hit-rate, breakdowns, and Est. Edge use ``entry.legs`` only.
+    """
+    if enabled is None:
+        enabled = config.ASSUME_SLEEPER_PROMO_LEG
+    if not enabled:
+        return entries
+
+    for entry in entries:
+        if not entry.promo_legs:
+            entry.promo_legs = [_assumed_promo_leg()]
+
+    return entries
 
 
 def read_prizepicks_performance(client: gspread.Client | None = None):

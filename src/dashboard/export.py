@@ -13,7 +13,6 @@ import os
 
 from . import config
 from . import sheet_reader
-from . import sleeper_enrich
 from . import stats
 
 
@@ -26,9 +25,6 @@ def build_dashboard_data(client=None) -> dict:
     client = client or sheet_reader.get_gspread_client()
 
     sleeper_entries, sleeper_summaries = sheet_reader.read_sleeper_performance(client)
-    sleeper_entries = sleeper_enrich.enrich_entries(
-        sleeper_entries, assume_promo_when_unmatched=config.ASSUME_SLEEPER_PROMO_LEG
-    )
     pp_entries, pp_summaries = sheet_reader.read_prizepicks_performance(client)
     combined = sleeper_entries + pp_entries
 
@@ -38,12 +34,8 @@ def build_dashboard_data(client=None) -> dict:
         "site_tagline": config.SITE_TAGLINE,
         "baseline_odds": config.FAIR_ODDS_BASELINE,
         "platforms": {
-            "overall": stats.compute_platform_stats(
-                combined, default_wager=config.DEFAULT_SLEEPER_WAGER
-            ),
-            "sleeper": stats.compute_platform_stats(
-                sleeper_entries, sleeper_summaries, default_wager=config.DEFAULT_SLEEPER_WAGER
-            ),
+            "overall": stats.compute_platform_stats(combined),
+            "sleeper": stats.compute_platform_stats(sleeper_entries, sleeper_summaries),
             "prizepicks": stats.compute_platform_stats(pp_entries, pp_summaries),
         },
     }
